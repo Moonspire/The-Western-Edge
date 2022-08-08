@@ -1,0 +1,8 @@
+{
+  "parent": "thewesternedge:custom/well",
+  "textures": {
+    "all": "thewesternedge:blocks/well",
+    "particle": "thewesternedge:blocks/well",
+    "0": "thewesternedge:blocks/well"
+  }
+}

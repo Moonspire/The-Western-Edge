@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:magma_cream",
+    "minecraft:rabbit_stew",
+    "minecraft:honey_bottle",
+    "minecraft:mushroom_stew",
+    "minecraft:slime_ball",
+    "minecraft:suspicious_stew"
+  ]
+}

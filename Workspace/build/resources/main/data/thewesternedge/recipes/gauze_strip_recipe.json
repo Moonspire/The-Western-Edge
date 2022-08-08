@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "minecraft:carpets"
+    },
+    {
+      "item": "minecraft:honey_bottle"
+    }
+  ],
+  "result": {
+    "item": "thewesternedge:gauze_strip",
+    "count": 4
+  }
+}

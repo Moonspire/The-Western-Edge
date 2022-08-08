@@ -1,0 +1,23 @@
+{
+  "_fv": 28,
+  "_type": "potioneffect",
+  "definition": {
+    "effectName": "Bandaged",
+    "icon": "medical.png",
+    "color": {
+      "value": -65536,
+      "falpha": 0.0
+    },
+    "isInstant": false,
+    "isBad": false,
+    "isBenefitical": true,
+    "renderStatusInInventory": true,
+    "renderStatusInHUD": true,
+    "onActiveTick": {
+      "name": "BandagesPreformEffect"
+    },
+    "activeTickCondition": {
+      "name": "BandagesActiveTickDeterminer"
+    }
+  }
+}

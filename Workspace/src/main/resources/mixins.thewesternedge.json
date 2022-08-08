@@ -1,0 +1,13 @@
+{
+    "required": true,
+	"package": "com.github.moonspire.thewesternedge.mixin",
+	"compatibilityLevel": "JAVA_17",
+	"refmap": "thewesternedge.refmap.json",
+	"mixins": [
+		"PotionApplyEffectModification",
+        "CreateFilledResultReplacement"
+	],
+	"client": [
+	],
+	"minVersion": "0.8"
+}

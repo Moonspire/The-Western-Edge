@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "thewesternedge:block/brewers_barrel"
+    },
+    "facing=east": {
+      "model": "thewesternedge:block/brewers_barrel",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "thewesternedge:block/brewers_barrel",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thewesternedge:block/brewers_barrel",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "thewesternedge:block/brewers_barrel",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "thewesternedge:block/brewers_barrel",
+      "x": 90
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "item.minecraft.splash_potion.effect.mead": "Splash Mead",
+  "block.thewesternedge.well_shaft": "Well Shaft",
+  "item.minecraft.lingering_potion.effect.mead": "Lingering Mead",
+  "itemGroup.tabtwe_alcohols": "TWE Alcohols",
+  "effect.thewesternedge.mead_effect": "Mead",
+  "item.thewesternedge.pemmican": "Pemmican",
+  "block.thewesternedge.rain_barrel": "Rain Barrel",
+  "block.thewesternedge.well_shaft_ladder": "Well Shaft Ladder",
+  "effect.thewesternedge.bandages_effect": "Bandaged",
+  "itemGroup.tabtwe_survival": "TWE Survival",
+  "block.thewesternedge.brewers_barrel": "Brewers Barrel",
+  "block.thewesternedge.well_topper": "Well Topper",
+  "item.thewesternedge.gauze_strip": "Gauze Strip",
+  "block.thewesternedge.gauze_rolls": "Gauze Rolls",
+  "item.minecraft.tipped_arrow.effect.mead": "Arrow of Mead",
+  "item.minecraft.potion.effect.mead": "Mead"
+}

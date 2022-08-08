@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "tag": "forge:fats"
+    },
+    {
+      "tag": "forge:meats"
+    },
+    {
+      "tag": "forge:veggies_seeds"
+    },
+    {
+      "tag": "forge:veggies_seeds"
+    }
+  ],
+  "result": {
+    "item": "thewesternedge:pemmican",
+    "count": 8
+  }
+}

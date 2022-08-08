@@ -1,0 +1,8 @@
+{
+  "parent": "thewesternedge:custom/rain_barrel",
+  "textures": {
+    "all": "thewesternedge:blocks/rainbarrel",
+    "particle": "thewesternedge:blocks/rainbarrel",
+    "0": "thewesternedge:blocks/rainbarrel"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "_fv": 28,
+  "_type": "tab",
+  "definition": {
+    "name": "TWE Alcohols",
+    "icon": {
+      "value": "Items.POTIONITEM"
+    },
+    "showSearch": false
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "thewesternedge:custom/well_shaft",
+  "textures": {
+    "all": "thewesternedge:blocks/cobblestone",
+    "particle": "thewesternedge:blocks/cobblestone",
+    "0": "thewesternedge:blocks/cobblestone"
+  }
+}

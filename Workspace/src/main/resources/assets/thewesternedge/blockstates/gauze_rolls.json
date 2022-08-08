@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "thewesternedge:block/gauze_rolls"
+    },
+    "facing=east": {
+      "model": "thewesternedge:block/gauze_rolls",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "thewesternedge:block/gauze_rolls",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thewesternedge:block/gauze_rolls",
+      "y": 270
+    }
+  }
+}

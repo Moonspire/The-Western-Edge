@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:glow_berries",
+    "minecraft:melon_slice",
+    "minecraft:spider_eye",
+    "minecraft:fermented_spider_eye",
+    "minecraft:sweet_berries",
+    "minecraft:apple",
+    "minecraft:beetroot"
+  ]
+}

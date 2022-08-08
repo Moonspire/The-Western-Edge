@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="[40,)"
+license="GNU General Public License version 3 (GPLv3)"
+
+[[mods]]
+modId="thewesternedge"
+version="1.0.0"
+displayName="TheWesternEdge"
+credits="Created using mod maker MCreator - https://mcreator.net/about"
+displayURL="https://mcreator.net"
+authors="aunuli, MCreator"
+
+[[dependencies.thewesternedge]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.18.2]"
+    ordering="NONE"
+    side="BOTH"
+
+
+
+

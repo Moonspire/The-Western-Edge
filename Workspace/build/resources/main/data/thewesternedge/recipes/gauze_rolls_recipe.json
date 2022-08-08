@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "012",
+    "345",
+    "678"
+  ],
+  "key": {
+    "0": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "1": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "2": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "3": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "4": {
+      "item": "minecraft:stick"
+    },
+    "5": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "6": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "7": {
+      "item": "thewesternedge:gauze_strip"
+    },
+    "8": {
+      "item": "thewesternedge:gauze_strip"
+    }
+  },
+  "result": {
+    "item": "thewesternedge:gauze_rolls",
+    "count": 1
+  }
+}

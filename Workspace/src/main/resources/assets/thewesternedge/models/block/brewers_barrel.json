@@ -1,0 +1,12 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "thewesternedge:blocks/barrelbottom",
+    "up": "thewesternedge:blocks/barreltop",
+    "north": "thewesternedge:blocks/barrel",
+    "east": "thewesternedge:blocks/barrel",
+    "south": "thewesternedge:blocks/barrel",
+    "west": "thewesternedge:blocks/barrel",
+    "particle": "thewesternedge:blocks/barrelbottom"
+  }
+}

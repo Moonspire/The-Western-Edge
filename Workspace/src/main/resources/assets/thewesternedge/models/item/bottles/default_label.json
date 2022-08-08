@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/potion",
+        "layer1": "thewesternedge:items/bottles/defaultlabel"
+    }
+}

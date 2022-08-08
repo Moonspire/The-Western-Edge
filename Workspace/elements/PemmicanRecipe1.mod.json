@@ -1,0 +1,46 @@
+{
+  "_fv": 28,
+  "_type": "recipe",
+  "definition": {
+    "recipeType": "Crafting",
+    "xpReward": 0.0,
+    "cookingTime": 200,
+    "recipeRetstackSize": 8,
+    "group": "",
+    "recipeShapeless": true,
+    "recipeSlots": [
+      {
+        "value": "TAG:forge:fats"
+      },
+      {
+        "value": "TAG:forge:meats"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": "TAG:forge:veggies_seeds"
+      },
+      {
+        "value": "TAG:forge:veggies_seeds"
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      },
+      {
+        "value": ""
+      }
+    ],
+    "recipeReturnStack": {
+      "value": "CUSTOM:Pemmican"
+    },
+    "name": "pemmican_recipe_1",
+    "namespace": "mod"
+  }
+}

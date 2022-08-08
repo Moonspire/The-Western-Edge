@@ -1,0 +1,38 @@
+{
+  "_fv": 28,
+  "_type": "tag",
+  "definition": {
+    "type": "Items",
+    "items": [
+      {
+        "value": "Items.WHEAT_SEEDS"
+      },
+      {
+        "value": "Items.WHEAT"
+      },
+      {
+        "value": "Items.CARROT"
+      },
+      {
+        "value": "Items.PUMPKIN_SEEDS"
+      },
+      {
+        "value": "Items.DRIED_KELP"
+      },
+      {
+        "value": "Items.MELON_SEEDS"
+      },
+      {
+        "value": "Items.BEETROOT_SEEDS"
+      },
+      {
+        "value": "Items.POTATO"
+      }
+    ],
+    "blocks": [],
+    "functions": [],
+    "entities": [],
+    "name": "veggies_seeds",
+    "namespace": "forge"
+  }
+}

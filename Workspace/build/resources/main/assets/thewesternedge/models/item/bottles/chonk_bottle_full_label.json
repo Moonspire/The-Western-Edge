@@ -1,0 +1,8 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "thewesternedge:items/bottles/chonkbottlefluid",
+        "layer1": "thewesternedge:items/bottles/chonkbottle",
+        "layer2": "thewesternedge:items/bottles/chonkbottlelabel"
+    }
+}

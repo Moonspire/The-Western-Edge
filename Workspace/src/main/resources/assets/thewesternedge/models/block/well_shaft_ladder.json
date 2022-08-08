@@ -1,0 +1,8 @@
+{
+  "parent": "thewesternedge:custom/well_shaft_ladder",
+  "textures": {
+    "all": "thewesternedge:blocks/wellshaftladder",
+    "particle": "thewesternedge:blocks/wellshaftladder",
+    "0": "thewesternedge:blocks/wellshaftladder"
+  }
+}

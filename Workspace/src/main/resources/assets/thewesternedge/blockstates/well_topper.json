@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "thewesternedge:block/well_topper"
+    },
+    "facing=east": {
+      "model": "thewesternedge:block/well_topper",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "thewesternedge:block/well_topper",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thewesternedge:block/well_topper",
+      "y": 270
+    }
+  }
+}

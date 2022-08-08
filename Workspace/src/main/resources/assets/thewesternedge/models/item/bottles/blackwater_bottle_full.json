@@ -1,0 +1,7 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "thewesternedge:items/bottles/blackwaterbottlefluid",
+        "layer1": "thewesternedge:items/bottles/blackwaterbottle"
+    }
+}
