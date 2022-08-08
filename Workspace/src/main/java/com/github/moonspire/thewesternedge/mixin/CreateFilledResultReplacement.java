@@ -7,7 +7,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
-import net.minecraftforge.client.model.geometry.ISimpleModelGeometry;
 
 
 @Mixin(ItemUtils.class)
