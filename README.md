@@ -7,3 +7,4 @@ I've got some mixins in here to allow CustomModelData NBT tags to transfer acros
 - Bottle variants
 - Bandages with custom status effect
 - Pemmican, a food with low hunger restoration but high saturation
+- Removes MC enchant shien as I found it annoying (Plan to make configurable later)
