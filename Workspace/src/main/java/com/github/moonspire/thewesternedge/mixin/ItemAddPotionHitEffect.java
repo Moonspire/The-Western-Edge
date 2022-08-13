@@ -16,15 +16,15 @@ import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.network.chat.TextComponent;
+import com.github.moonspire.thewesternedge.init.ThewesternedgeModItems;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.item.PotionItem;
 
 @Mixin(Item.class)
 public class ItemAddPotionHitEffect {
 	@Inject(at = @At("HEAD"), method = "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z", cancellable = true, remap = false)
 	public void hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity, CallbackInfoReturnable<Boolean> callback) {
     	if (itemstack.getItem() == Items.POTION) {
-    		if (sourceentity instanceof Player _player && !_player.level.isClientSide())
-				_player.displayClientMessage(new TextComponent("Message"), (false));
     		Potion potion = PotionUtils.getPotion(itemstack);
 	   		List<MobEffectInstance> list = PotionUtils.getMobEffects(itemstack);
      		boolean flag = potion == Potions.WATER && list.isEmpty();
@@ -34,6 +34,12 @@ public class ItemAddPotionHitEffect {
      		
      		int i = potion.hasInstantEffects() ? 2007 : 2002;
      		entity.level.levelEvent(i, entity.blockPosition(), PotionUtils.getColor(itemstack));
+     		ItemStack _setstack = new ItemStack(ThewesternedgeModItems.BROKEN_BOTTLE.get());
+			_setstack.setCount(1);
+			_setstack.getOrCreateTag().putDouble("CustomModelData", itemstack.getOrCreateTag().getDouble("CustomModelData"));
+			sourceentity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
+			if (sourceentity instanceof Player _player)
+				_player.getInventory().setChanged();
      		callback.setReturnValue(true);
     	}
 	}

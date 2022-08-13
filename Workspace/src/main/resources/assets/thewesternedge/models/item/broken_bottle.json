@@ -1,0 +1,12 @@
+{
+    "parent": "item/generated",
+    "textures": {
+    	"layer0": "thewesternedge:items/defaultbroken"
+    },
+	"overrides": [
+		{ "predicate": { "custom_model_data": 2}, "model": "thewesternedge:item/bottles/door_bottle_broken" },
+		{ "predicate": { "custom_model_data": 4}, "model": "thewesternedge:item/bottles/chonk_bottle_broken" },
+		{ "predicate": { "custom_model_data": 6}, "model": "thewesternedge:item/bottles/blackwater_bottle_broken" },
+		{ "predicate": { "custom_model_data": 8}, "model": "thewesternedge:item/bottles/tall_bottle_broken" }
+	]
+}

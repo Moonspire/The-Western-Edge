@@ -15,6 +15,8 @@ public class BrewingStandApplyNBT {
     		ItemStack retPot = callback.getReturnValue();
     		retPot.getOrCreateTag().putDouble("CustomModelData", potion.getOrCreateTag().getDouble("CustomModelData"));
 	    	callback.setReturnValue(retPot);
+	    } else {
+	    	callback.setReturnValue(callback.getReturnValue());
 	    }
 	}
 }
