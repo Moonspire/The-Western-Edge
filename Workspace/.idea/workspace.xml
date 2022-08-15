@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Workspace.main.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules/Workspace.test.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/wall_markings.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/../Resources/wall_markings.xcf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/dependencies-accessors/dependencies-accessors.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/dependencies-accessors/dependencies-accessors.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/ThewesternedgeMod.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/BrewersBarrelBlock$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/BrewersBarrelBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/GauzeRollsBlock$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/GauzeRollsBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/RainBarrelBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/WellShaftBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/WellShaftLadderBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/WellTopperBlock$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/WellTopperBlock.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/entity/BrewersBarrelBlockEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/entity/GauzeRollsBlockEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/entity/RainBarrelBlockEntity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/entity/RainBarrelBlockEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/entity/WellTopperBlockEntity$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/block/entity/WellTopperBlockEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/client/gui/BrewersBarrelGuiScreen$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/client/gui/BrewersBarrelGuiScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/client/gui/GauzeRollGuiScreen.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModBlockEntities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModBlocks$ClientSideHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModBlocks.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModItems.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModMenus.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModMobEffects.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModPotions.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModScreens.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModTabs$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModTabs$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/init/ThewesternedgeModTabs.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/GauzeStripItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/PemmicanItem.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/CreateFilledResultReplacement.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/PotionApplyEffectModification.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/potion/BandagesEffectMobEffect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/potion/MeadEffectMobEffect.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/AlcoholSystemProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BandagesActiveTickDeterminerProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BandagesPreformEffectProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelStartBrewProcedure$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelStartBrewProcedure$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelStartBrewProcedure$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelStartBrewProcedure$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelStartBrewProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelUpdateProcedure$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelUpdateProcedure$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/BrewersBarrelUpdateProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/FillBucketOrBottleProcedure$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/FillBucketOrBottleProcedure$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/FillBucketOrBottleProcedure$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/FillBucketOrBottleProcedure$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/FillBucketOrBottleProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/GauzeRollsRightClickedProcedure$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/GauzeRollsRightClickedProcedure$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/GauzeRollsRightClickedProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/GauzeStripApplyEffectProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/RainBarrelUpdateTickProcedure$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/RainBarrelUpdateTickProcedure$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/RainBarrelUpdateTickProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/WellShaftBreakLadderProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/WellShaftPlaceLadderProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/WellTopUpdateTickProcedure$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/WellTopUpdateTickProcedure$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/procedures/WellTopUpdateTickProcedure.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$6.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$7.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu$8.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/BrewersBarrelGuiMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/GauzeRollGuiMenu$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/world/inventory/GauzeRollGuiMenu.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classpath/runClient_minecraftClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/classpath/runClient_minecraftClasspath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classpath/runServer_minecraftClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/classpath/runServer_minecraftClasspath.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/libs/modid-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/modid-1.0.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reobfJar/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/reobfJar/log.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/reobfJar/output.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/reobfJar/output.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/mixins.thewesternedge.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mixins.thewesternedge.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/elements/TWEAlcohols.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/elements/TWEAlcohols.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/run/options.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/DIM-1/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/DIM1/data/raids_end.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/advancements/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/advancements/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/data/raids.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/entities/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/entities/r.-1.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/entities/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/entities/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/entities/r.0.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/entities/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/entities/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/level.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/level.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/playerdata/380df991-f603-344c-a090-369bad2a924a.dat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/playerdata/380df991-f603-344c-a090-369bad2a924a.dat_old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/poi/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/poi/r.-1.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/region/r.-1.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/region/r.-1.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/region/r.0.-1.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/region/r.0.0.mca" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/saves/Testing/stats/380df991-f603-344c-a090-369bad2a924a.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/Testing/stats/380df991-f603-344c-a090-369bad2a924a.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/init/ThewesternedgeModWallPaint.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2D3javjZPGkyB1FObrks0EDkRzZ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "settings.editor.selected.configurable": "preferences.keymap"
+  }
+}]]></component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="" />
+      <created>1659934733388</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1659934733388</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
