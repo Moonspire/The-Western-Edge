@@ -11,10 +11,9 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
-apply plugin: 'eclipse'
 
 version = '1.0'
-group = 'com.yourname.modid'
+group = 'com.github.moonspire.thewesternedge'
 archivesBaseName = 'modid'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
@@ -66,6 +65,4 @@ mixin {
 tasks.withType(JavaCompile).configureEach {
     options.encoding = 'UTF-8' // Use the UTF-8 charset for Java compilation
 }
-
-apply from: 'mcreator.gradle'
 

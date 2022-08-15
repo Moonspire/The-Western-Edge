@@ -5,7 +5,9 @@
 	"refmap": "thewesternedge.refmap.json",
 	"mixins": [
 		"PotionApplyEffectModification",
-        "CreateFilledResultReplacement"
+        "CreateFilledResultReplacement",
+        "ItemAddPotionHitEffect",
+        "BrewingStandApplyNBT"
 	],
 	"client": [
 	],
