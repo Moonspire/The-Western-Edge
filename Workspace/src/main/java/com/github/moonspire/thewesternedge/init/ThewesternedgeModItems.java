@@ -14,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.BlockItem;
 
 import com.github.moonspire.thewesternedge.item.PemmicanItem;
+import com.github.moonspire.thewesternedge.item.PaintBrushItem;
 import com.github.moonspire.thewesternedge.item.GauzeStripItem;
 import com.github.moonspire.thewesternedge.item.BrokenBottleItem;
 import com.github.moonspire.thewesternedge.ThewesternedgeMod;
@@ -29,6 +30,8 @@ public class ThewesternedgeModItems {
 	public static final RegistryObject<Item> PEMMICAN = REGISTRY.register("pemmican", () -> new PemmicanItem());
 	public static final RegistryObject<Item> BREWERS_BARREL = block(ThewesternedgeModBlocks.BREWERS_BARREL, ThewesternedgeModTabs.TAB_TWE_SURVIVAL);
 	public static final RegistryObject<Item> BROKEN_BOTTLE = REGISTRY.register("broken_bottle", () -> new BrokenBottleItem());
+	public static final RegistryObject<Item> PAINT_BRUSH = REGISTRY.register("paint_brush", () -> new PaintBrushItem());
+	public static final RegistryObject<Item> WALL_MARKING = block(ThewesternedgeModBlocks.WALL_MARKING, ThewesternedgeModTabs.TAB_TWE_MARKINGS);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

@@ -555,6 +555,42 @@
       "locked_code": false,
       "registry_name": "mead",
       "path": "~/alcohol/items"
+    },
+    {
+      "name": "BrokenBottle",
+      "type": "item",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "broken_bottle",
+      "path": "~/alcohol/items"
+    },
+    {
+      "name": "TWEMarkings",
+      "type": "tab",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "twe_markings",
+      "path": "~/markings"
+    },
+    {
+      "name": "PaintBrush",
+      "type": "item",
+      "sortid": 59,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "paint_brush",
+      "path": "~/markings/items"
+    },
+    {
+      "name": "WallMarking",
+      "type": "block",
+      "sortid": 60,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "wall_marking",
+      "path": "~/markings/blocks"
     }
   ],
   "variable_elements": [],
@@ -562,13 +598,17 @@
   "language_map": {
     "en_us": {
       "item.minecraft.splash_potion.effect.mead": "Splash Mead",
+      "item.thewesternedge.paint_brush": "Paint Brush",
       "block.thewesternedge.well_shaft": "Well Shaft",
       "item.minecraft.lingering_potion.effect.mead": "Lingering Mead",
       "itemGroup.tabtwe_alcohols": "TWE Alcohols",
+      "block.thewesternedge.wall_marking": "Wall Marking",
       "effect.thewesternedge.mead_effect": "Mead",
       "item.thewesternedge.pemmican": "Pemmican",
       "block.thewesternedge.rain_barrel": "Rain Barrel",
       "block.thewesternedge.well_shaft_ladder": "Well Shaft Ladder",
+      "itemGroup.tabtwe_markings": "TWE Markings",
+      "item.thewesternedge.broken_bottle": "Broken Bottle",
       "effect.thewesternedge.bandages_effect": "Bandaged",
       "itemGroup.tabtwe_survival": "TWE Survival",
       "block.thewesternedge.brewers_barrel": "Brewers Barrel",
@@ -636,6 +676,19 @@
           },
           {
             "name": "effects",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "markings",
+        "children": [
+          {
+            "name": "items",
+            "children": []
+          },
+          {
+            "name": "blocks",
             "children": []
           }
         ]

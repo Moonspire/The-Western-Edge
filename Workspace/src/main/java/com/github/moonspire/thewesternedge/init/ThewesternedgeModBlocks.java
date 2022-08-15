@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.Block;
 import com.github.moonspire.thewesternedge.block.WellTopperBlock;
 import com.github.moonspire.thewesternedge.block.WellShaftLadderBlock;
 import com.github.moonspire.thewesternedge.block.WellShaftBlock;
+import com.github.moonspire.thewesternedge.block.WallMarkingBlock;
 import com.github.moonspire.thewesternedge.block.RainBarrelBlock;
 import com.github.moonspire.thewesternedge.block.GauzeRollsBlock;
 import com.github.moonspire.thewesternedge.block.BrewersBarrelBlock;
@@ -30,6 +31,7 @@ public class ThewesternedgeModBlocks {
 	public static final RegistryObject<Block> WELL_TOPPER = REGISTRY.register("well_topper", () -> new WellTopperBlock());
 	public static final RegistryObject<Block> GAUZE_ROLLS = REGISTRY.register("gauze_rolls", () -> new GauzeRollsBlock());
 	public static final RegistryObject<Block> BREWERS_BARREL = REGISTRY.register("brewers_barrel", () -> new BrewersBarrelBlock());
+	public static final RegistryObject<Block> WALL_MARKING = REGISTRY.register("wall_marking", () -> new WallMarkingBlock());
 
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
@@ -40,6 +42,7 @@ public class ThewesternedgeModBlocks {
 			WellShaftLadderBlock.registerRenderLayer();
 			WellTopperBlock.registerRenderLayer();
 			GauzeRollsBlock.registerRenderLayer();
+			WallMarkingBlock.registerRenderLayer();
 		}
 	}
 }

@@ -555,6 +555,24 @@
       "locked_code": false,
       "registry_name": "mead",
       "path": "~/alcohol/items"
+    },
+    {
+      "name": "BrokenBottle",
+      "type": "item",
+      "sortid": 57,
+      "compiles": true,
+      "locked_code": true,
+      "registry_name": "broken_bottle",
+      "path": "~/alcohol/items"
+    },
+    {
+      "name": "TWEMarkings",
+      "type": "tab",
+      "sortid": 58,
+      "compiles": true,
+      "locked_code": false,
+      "registry_name": "twe_markings",
+      "path": "~/markings"
     }
   ],
   "variable_elements": [],
@@ -569,6 +587,8 @@
       "item.thewesternedge.pemmican": "Pemmican",
       "block.thewesternedge.rain_barrel": "Rain Barrel",
       "block.thewesternedge.well_shaft_ladder": "Well Shaft Ladder",
+      "itemGroup.tabtwe_markings": "TWE Markings",
+      "item.thewesternedge.broken_bottle": "Broken Bottle",
       "effect.thewesternedge.bandages_effect": "Bandaged",
       "itemGroup.tabtwe_survival": "TWE Survival",
       "block.thewesternedge.brewers_barrel": "Brewers Barrel",
@@ -636,6 +656,15 @@
           },
           {
             "name": "effects",
+            "children": []
+          }
+        ]
+      },
+      {
+        "name": "markings",
+        "children": [
+          {
+            "name": "items",
             "children": []
           }
         ]

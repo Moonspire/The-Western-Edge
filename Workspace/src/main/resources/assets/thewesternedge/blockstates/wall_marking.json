@@ -1,0 +1,27 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "thewesternedge:block/wall_marking"
+    },
+    "facing=east": {
+      "model": "thewesternedge:block/wall_marking",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "thewesternedge:block/wall_marking",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thewesternedge:block/wall_marking",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "thewesternedge:block/wall_marking",
+      "x": 270
+    },
+    "facing=down": {
+      "model": "thewesternedge:block/wall_marking",
+      "x": 90
+    }
+  }
+}
