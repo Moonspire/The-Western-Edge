@@ -4,6 +4,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
 import net.minecraft.world.item.alchemy.Potion;
 import java.util.List;
 import net.minecraft.nbt.CompoundTag;
@@ -18,18 +19,17 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
 import com.github.moonspire.thewesternedge.init.ThewesternedgeModItems;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.item.PotionItem;
 
 @Mixin(Item.class)
 public class ItemAddPotionHitEffect {
-	@Inject(at = @At("HEAD"), method = "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z", cancellable = true, remap = false)
+	@Inject(at = @At("HEAD"), method = "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z", cancellable = true)
 	public void hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity, CallbackInfoReturnable<Boolean> callback) {
     	if (itemstack.getItem() == Items.POTION) {
     		Potion potion = PotionUtils.getPotion(itemstack);
 	   		List<MobEffectInstance> list = PotionUtils.getMobEffects(itemstack);
      		boolean flag = potion == Potions.WATER && list.isEmpty();
      		if (!list.isEmpty() && !flag) {
-        	   	this.makeAreaOfEffectCloud(itemstack, potion, 1.0F, 1.0F, 10, sourceentity, entity);
+        	   	this.makeAreaOfEffectCloud(itemstack, potion, 2.0F, 0.0F, 0, sourceentity, entity);
      		}
      		
      		int i = potion.hasInstantEffects() ? 2007 : 2002;
@@ -50,7 +50,8 @@ public class ItemAddPotionHitEffect {
       areaeffectcloud.setRadius(rad);
       areaeffectcloud.setRadiusOnUse(useRad);
       areaeffectcloud.setWaitTime(waitTime);
-      areaeffectcloud.setRadiusPerTick(-areaeffectcloud.getRadius() / (float)areaeffectcloud.getDuration());
+      areaeffectcloud.setRadiusPerTick(0.0F);
+	  areaeffectcloud.setDuration(40);
       areaeffectcloud.setPotion(potion);
 
       for(MobEffectInstance mobeffectinstance : PotionUtils.getCustomEffects(itemstack)) {

@@ -5,10 +5,10 @@ license="GNU General Public License version 3 (GPLv3)"
 [[mods]]
 modId="thewesternedge"
 version="1.0.0"
-displayName="TheWesternEdge"
+displayName="The Western Edge"
 credits="Created using mod maker MCreator - https://mcreator.net/about"
 displayURL="https://mcreator.net"
-authors="aunuli, MCreator"
+authors="Aunuli"
 
 [[dependencies.thewesternedge]]
     modId="minecraft"

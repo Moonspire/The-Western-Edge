@@ -3,10 +3,10 @@ package com.github.moonspire.thewesternedge.item;
 
 import java.util.Random;
 
-import net.minecraft.world.item.UseAnim;
-import net.minecraft.world.item.Rarity;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Item;
+import net.minecraft.core.BlockPos;
+import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.*;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attribute;
@@ -17,42 +17,32 @@ import com.google.common.collect.Multimap;
 import com.google.common.collect.ImmutableMultimap;
 
 import com.github.moonspire.thewesternedge.init.ThewesternedgeModTabs;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.state.BlockState;
 
-public class BrokenBottleItem extends Item {
+public class BrokenBottleItem extends SwordItem {
 	public BrokenBottleItem() {
-		super(new Item.Properties().tab(ThewesternedgeModTabs.TAB_TWE_ALCOHOLS).durability(5).rarity(Rarity.COMMON));
+		super(Tiers.WOOD, 2, -3.0F, new Item.Properties().tab(ThewesternedgeModTabs.TAB_TWE_ALCOHOLS).durability(3).rarity(Rarity.COMMON));
 	}
-
 	@Override
-	public UseAnim getUseAnimation(ItemStack itemstack) {
-		return UseAnim.EAT;
-	}
-
-	@Override
-	public int getUseDuration(ItemStack itemstack) {
-		return 0;
-	}
-
-	@Override
-	public Multimap<Attribute, AttributeModifier> getDefaultAttributeModifiers(EquipmentSlot equipmentSlot) {
-		if (equipmentSlot == EquipmentSlot.MAINHAND) {
-			ImmutableMultimap.Builder<Attribute, AttributeModifier> builder = ImmutableMultimap.builder();
-			builder.putAll(super.getDefaultAttributeModifiers(equipmentSlot));
-			builder.put(Attributes.ATTACK_DAMAGE,
-					new AttributeModifier(BASE_ATTACK_DAMAGE_UUID, "Item modifier", 2d, AttributeModifier.Operation.ADDITION));
-			builder.put(Attributes.ATTACK_SPEED,
-					new AttributeModifier(BASE_ATTACK_SPEED_UUID, "Item modifier", -2.4, AttributeModifier.Operation.ADDITION));
+	public boolean canAttackBlock(BlockState block, Level level, BlockPos pos, Player player) {
+		if (!player.isCreative()) {
+			hurtSelf(player.getMainHandItem(), player);
 		}
-		return super.getDefaultAttributeModifiers(equipmentSlot);
+		return false;
 	}
-
 	@Override
-	public boolean hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity) {
-		ItemStack _ist = itemstack;
-		if (_ist.hurt(1, new Random(), null)) {
-			_ist.shrink(1);
-			_ist.setDamageValue(0);
-		}
-		return true;
+	public float getDestroySpeed(ItemStack item, BlockState block) {
+		return 1000.0F;
+	}
+	@Override
+	public boolean canPerformAction(ItemStack stack, net.minecraftforge.common.ToolAction toolAction) {
+		return false;
+	}
+	public void hurtSelf(ItemStack item, Player player) {
+		item.hurtAndBreak(item.getMaxDamage(),player, (player1) -> {
+			player1.broadcastBreakEvent(EquipmentSlot.MAINHAND);
+		});
+		player.hurt(DamageSource.playerAttack(player),3);
 	}
 }
