@@ -7,14 +7,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.entity.ai.attributes.Attributes;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
-import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-
-import com.google.common.collect.Multimap;
-import com.google.common.collect.ImmutableMultimap;
 
 import com.github.moonspire.thewesternedge.init.ThewesternedgeModTabs;
 import net.minecraft.world.level.Level;
