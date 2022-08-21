@@ -5,7 +5,7 @@ I've got some mixins in here to allow CustomModelData NBT tags to transfer acros
 # Features
 - Wells and rain barrels to use with https://github.com/Trinsdar/FiniteWater to provide water sources outside water biomes
 - Bottle variants
-- Broken bottles (deal 2 hearts and have 5 uses before breaking)
+- Broken bottles (deal 1.5 hearts and have 3 uses before breaking, will break instantly if you hit a block with them)
 - Bandages with custom status effect
 - Pemmican, a food with low hunger restoration but high saturation
 - Removes MC enchant shien as I found it annoying (Plan to make configurable later)
