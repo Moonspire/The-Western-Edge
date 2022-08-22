@@ -1,10 +1,11 @@
 package com.github.moonspire.thewesternedge.mixin;
 
 import org.spongepowered.asm.mixin.Mixin;
-import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.alchemy.Potion;
 import java.util.List;
 import net.minecraft.nbt.CompoundTag;
@@ -15,7 +16,6 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.entity.player.Player;
 import com.github.moonspire.thewesternedge.init.ThewesternedgeModItems;
 import net.minecraft.world.InteractionHand;

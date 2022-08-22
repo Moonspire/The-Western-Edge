@@ -13,6 +13,9 @@
  */
 package com.github.moonspire.thewesternedge;
 
+import com.github.moonspire.thewesternedge.events.GeneratedItemHooks;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.eventbus.api.EventPriority;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -49,6 +52,8 @@ public class ThewesternedgeMod {
 	public ThewesternedgeMod() {
 		ThewesternedgeModTabs.load();
 		IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+		IEventBus forgeEventBus = MinecraftForge.EVENT_BUS;
+
 		ThewesternedgeModBlocks.REGISTRY.register(bus);
 		ThewesternedgeModItems.REGISTRY.register(bus);
 
@@ -57,6 +62,7 @@ public class ThewesternedgeMod {
 		ThewesternedgeModMobEffects.REGISTRY.register(bus);
 		ThewesternedgeModPotions.REGISTRY.register(bus);
 
+		forgeEventBus.addListener(EventPriority.NORMAL, GeneratedItemHooks::OnEntityInteract);
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,

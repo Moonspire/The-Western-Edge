@@ -1,8 +1,6 @@
 
 package com.github.moonspire.thewesternedge.item;
 
-import java.util.Random;
-
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
