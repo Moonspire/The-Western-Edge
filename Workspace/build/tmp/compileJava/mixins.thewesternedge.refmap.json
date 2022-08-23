@@ -1,4 +1,32 @@
 {
-  "mappings": {},
-  "data": {}
+  "mappings": {
+    "com/github/moonspire/thewesternedge/mixin/PotionApplyEffectModification": {
+      "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;"
+    },
+    "com/github/moonspire/thewesternedge/mixin/BrewingStandApplyNBT": {
+      "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/alchemy/PotionBrewing;m_43529_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"
+    },
+    "com/github/moonspire/thewesternedge/mixin/CreateFilledResultReplacement": {
+      "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/ItemUtils;m_41817_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;"
+    },
+    "com/github/moonspire/thewesternedge/mixin/ItemAddPotionHitEffect": {
+      "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z": "Lnet/minecraft/world/item/Item;m_7579_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/github/moonspire/thewesternedge/mixin/PotionApplyEffectModification": {
+        "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;"
+      },
+      "com/github/moonspire/thewesternedge/mixin/BrewingStandApplyNBT": {
+        "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/alchemy/PotionBrewing;m_43529_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"
+      },
+      "com/github/moonspire/thewesternedge/mixin/CreateFilledResultReplacement": {
+        "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/ItemUtils;m_41817_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;"
+      },
+      "com/github/moonspire/thewesternedge/mixin/ItemAddPotionHitEffect": {
+        "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z": "Lnet/minecraft/world/item/Item;m_7579_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z"
+      }
+    }
+  }
 }
