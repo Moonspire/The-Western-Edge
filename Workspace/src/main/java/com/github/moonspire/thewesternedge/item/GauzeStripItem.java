@@ -7,14 +7,13 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.entity.LivingEntity;
 
 import com.github.moonspire.thewesternedge.init.ThewesternedgeModTabs;
 
-public class GauzeStripItem extends Item {
+public class GauzeStripItem extends Item implements ItemRightClickTrigger {
 	private final static int COOLDOWN = 300;
 	private final static int STRENGTH = 0;
 	private final static int USEDURATION = 64;
@@ -53,7 +52,7 @@ public class GauzeStripItem extends Item {
 		return this.applyGauzeStripEffect(entity, itemstack, COOLDOWN);
 	}
 
-	public int mobInteract(InteractionHand hand, Entity entity, Player player) { // Invoked when item used on entity.
+	public int mobInteract(InteractionHand hand, Entity entity, Player player) {
 		if (entity instanceof LivingEntity livingentity) {
 			ItemStack itemstack = player.getItemInHand(hand);
 			this.applyGauzeStripEffect(livingentity, itemstack, COOLDOWN);

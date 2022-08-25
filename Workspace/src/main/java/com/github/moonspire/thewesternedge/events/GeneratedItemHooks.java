@@ -1,5 +1,6 @@
 package com.github.moonspire.thewesternedge.events;
 
+import com.github.moonspire.thewesternedge.item.ItemRightClickTrigger;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
@@ -22,19 +23,14 @@ public class GeneratedItemHooks {
         ItemStack itemstack = player.getItemInHand(interactionhand);
         Item item = itemstack.getItem();
         if (!player.getCooldowns().isOnCooldown(item)) {
-            try {
-                Object[] args = new Object[3];
-                args[0] = interactionhand;
-                args[1] = target;
-                args[2] = player;
-                int itemCooldownModifier = (int) item.getClass().getMethod("mobInteract", new Class[]{InteractionHand.class, Entity.class, Player.class}).invoke(item, args);
+            int itemCooldownModifier = 0;
+            if (item instanceof ItemRightClickTrigger itemrct) {
+                itemCooldownModifier = itemrct.mobInteract(interactionhand, target, player);
                 if (itemstack.getUseDuration() + itemCooldownModifier > USEDURATION) {
                     player.getCooldowns().addCooldown(item, itemstack.getUseDuration() + itemCooldownModifier);
                 } else {
                     player.getCooldowns().addCooldown(item, USEDURATION);
                 }
-            } catch (NoSuchMethodException | SecurityException | IllegalAccessException | InvocationTargetException e) {
-                System.out.println("No 'mobInteract' method found, skipping action");
             }
         }
     }

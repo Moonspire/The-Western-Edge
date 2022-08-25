@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/item/animations/UseAnim.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/ItemRightClickTrigger.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/animations/UseAnim.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/item/ItemRightClickTrigger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" afterDir="false" />
@@ -15,23 +16,9 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/ThewesternedgeMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/ThewesternedgeMod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/BrokenBottleItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/BrokenBottleItem.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/events/GeneratedItemHooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/events/GeneratedItemHooks.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/GauzeStripItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/item/GauzeStripItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/BrewingStandApplyNBT.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/BrewingStandApplyNBT.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/CreateFilledResultReplacement.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/CreateFilledResultReplacement.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/ItemAddPotionHitEffect.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/ItemAddPotionHitEffect.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/PotionApplyEffectModification.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/com/github/moonspire/thewesternedge/mixin/PotionApplyEffectModification.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classpath/runServer_minecraftClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/classpath/runServer_minecraftClasspath.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/libs/modid-1.0.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/libs/modid-1.0.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reobfJar/output.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/reobfJar/output.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/META-INF/mods.toml" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/META-INF/mods.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/mixins.thewesternedge.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/mixins.thewesternedge.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/pack.mcmeta" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/pack.mcmeta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileJava-refmap.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/compileJava-refmap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/mixins.thewesternedge.refmap.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/mixins.thewesternedge.refmap.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/events/GeneratedItemHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/events/GeneratedItemHooks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/item/GauzeStripItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/moonspire/thewesternedge/item/GauzeStripItem.java" afterDir="false" />
