@@ -13,8 +13,8 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'org.spongepowered.mixin'
 
 version = '1.0'
-group = 'com.github.moonspire.thewesternedge'
-archivesBaseName = 'modid'
+group = 'net.ironhorsedevgroup.mods.thewesternedge'
+archivesBaseName = 'thewesternedge'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(17)
 

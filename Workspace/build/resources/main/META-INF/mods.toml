@@ -6,8 +6,7 @@ license="GNU General Public License version 3 (GPLv3)"
 modId="thewesternedge"
 version="1.0.0"
 displayName="The Western Edge"
-credits="Created using mod maker MCreator - https://mcreator.net/about"
-displayURL="https://mcreator.net"
+displayURL="https://www.ironhorsedevgroup.net"
 authors="Aunuli"
 
 [[dependencies.thewesternedge]]
