@@ -34,7 +34,7 @@ public class GauzeStripItem extends Item implements ItemRightClickTrigger {
 
 	@Override
 	public UseAnim getUseAnimation(ItemStack itemstack) {
-		return UseAnim.BLOCK;
+		return UseAnim.DRINK;
 	}
 
 	@Override

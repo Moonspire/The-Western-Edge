@@ -1,0 +1,15 @@
+Java Launcher: /usr/lib/jvm/java-17-openjdk-amd64/bin/java
+Arguments: '--task, SRG_TO_MCP, --input, /home/aunuli/.gradle/caches/modules-2/files-2.1/software.bernie.geckolib/geckolib-forge-1.18/3.0.37/8c4e34a781c1e23fae0e72be04df9e3369b7dde0/geckolib-forge-1.18-3.0.37.jar, --output, /home/aunuli/.gradle/caches/forge_gradle/deobf_dependencies/software/bernie/geckolib/geckolib-forge-1.18/3.0.37_mapped_official_1.18.2/geckolib-forge-1.18-3.0.37_mapped_official_1.18.2.jar, --mcp, /home/aunuli/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/mapping/1.18.2/mapping-1.18.2-mapping.zip, --strip-signatures'
+Classpath:
+ - /home/aunuli/.gradle/caches/forge_gradle/maven_downloader/net/minecraftforge/installertools/1.3.2/installertools-1.3.2-fatjar.jar
+Working directory: /media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/build/_RenameSrg2Mcp_-2111611848
+Main class: net.minecraftforge.installertools.ConsoleTool
+====================================
+Task: SRG_TO_MCP
+Input:  /home/aunuli/.gradle/caches/modules-2/files-2.1/software.bernie.geckolib/geckolib-forge-1.18/3.0.37/8c4e34a781c1e23fae0e72be04df9e3369b7dde0/geckolib-forge-1.18-3.0.37.jar
+Output: /home/aunuli/.gradle/caches/forge_gradle/deobf_dependencies/software/bernie/geckolib/geckolib-forge-1.18/3.0.37_mapped_official_1.18.2/geckolib-forge-1.18-3.0.37_mapped_official_1.18.2.jar
+MCP:    /home/aunuli/.gradle/caches/forge_gradle/mcp_repo/net/minecraft/mapping/1.18.2/mapping-1.18.2-mapping.zip
+Loading MCP Data
+Processing ZIP file
+Stripped Manifest of sha digests
+Process complete
