@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.block.entity;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModBlockEntities;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlockEntities;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -34,7 +34,7 @@ public class RainBarrelBlockEntity extends RandomizableContainerBlockEntity impl
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public RainBarrelBlockEntity(BlockPos position, BlockState state) {
-		super(ThewesternedgeModBlockEntities.RAIN_BARREL.get(), position, state);
+		super(TWEBlockEntities.RAIN_BARREL.get(), position, state);
 	}
 
 	@Override

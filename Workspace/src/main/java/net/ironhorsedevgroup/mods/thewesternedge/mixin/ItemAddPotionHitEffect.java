@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModItems;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -34,7 +34,7 @@ public class ItemAddPotionHitEffect {
      		
      		int i = potion.hasInstantEffects() ? 2007 : 2002;
      		entity.level.levelEvent(i, entity.blockPosition(), PotionUtils.getColor(itemstack));
-     		ItemStack _setstack = new ItemStack(ThewesternedgeModItems.BROKEN_BOTTLE.get());
+     		ItemStack _setstack = new ItemStack(TWEItems.BROKEN_BOTTLE.get());
 			_setstack.setCount(1);
 			_setstack.getOrCreateTag().putDouble("CustomModelData", itemstack.getOrCreateTag().getDouble("CustomModelData"));
 			sourceentity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);

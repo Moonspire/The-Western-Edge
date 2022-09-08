@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.block.entity;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModBlockEntities;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlockEntities;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -34,7 +34,7 @@ public class WellTopperBlockEntity extends RandomizableContainerBlockEntity impl
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public WellTopperBlockEntity(BlockPos position, BlockState state) {
-		super(ThewesternedgeModBlockEntities.WELL_TOPPER.get(), position, state);
+		super(TWEBlockEntities.WELL_TOPPER.get(), position, state);
 	}
 
 	@Override

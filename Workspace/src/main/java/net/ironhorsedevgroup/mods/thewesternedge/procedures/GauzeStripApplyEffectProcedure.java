@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.procedures;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModMobEffects;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEMobEffects;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.LivingEntity;
@@ -15,6 +15,6 @@ public class GauzeStripApplyEffectProcedure {
 		if (entity instanceof Player _player)
 			_player.getCooldowns().addCooldown(itemstack.getItem(), 300);
 		if (entity instanceof LivingEntity _entity)
-			_entity.addEffect(new MobEffectInstance(ThewesternedgeModMobEffects.BANDAGES_EFFECT.get(), 360, 0));
+			_entity.addEffect(new MobEffectInstance(TWEMobEffects.BANDAGES_EFFECT.get(), 360, 0));
 	}
 }

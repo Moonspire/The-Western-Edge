@@ -1,8 +1,8 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModMobEffects;
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModTabs;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEMobEffects;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWETabs;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffectInstance;
@@ -18,7 +18,7 @@ public class GauzeStripItem extends Item implements ItemRightClickTrigger {
 	private final static int USEDURATION = 64;
 	private final static int EFFECTDURATION = 240;
 	public GauzeStripItem() {
-		super(new Item.Properties().tab(ThewesternedgeModTabs.TAB_TWE_SURVIVAL).stacksTo(64).rarity(Rarity.COMMON));
+		super(new Item.Properties().tab(TWETabs.TAB_TWE_SURVIVAL).stacksTo(64).rarity(Rarity.COMMON));
 	}
 
 	public ItemStack applyGauzeStripEffect(LivingEntity entity, ItemStack itemstack, int cooldown) {
@@ -27,7 +27,7 @@ public class GauzeStripItem extends Item implements ItemRightClickTrigger {
 			Item item = itemstack.getItem();
 			player.getCooldowns().addCooldown(item, (cooldown + item.getUseDuration(itemstack)));
 		}
-		entity.addEffect(new MobEffectInstance(ThewesternedgeModMobEffects.BANDAGES_EFFECT.get(), EFFECTDURATION, STRENGTH));
+		entity.addEffect(new MobEffectInstance(TWEMobEffects.BANDAGES_EFFECT.get(), EFFECTDURATION, STRENGTH));
 		return itemstack;
 	}
 

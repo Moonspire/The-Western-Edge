@@ -1,7 +1,10 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.block;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModBlocks;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlocks;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.item.*;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -27,8 +30,6 @@ import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
-import net.minecraft.world.item.TieredItem;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.InteractionHand;
@@ -40,27 +41,19 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import java.util.List;
 import java.util.Collections;
 
-import net.ironhorsedevgroup.mods.thewesternedge.procedures.WellShaftPlaceLadderProcedure;
-
-public class WellShaftBlock extends Block implements SimpleWaterloggedBlock
+public class WellShaftBlock extends AbstractWellShaftBlock implements SimpleWaterloggedBlock
 
 {
 	public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
 
 	public WellShaftBlock() {
-		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(2f, 6f).requiresCorrectToolForDrops().noOcclusion()
-				.isRedstoneConductor((bs, br, bp) -> false));
+		super(BlockBehaviour.Properties.of(Material.STONE).sound(SoundType.STONE).strength(2f, 6f).requiresCorrectToolForDrops().noOcclusion());
 		this.registerDefaultState(this.stateDefinition.any().setValue(WATERLOGGED, false));
 	}
 
 	@Override
 	public boolean propagatesSkylightDown(BlockState state, BlockGetter reader, BlockPos pos) {
 		return state.getFluidState().isEmpty();
-	}
-
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
 	}
 
 	@Override
@@ -96,7 +89,7 @@ public class WellShaftBlock extends Block implements SimpleWaterloggedBlock
 
 	@Override
 	public boolean canHarvestBlock(BlockState state, BlockGetter world, BlockPos pos, Player player) {
-		if (player.getInventory().getSelected().getItem() instanceof TieredItem tieredItem)
+		if (player.getInventory().getSelected().getItem() instanceof PickaxeItem tieredItem)
 			return tieredItem.getTier().getLevel() >= 1;
 		return false;
 	}
@@ -112,20 +105,22 @@ public class WellShaftBlock extends Block implements SimpleWaterloggedBlock
 	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		double hitX = hit.getLocation().x;
-		double hitY = hit.getLocation().y;
-		double hitZ = hit.getLocation().z;
-		Direction direction = hit.getDirection();
 
-		WellShaftPlaceLadderProcedure.execute(world, x, y, z, entity);
-		return InteractionResult.SUCCESS;
+		ItemStack itemstack = entity.getItemInHand(hand);
+		Item item = itemstack.getItem();
+		if (item == Items.LADDER) {
+			if (!(entity.isCreative())) {
+				itemstack.shrink(1);
+			}
+			world.setBlock(pos, TWEBlocks.WELL_SHAFT_LADDER.get().defaultBlockState(), 3);
+			world.playSound(entity, pos, SoundEvents.LADDER_PLACE, SoundSource.PLAYERS, 1.0F, 0.0F);
+			return InteractionResult.SUCCESS;
+		}
+		return InteractionResult.PASS;
 	}
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(ThewesternedgeModBlocks.WELL_SHAFT.get(), renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(TWEBlocks.WELL_SHAFT.get(), renderType -> renderType == RenderType.cutout());
 	}
 }

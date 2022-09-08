@@ -1,7 +1,7 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModTabs;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWETabs;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.player.Player;
@@ -13,7 +13,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BrokenBottleItem extends SwordItem {
 	public BrokenBottleItem() {
-		super(Tiers.WOOD, 2, -3.0F, new Item.Properties().tab(ThewesternedgeModTabs.TAB_TWE_ALCOHOLS).durability(3).rarity(Rarity.COMMON));
+		super(Tiers.WOOD, 2, -3.0F, new Item.Properties().tab(TWETabs.TAB_TWE_ALCOHOLS).durability(3).rarity(Rarity.COMMON));
 	}
 	@Override
 	public boolean canAttackBlock(BlockState block, Level level, BlockPos pos, Player player) {

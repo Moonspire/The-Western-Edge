@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.procedures;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModMobEffects;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEMobEffects;
 import net.minecraftforge.network.NetworkHooks;
 import net.minecraftforge.items.IItemHandlerModifiable;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -75,7 +75,7 @@ public class GauzeRollsRightClickedProcedure {
 				}
 			}
 			if (entity instanceof LivingEntity _entity)
-				_entity.addEffect(new MobEffectInstance(ThewesternedgeModMobEffects.BANDAGES_EFFECT.get(), 240, 1));
+				_entity.addEffect(new MobEffectInstance(TWEMobEffects.BANDAGES_EFFECT.get(), 240, 1));
 		} else {
 			if (entity instanceof Player _player && !_player.level.isClientSide())
 				_player.displayClientMessage(new TextComponent("Out of Gauze"), (true));

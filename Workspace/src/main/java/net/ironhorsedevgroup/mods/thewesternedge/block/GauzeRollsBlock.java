@@ -1,8 +1,8 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.block;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModBlocks;
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModItems;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlocks;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -124,7 +124,7 @@ public class GauzeRollsBlock extends Block implements SimpleWaterloggedBlock, En
 		List<ItemStack> dropsOriginal = super.getDrops(state, builder);
 		if (!dropsOriginal.isEmpty())
 			return dropsOriginal;
-		return Collections.singletonList(new ItemStack(ThewesternedgeModItems.GAUZE_STRIP.get(), 8));
+		return Collections.singletonList(new ItemStack(TWEItems.GAUZE_STRIP.get(), 8));
 	}
 
 	@Override
@@ -188,7 +188,7 @@ public class GauzeRollsBlock extends Block implements SimpleWaterloggedBlock, En
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(ThewesternedgeModBlocks.GAUZE_ROLLS.get(), renderType -> renderType == RenderType.cutout());
+		ItemBlockRenderTypes.setRenderLayer(TWEBlocks.GAUZE_ROLLS.get(), renderType -> renderType == RenderType.cutout());
 	}
 
 }

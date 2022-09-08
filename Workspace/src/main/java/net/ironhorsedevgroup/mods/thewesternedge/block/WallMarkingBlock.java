@@ -1,7 +1,7 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.block;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModBlocks;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlocks;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -109,7 +109,7 @@ public class WallMarkingBlock extends Block implements SimpleWaterloggedBlock
 
 	@OnlyIn(Dist.CLIENT)
 	public static void registerRenderLayer() {
-		ItemBlockRenderTypes.setRenderLayer(ThewesternedgeModBlocks.WALL_MARKING.get(), renderType -> renderType == RenderType.translucent());
+		ItemBlockRenderTypes.setRenderLayer(TWEBlocks.WALL_MARKING.get(), renderType -> renderType == RenderType.translucent());
 	}
 
 }

@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.block.entity;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModBlockEntities;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlockEntities;
 import net.minecraftforge.items.wrapper.SidedInvWrapper;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
@@ -36,7 +36,7 @@ public class BrewersBarrelBlockEntity extends RandomizableContainerBlockEntity i
 	private final LazyOptional<? extends IItemHandler>[] handlers = SidedInvWrapper.create(this, Direction.values());
 
 	public BrewersBarrelBlockEntity(BlockPos position, BlockState state) {
-		super(ThewesternedgeModBlockEntities.BREWERS_BARREL.get(), position, state);
+		super(TWEBlockEntities.BREWERS_BARREL.get(), position, state);
 	}
 
 	@Override

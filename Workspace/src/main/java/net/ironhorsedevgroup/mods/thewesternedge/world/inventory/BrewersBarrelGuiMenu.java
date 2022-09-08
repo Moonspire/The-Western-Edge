@@ -1,7 +1,7 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.world.inventory;
 
-import net.ironhorsedevgroup.mods.thewesternedge.init.ThewesternedgeModMenus;
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEMenus;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -34,7 +34,7 @@ public class BrewersBarrelGuiMenu extends AbstractContainerMenu implements Suppl
 	private boolean bound = false;
 
 	public BrewersBarrelGuiMenu(int id, Inventory inv, FriendlyByteBuf extraData) {
-		super(ThewesternedgeModMenus.BREWERS_BARREL_GUI, id);
+		super(TWEMenus.BREWERS_BARREL_GUI, id);
 		this.entity = inv.player;
 		this.world = inv.player.level;
 		this.internal = new ItemStackHandler(8);
