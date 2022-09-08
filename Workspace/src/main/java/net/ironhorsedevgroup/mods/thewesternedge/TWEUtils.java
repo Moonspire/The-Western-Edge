@@ -4,17 +4,17 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.ItemUtils;
-import net.minecraft.world.item.Items;
+import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.level.material.Fluids;
 import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.FluidStack;
@@ -67,12 +67,16 @@ public class TWEUtils {
         if (getFluidTankLevel(world, pos, tank) >= drawAmount) {
             drainFluid(world, pos, tank, drawAmount);
             ItemStack itemstack = player.getItemInHand(hand);
-            Item item = itemstack.getItem();
             ItemStack newstack = itemstack;
-            if (item == Items.BUCKET) {
+            Item item = itemstack.getItem();
+            if (item instanceof BucketItem bucketitem) {
+                world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BUCKET_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                world.gameEvent(player, GameEvent.FLUID_PICKUP, pos);
                 newstack = ItemUtils.createFilledResult(itemstack, player, new ItemStack(Items.WATER_BUCKET));
                 retval = true;
-            } else if (item == Items.GLASS_BOTTLE) {
+            } else if (item instanceof BottleItem bottleitem) {
+                world.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                world.gameEvent(player, GameEvent.FLUID_PICKUP, pos);
                 newstack = ItemUtils.createFilledResult(itemstack, player, PotionUtils.setPotion(new ItemStack(Items.POTION), Potions.WATER));
                 retval = true;
             }
@@ -87,9 +91,9 @@ public class TWEUtils {
         boolean retval = false;
         ItemStack itemstack = player.getItemInHand(hand);
         Item item = itemstack.getItem();
-        if (item == Items.BUCKET) {
+        if (item instanceof BucketItem) {
             retval = drawFluid(world, hand, player, pos, tank, 1000);
-        } else if (item == Items.GLASS_BOTTLE) {
+        } else if (item instanceof BottleItem) {
             retval = drawFluid(world, hand, player, pos, tank, 250);
         } else {
             player.displayClientMessage(new TextComponent("You can't fill this"), (true));
@@ -105,5 +109,13 @@ public class TWEUtils {
             return true;
         }
         return false;
+    }
+
+    public static double getDoubleTag(ItemStack itemstack, String name) {
+        try {
+            return itemstack.getTag().getDouble("CustomModelData");
+        } catch (Exception e) {
+            return 0;
+        }
     }
 }

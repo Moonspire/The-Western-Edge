@@ -109,7 +109,7 @@ public class WellShaftBlock extends AbstractWellShaftBlock implements SimpleWate
 		ItemStack itemstack = entity.getItemInHand(hand);
 		Item item = itemstack.getItem();
 		if (item == Items.LADDER) {
-			if (!(entity.isCreative())) {
+			if (!(entity.getAbilities().instabuild)) {
 				itemstack.shrink(1);
 			}
 			world.setBlock(pos, TWEBlocks.WELL_SHAFT_LADDER.get().defaultBlockState(), 3);
