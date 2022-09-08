@@ -5,10 +5,6 @@ import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlocks;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import net.ironhorsedevgroup.mods.thewesternedge.item.AbstractBandageItem;
-import net.ironhorsedevgroup.mods.thewesternedge.item.GauzeStripItem;
-import net.minecraft.network.chat.TextComponent;
-import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -39,7 +35,6 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.MenuProvider;
 import net.minecraft.world.InteractionResult;
@@ -53,7 +48,6 @@ import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import java.util.List;
 import java.util.Collections;
 
-import net.ironhorsedevgroup.mods.thewesternedge.procedures.GauzeRollsRightClickedProcedure;
 import net.ironhorsedevgroup.mods.thewesternedge.block.entity.GauzeRollsBlockEntity;
 
 public class GauzeRollsBlock extends Block implements SimpleWaterloggedBlock, EntityBlock {
