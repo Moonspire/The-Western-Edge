@@ -1,6 +1,5 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
-import com.mojang.blaze3d.shaders.Effect;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEMobEffects;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -37,7 +36,7 @@ public class AbstractBandageItem extends Item implements ItemRightClickTrigger {
     }
 
     public int getEffectDuration() {
-        return 0;
+        return 240;
     }
 
     @Override
