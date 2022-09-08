@@ -3,6 +3,7 @@ package net.ironhorsedevgroup.mods.thewesternedge.world.inventory;
 
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEMenus;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
+import net.ironhorsedevgroup.mods.thewesternedge.item.AbstractBandageItem;
 import net.minecraftforge.items.SlotItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.items.IItemHandler;
@@ -78,7 +79,7 @@ public class GauzeRollGuiMenu extends AbstractContainerMenu implements Supplier<
 		this.customSlots.put(0, this.addSlot(new SlotItemHandler(internal, 0, 79, 44) {
 			@Override
 			public boolean mayPlace(ItemStack stack) {
-				return (TWEItems.GAUZE_STRIP.get() == stack.getItem());
+				return (stack.getItem() instanceof AbstractBandageItem);
 			}
 		}));
 		for (int si = 0; si < 3; ++si)

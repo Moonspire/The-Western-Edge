@@ -20,9 +20,13 @@ import net.minecraftforge.common.BiomeDictionary;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandlerModifiable;
 
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.concurrent.atomic.AtomicReference;
 
 public class TWEUtils {
 
@@ -95,11 +99,91 @@ public class TWEUtils {
             retval = drawFluid(world, hand, player, pos, tank, 1000);
         } else if (item instanceof BottleItem) {
             retval = drawFluid(world, hand, player, pos, tank, 250);
-        } else {
-            player.displayClientMessage(new TextComponent("You can't fill this"), (true));
         }
         return retval;
     }
+
+    public static int getSlotAmount(LevelAccessor world, BlockPos pos, int slotid) {
+        AtomicInteger _retval = new AtomicInteger(0);
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null)
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+                    .ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getCount()));
+        return _retval.get();
+    }
+
+    public static int getSlotMaxStackSize(LevelAccessor world, BlockPos pos, int slotid) {
+        AtomicInteger _retval = new AtomicInteger(0);
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null)
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null)
+                    .ifPresent(capability -> _retval.set(capability.getStackInSlot(slotid).getMaxStackSize()));
+        return _retval.get();
+    }
+
+    public static boolean isItemInSlotOf(LevelAccessor world, BlockPos pos, int slotid, ItemStack itemstack) {
+        AtomicBoolean retbool = new AtomicBoolean(false);
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null) {
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+                if (capability instanceof IItemHandlerModifiable) {
+                    retbool.set(capability.getStackInSlot(slotid).sameItem(itemstack));
+                }
+            });
+        }
+        return retbool.get();
+    }
+
+    public static ItemStack getItemStack(LevelAccessor world, BlockPos pos, int slotid) {
+        AtomicReference<ItemStack> retstack = new AtomicReference<>(ItemStack.EMPTY);
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null) {
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+                if (capability instanceof IItemHandlerModifiable) {
+                    retstack.set(capability.getStackInSlot(slotid).copy());
+                }
+            });
+        }
+        return retstack.get();
+    }
+
+    public static void setItemStackInSlot(LevelAccessor world, BlockPos pos, int slotid, ItemStack itemstack) {
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null) {
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+                if (capability instanceof IItemHandlerModifiable) {
+                    ((IItemHandlerModifiable) capability).setStackInSlot(slotid, itemstack);
+                }
+            });
+        }
+    }
+
+    public static void growStackInSlot(LevelAccessor world, BlockPos pos, int slotid, int growth) {
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null) {
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+                if (capability instanceof IItemHandlerModifiable) {
+                    ItemStack itemstack = capability.getStackInSlot(slotid).copy();
+                    itemstack.grow(growth);
+                    ((IItemHandlerModifiable) capability).setStackInSlot(slotid, itemstack);
+                }
+            });
+        }
+    }
+
+    public static void shrinkStackInSlot(LevelAccessor world, BlockPos pos, int slotid, int shrink) {
+        BlockEntity _ent = world.getBlockEntity(pos);
+        if (_ent != null) {
+            _ent.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null).ifPresent(capability -> {
+                if (capability instanceof IItemHandlerModifiable) {
+                    ItemStack itemstack = capability.getStackInSlot(slotid).copy();
+                    itemstack.shrink(shrink);
+                    ((IItemHandlerModifiable) capability).setStackInSlot(slotid, itemstack);
+                }
+            });
+        }
+    }
+
 
     public static boolean isBiomeOfType(LevelAccessor world, BiomeDictionary.Type biome, BlockPos pos) {
         if (world.getBiome(pos).value().getRegistryName() != null && BiomeDictionary.hasType(

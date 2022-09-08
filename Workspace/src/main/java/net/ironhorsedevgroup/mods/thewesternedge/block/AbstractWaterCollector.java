@@ -23,7 +23,9 @@ public class AbstractWaterCollector extends Block {
     public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
         super.use(blockstate, world, pos, entity, hand, hit);
 
-        TWEUtils.drawFluid(world, hand, entity, pos, 1);
-        return InteractionResult.SUCCESS;
+        if (TWEUtils.drawFluid(world, hand, entity, pos, 1)) {
+            return InteractionResult.SUCCESS;
+        }
+        return InteractionResult.PASS;
     }
 }

@@ -1,8 +1,14 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.block;
 
+import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlocks;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
+import net.ironhorsedevgroup.mods.thewesternedge.item.AbstractBandageItem;
+import net.ironhorsedevgroup.mods.thewesternedge.item.GauzeStripItem;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.item.Item;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
@@ -65,10 +71,6 @@ public class GauzeRollsBlock extends Block implements SimpleWaterloggedBlock, En
 		return state.getFluidState().isEmpty();
 	}
 
-	@Override
-	public int getLightBlock(BlockState state, BlockGetter worldIn, BlockPos pos) {
-		return 0;
-	}
 
 	@Override
 	public VoxelShape getShape(BlockState state, BlockGetter world, BlockPos pos, CollisionContext context) {
@@ -130,16 +132,60 @@ public class GauzeRollsBlock extends Block implements SimpleWaterloggedBlock, En
 	@Override
 	public InteractionResult use(BlockState blockstate, Level world, BlockPos pos, Player entity, InteractionHand hand, BlockHitResult hit) {
 		super.use(blockstate, world, pos, entity, hand, hit);
-		int x = pos.getX();
-		int y = pos.getY();
-		int z = pos.getZ();
-		double hitX = hit.getLocation().x;
-		double hitY = hit.getLocation().y;
-		double hitZ = hit.getLocation().z;
-		Direction direction = hit.getDirection();
+		ItemStack itemstack = entity.getItemInHand(hand);
+		if (TWEUtils.getItemStack(world, pos, 0) == ItemStack.EMPTY) {
+			return insertNewItem(entity, hand, world, pos);
+		} else if (TWEUtils.isItemInSlotOf(world, pos, 0, itemstack)) {
+			return addToItemStack(entity, hand, world, pos);
+		} else if (entity.isCrouching()){
+			return removeFromItemStack(entity, hand, world, pos);
+		} else {
+			return useBandageStack(entity, hand, world, pos);
+		}
+	}
 
-		GauzeRollsRightClickedProcedure.execute(world, x, y, z, entity);
-		return InteractionResult.SUCCESS;
+	private InteractionResult insertNewItem(Player player, InteractionHand hand, Level world, BlockPos pos) {
+		ItemStack itemstack = player.getItemInHand(hand);
+		if (itemstack.getItem() instanceof AbstractBandageItem bandageitem) {
+			if (!player.getAbilities().instabuild) {
+				itemstack.shrink(1);
+			}
+			TWEUtils.setItemStackInSlot(world, pos, 0, new ItemStack(bandageitem));
+			return InteractionResult.SUCCESS;
+		}
+		return InteractionResult.PASS;
+	}
+
+	private InteractionResult addToItemStack(Player player, InteractionHand hand, Level world, BlockPos pos) {
+		ItemStack itemstack = player.getItemInHand(hand);
+		if (TWEUtils.getSlotAmount(world, pos, 0) < TWEUtils.getSlotMaxStackSize(world, pos, 0)) {
+			if (!player.getAbilities().instabuild) {
+				itemstack.shrink(1);
+			}
+			TWEUtils.growStackInSlot(world, pos, 0, 1);
+			return InteractionResult.SUCCESS;
+		}
+		return InteractionResult.PASS;
+	}
+
+	private InteractionResult removeFromItemStack(Player player, InteractionHand hand, Level world, BlockPos pos) {
+		ItemStack itemstack = player.getItemInHand(hand);
+		if (TWEUtils.getSlotAmount(world, pos, 0) > 0) {
+			player.addItem(new ItemStack(TWEUtils.getItemStack(world, pos, 0).getItem()));
+			TWEUtils.shrinkStackInSlot(world, pos, 0, 1);
+			return InteractionResult.SUCCESS;
+		}
+		return InteractionResult.PASS;
+	}
+
+	private InteractionResult useBandageStack(Player player, InteractionHand hand, Level world, BlockPos pos) {
+		ItemStack itemstack = TWEUtils.getItemStack(world, pos, 0);
+		if (itemstack.getItem() instanceof AbstractBandageItem bandageitem) {
+			bandageitem.applyGauzeStripEffect(player, itemstack, 0, bandageitem.getStrength() + 1, bandageitem.getEffectDuration() / 2, bandageitem.getMobEffect());
+			TWEUtils.shrinkStackInSlot(world, pos, 0, 1);
+			return InteractionResult.SUCCESS;
+		}
+		return InteractionResult.PASS;
 	}
 
 	@Override
@@ -170,20 +216,6 @@ public class GauzeRollsBlock extends Block implements SimpleWaterloggedBlock, En
 			}
 			super.onRemove(state, world, pos, newState, isMoving);
 		}
-	}
-
-	@Override
-	public boolean hasAnalogOutputSignal(BlockState state) {
-		return true;
-	}
-
-	@Override
-	public int getAnalogOutputSignal(BlockState blockState, Level world, BlockPos pos) {
-		BlockEntity tileentity = world.getBlockEntity(pos);
-		if (tileentity instanceof GauzeRollsBlockEntity be)
-			return AbstractContainerMenu.getRedstoneSignalFromContainer(be);
-		else
-			return 0;
 	}
 
 	@OnlyIn(Dist.CLIENT)
