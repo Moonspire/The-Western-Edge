@@ -1,8 +1,0 @@
-{
-  "parent": "thewesternedge:custom/wall_marking",
-  "textures": {
-    "all": "thewesternedge:blocks/medicalcobblestone",
-    "particle": "thewesternedge:blocks/medicalcobblestone",
-    "0": "thewesternedge:blocks/medicalwood"
-  }
-}

@@ -1,0 +1,50 @@
+{
+  "variants": {
+    "facing=north,material=planks,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood"
+    },
+    "facing=east,material=planks,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood",
+      "y": 90
+    },
+    "facing=,material=planks,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood",
+      "y": 180
+    },
+    "facing=west,material=planks,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood",
+      "y": 270
+    },
+    "facing=up,material=planks,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood",
+      "x": 270
+    },
+    "facing=down,material=planks,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood",
+      "x": 90
+    },
+    "facing=north,material=cobblestone,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_cobblestone"
+    },
+    "facing=east,material=cobblestone,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_cobblestone",
+      "y": 90
+    },
+    "facing=south,material=cobblestone,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_cobblestone",
+      "y": 180
+    },
+    "facing=west,material=cobblestone,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_cobblestone",
+      "y": 270
+    },
+    "facing=up,material=cobblestone,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_cobblestone",
+      "x": 270
+    },
+    "facing=down,material=cobblestone,texture=medical": {
+      "model": "thewesternedge:walldecals/medical_wood",
+      "x": 90
+    }
+  }
+}

@@ -1,10 +1,12 @@
-
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.block.wallmarkings.WallMarkingBlock;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.world.level.block.SoundType;
+import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.material.Material;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -18,7 +20,6 @@ import net.minecraft.world.level.block.Block;
 import net.ironhorsedevgroup.mods.thewesternedge.block.WellTopperBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.WellShaftLadderBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.WellShaftBlock;
-import net.ironhorsedevgroup.mods.thewesternedge.block.WallMarkingBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.RainBarrelBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.GauzeRollsBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.BrewersBarrelBlock;
@@ -31,8 +32,9 @@ public class TWEBlocks {
 	public static final RegistryObject<Block> WELL_TOPPER = REGISTRY.register("well_topper", () -> new WellTopperBlock());
 	public static final RegistryObject<Block> GAUZE_ROLLS = REGISTRY.register("gauze_rolls", () -> new GauzeRollsBlock());
 	public static final RegistryObject<Block> BREWERS_BARREL = REGISTRY.register("brewers_barrel", () -> new BrewersBarrelBlock());
-	public static final RegistryObject<Block> WALL_MARKING = REGISTRY.register("wall_marking", () -> new WallMarkingBlock());
 
+	// Wall Decals
+	public static final RegistryObject<Block> WALL_DECAL_SMALL = REGISTRY.register("wall_decal_small", () -> new WallMarkingBlock(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION).sound(SoundType.BAMBOO).instabreak().noCollission().noOcclusion().noDrops()));
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 	public static class ClientSideHandler {
 		@SubscribeEvent
@@ -42,7 +44,9 @@ public class TWEBlocks {
 			WellShaftLadderBlock.registerRenderLayer();
 			WellTopperBlock.registerRenderLayer();
 			GauzeRollsBlock.registerRenderLayer();
-			WallMarkingBlock.registerRenderLayer();
+
+			// Wall Decals
+			ItemBlockRenderTypes.setRenderLayer(WALL_DECAL_SMALL.get(), renderType -> renderType == RenderType.translucent());
 		}
 	}
 }

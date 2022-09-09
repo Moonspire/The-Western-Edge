@@ -1,7 +1,3 @@
-
-/*
- *    MCreator note: This file will be REGENERATED on each build.
- */
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
@@ -23,7 +19,7 @@ public class TWEItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TheWesternEdgeMod.MODID);
 	public static final RegistryObject<Item> RAIN_BARREL = block(TWEBlocks.RAIN_BARREL, TWETabs.TAB_TWE_SURVIVAL);
 	public static final RegistryObject<Item> WELL_SHAFT = block(TWEBlocks.WELL_SHAFT, TWETabs.TAB_TWE_SURVIVAL);
-	public static final RegistryObject<Item> WELL_SHAFT_LADDER = block(TWEBlocks.WELL_SHAFT_LADDER, null);
+	//public static final RegistryObject<Item> WELL_SHAFT_LADDER = block(TWEBlocks.WELL_SHAFT_LADDER, null);
 	public static final RegistryObject<Item> WELL_TOPPER = block(TWEBlocks.WELL_TOPPER, TWETabs.TAB_TWE_SURVIVAL);
 	public static final RegistryObject<Item> GAUZE_ROLLS = block(TWEBlocks.GAUZE_ROLLS, TWETabs.TAB_TWE_SURVIVAL);
 	public static final RegistryObject<Item> GAUZE_STRIP = REGISTRY.register("gauze_strip", () -> new GauzeStripItem());
@@ -31,7 +27,6 @@ public class TWEItems {
 	public static final RegistryObject<Item> BREWERS_BARREL = block(TWEBlocks.BREWERS_BARREL, TWETabs.TAB_TWE_SURVIVAL);
 	public static final RegistryObject<Item> BROKEN_BOTTLE = REGISTRY.register("broken_bottle", () -> new BrokenBottleItem());
 	public static final RegistryObject<Item> PAINT_BRUSH = REGISTRY.register("paint_brush", () -> new PaintBrushItem());
-	public static final RegistryObject<Item> WALL_MARKING = block(TWEBlocks.WALL_MARKING, TWETabs.TAB_TWE_MARKINGS);
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

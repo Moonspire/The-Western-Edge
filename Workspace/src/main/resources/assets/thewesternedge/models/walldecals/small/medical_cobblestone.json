@@ -1,0 +1,6 @@
+{
+  "parent": "thewesternedge:walldecals/wall_decals",
+  "textures": {
+    "all": "thewesternedge:walldecals/medicalcobblestone"
+  }
+}

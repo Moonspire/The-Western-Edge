@@ -1,7 +1,3 @@
-
-/*
- *	MCreator note: This file will be REGENERATED on each build.
- */
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
