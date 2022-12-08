@@ -8,4 +8,5 @@ I've got some mixins in here to allow CustomModelData NBT tags to transfer acros
 - Broken bottles (deal 1.5 hearts and have 3 uses before breaking, will break instantly if you hit a block with them)
 - Bandages with custom status effect
 - Pemmican, a food with low hunger restoration but high saturation
+- More berry bushes (not finished yet)
 - Removes MC enchant shien as I found it annoying (Plan to make configurable later)
