@@ -197,9 +197,17 @@ public class TWEUtils {
 
     public static double getDoubleTag(ItemStack itemstack, String name) {
         try {
-            return itemstack.getTag().getDouble("CustomModelData");
+            return itemstack.getTag().getDouble(name);
         } catch (Exception e) {
             return 0;
+        }
+    }
+
+    public static String getStringTag(ItemStack itemstack, String name) {
+        try {
+            return itemstack.getTag().getString(name);
+        } catch (Exception e) {
+            return "";
         }
     }
 }

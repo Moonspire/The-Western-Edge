@@ -5,5 +5,5 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 
 public interface ItemRightClickTrigger {
-    public int mobInteract(InteractionHand hand, Entity entity, Player player);
+    int mobInteract(InteractionHand hand, Entity entity, Player player);
 }

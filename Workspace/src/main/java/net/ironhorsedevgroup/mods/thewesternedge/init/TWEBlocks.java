@@ -1,6 +1,7 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.block.berries.BerryBushBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.wallmarkings.WallMarkingBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -33,6 +34,9 @@ public class TWEBlocks {
 	public static final RegistryObject<Block> GAUZE_ROLLS = REGISTRY.register("gauze_rolls", () -> new GauzeRollsBlock());
 	public static final RegistryObject<Block> BREWERS_BARREL = REGISTRY.register("brewers_barrel", () -> new BrewersBarrelBlock());
 
+	// Foliage
+	public static final RegistryObject<Block> BERRY_BUSH = REGISTRY.register("berry_bush", () -> new BerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));
+
 	// Wall Decals
 	public static final RegistryObject<Block> WALL_DECAL_SMALL = REGISTRY.register("wall_decal_small", () -> new WallMarkingBlock(BlockBehaviour.Properties.of(Material.CLOTH_DECORATION).sound(SoundType.BAMBOO).instabreak().noCollission().noOcclusion().noDrops()));
 	@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
@@ -44,6 +48,9 @@ public class TWEBlocks {
 			WellShaftLadderBlock.registerRenderLayer();
 			WellTopperBlock.registerRenderLayer();
 			GauzeRollsBlock.registerRenderLayer();
+
+			// Foliage
+			ItemBlockRenderTypes.setRenderLayer(BERRY_BUSH.get(), renderType -> renderType == RenderType.cutout());
 
 			// Wall Decals
 			ItemBlockRenderTypes.setRenderLayer(WALL_DECAL_SMALL.get(), renderType -> renderType == RenderType.translucent());
