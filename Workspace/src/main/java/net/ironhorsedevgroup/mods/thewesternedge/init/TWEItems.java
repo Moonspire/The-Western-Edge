@@ -1,6 +1,8 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.minecraft.world.food.Foods;
+import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
@@ -28,7 +30,19 @@ public class TWEItems {
 	public static final RegistryObject<Item> BROKEN_BOTTLE = REGISTRY.register("broken_bottle", () -> new BrokenBottleItem());
 	public static final RegistryObject<Item> PAINT_BRUSH = REGISTRY.register("paint_brush", () -> new PaintBrushItem());
 
+	//Berries
+	public static final RegistryObject<Item> AMBER_BERRIES = berries("amber_berries");
+	public static final RegistryObject<Item> INDIGO_BERRIES = berries("indigo_berries");
+	public static final RegistryObject<Item> JADE_BERRIES = berries("jade_berries");
+	public static final RegistryObject<Item> MAUVE_BERRIES = berries("mauve_berries");
+	public static final RegistryObject<Item> RUSSET_BERRIES = berries("russet_berries");
+	public static final RegistryObject<Item> TEAL_BERRIES = berries("teal_berries");
+	public static final RegistryObject<Item> VERMILLION_BERRIES = berries("vermillion_berries");
+
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
+	}
+	private static RegistryObject<Item> berries(String regName) {
+		return REGISTRY.register(regName, () -> new ItemNameBlockItem(TWEBlocks.BERRY_BUSH.get(), new Item.Properties().tab(TWETabs.TAB_TWE_ALCOHOLS).food(Foods.SWEET_BERRIES)));
 	}
 }

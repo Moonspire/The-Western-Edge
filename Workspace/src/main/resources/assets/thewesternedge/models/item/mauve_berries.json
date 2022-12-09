@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "thewesternedge:items/berries/mauve_berries"
+  }
+}

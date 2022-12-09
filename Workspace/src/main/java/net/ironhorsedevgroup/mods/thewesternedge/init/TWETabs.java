@@ -1,5 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
+import net.minecraft.core.NonNullList;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 
