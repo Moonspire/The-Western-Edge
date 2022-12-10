@@ -49,6 +49,8 @@ public class TheWesternEdgeMod {
 
 		TWEMobEffects.REGISTRY.register(bus);
 
+		TWEFeatures.REGISTRY.register(bus);
+
 		forgeEventBus.addListener(EventPriority.NORMAL, GeneratedItemHooks::OnEntityInteract);
 		forgeEventBus.addListener(ClientInitEvents::registerItemColors);
 	}
