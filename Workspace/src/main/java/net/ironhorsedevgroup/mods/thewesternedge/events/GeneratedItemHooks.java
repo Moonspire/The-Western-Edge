@@ -1,14 +1,22 @@
 package net.ironhorsedevgroup.mods.thewesternedge.events;
 
+import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import net.ironhorsedevgroup.mods.thewesternedge.item.ItemRightClickTrigger;
+import net.minecraft.client.color.item.ItemColor;
+import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraftforge.client.event.ColorHandlerEvent;
+import net.minecraftforge.client.event.RenderTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+
+import java.awt.*;
+import java.rmi.registry.RegistryHandler;
 
 @Mod.EventBusSubscriber
 public class GeneratedItemHooks {

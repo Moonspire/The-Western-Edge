@@ -1,5 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
+import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.block.berries.BerryBushBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.wallmarkings.WallMarkingBlock;
@@ -26,6 +27,9 @@ import net.ironhorsedevgroup.mods.thewesternedge.block.GauzeRollsBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.BrewersBarrelBlock;
 
 public class TWEBlocks {
+	//static {
+	//	TheWesternEdgeMod.REGISTRATE.creativeModeTab(() -> TWETabs.TAB_TWE_SURVIVAL);
+	//}
 	public static final DeferredRegister<Block> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCKS, TheWesternEdgeMod.MODID);
 	public static final RegistryObject<Block> RAIN_BARREL = REGISTRY.register("rain_barrel", () -> new RainBarrelBlock());
 	public static final RegistryObject<Block> WELL_SHAFT = REGISTRY.register("well_shaft", () -> new WellShaftBlock());

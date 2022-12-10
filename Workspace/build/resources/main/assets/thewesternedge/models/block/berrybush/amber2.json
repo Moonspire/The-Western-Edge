@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cross",
+  "textures": {
+    "cross": "thewesternedge:blocks/berries/amber_berry_bush_stage2"
+  }
+}

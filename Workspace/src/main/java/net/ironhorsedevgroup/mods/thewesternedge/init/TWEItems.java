@@ -1,21 +1,14 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.item.*;
 import net.minecraft.world.food.Foods;
-import net.minecraft.world.item.ItemNameBlockItem;
+import net.minecraft.world.item.*;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.CreativeModeTab;
-import net.minecraft.world.item.BlockItem;
-
-import net.ironhorsedevgroup.mods.thewesternedge.item.PemmicanItem;
-import net.ironhorsedevgroup.mods.thewesternedge.item.PaintBrushItem;
-import net.ironhorsedevgroup.mods.thewesternedge.item.GauzeStripItem;
-import net.ironhorsedevgroup.mods.thewesternedge.item.BrokenBottleItem;
 
 public class TWEItems {
 	public static final DeferredRegister<Item> REGISTRY = DeferredRegister.create(ForgeRegistries.ITEMS, TheWesternEdgeMod.MODID);
@@ -38,6 +31,9 @@ public class TWEItems {
 	public static final RegistryObject<Item> RUSSET_BERRIES = berries("russet_berries");
 	public static final RegistryObject<Item> TEAL_BERRIES = berries("teal_berries");
 	public static final RegistryObject<Item> VERMILLION_BERRIES = berries("vermillion_berries");
+
+	//Drinks
+	public static final RegistryObject<Item> DRINK = REGISTRY.register("drink", () -> new DrinkItem((new Item.Properties()).stacksTo(1).tab(TWETabs.TAB_TWE_ALCOHOLS)));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));

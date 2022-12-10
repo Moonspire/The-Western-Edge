@@ -210,4 +210,22 @@ public class TWEUtils {
             return "";
         }
     }
+
+    public static Boolean getBoolTag(ItemStack itemStack, String name) {
+        try {
+            return itemStack.getTag().getBoolean(name);
+        } catch (Exception e) {
+            return false;
+        }
+    }
+
+    public static ItemStack toggleBoolTag(ItemStack itemStack, String name) {
+        try {
+            Boolean bool = itemStack.getTag().getBoolean(name);
+            itemStack.getOrCreateTag().putBoolean(name, !bool);
+            return itemStack;
+        } catch (Exception e) {
+            return itemStack;
+        }
+    }
 }

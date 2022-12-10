@@ -1,0 +1,18 @@
+{
+    "parent": "minecraft:item/generated",
+    "textures": {
+        "layer0": "minecraft:item/potion_overlay",
+        "layer1": "minecraft:item/potion"
+    },
+    "overrides": [
+    	{ "predicate": { "custom_model_data": 1}, "model": "thewesternedge:item/bottles/default_full_label" },
+  		{ "predicate": { "custom_model_data": 2}, "model": "thewesternedge:item/bottles/door_bottle_full" },
+  		{ "predicate": { "custom_model_data": 3}, "model": "thewesternedge:item/bottles/door_bottle_full_label" },
+  		{ "predicate": { "custom_model_data": 4}, "model": "thewesternedge:item/bottles/chonk_bottle_full" },
+  		{ "predicate": { "custom_model_data": 5}, "model": "thewesternedge:item/bottles/chonk_bottle_full_label" },
+  		{ "predicate": { "custom_model_data": 6}, "model": "thewesternedge:item/bottles/blackwater_bottle_full" },
+  		{ "predicate": { "custom_model_data": 7}, "model": "thewesternedge:item/bottles/blackwater_bottle_full_label" },
+  		{ "predicate": { "custom_model_data": 8}, "model": "thewesternedge:item/bottles/tall_bottle_full" },
+  		{ "predicate": { "custom_model_data": 9}, "model": "thewesternedge:item/bottles/tall_bottle_full_label" }
+  	]
+}

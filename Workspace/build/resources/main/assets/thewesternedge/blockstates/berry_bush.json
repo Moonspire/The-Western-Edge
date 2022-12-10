@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "minecraft:block/sweet_berry_bush_stage0"
+    },
+    "age=1": {
+      "model": "minecraft:block/sweet_berry_bush_stage1"
+    },
+    "age=2,berry_type=amber": {
+      "model": "thewesternedge:block/berrybush/amber2"
+    },
+    "age=3,berry_type=amber": {
+      "model": "thewesternedge:block/berrybush/amber3"
+    },
+    "age=2,berry_type=indigo": {
+      "model": "thewesternedge:block/berrybush/indigo2"
+    },
+    "age=3,berry_type=indigo": {
+      "model": "thewesternedge:block/berrybush/indigo3"
+    },
+    "age=2,berry_type=jade": {
+      "model": "thewesternedge:block/berrybush/jade2"
+    },
+    "age=3,berry_type=jade": {
+      "model": "thewesternedge:block/berrybush/jade3"
+    },
+    "age=2,berry_type=mauve": {
+      "model": "thewesternedge:block/berrybush/mauve2"
+    },
+    "age=3,berry_type=mauve": {
+      "model": "thewesternedge:block/berrybush/mauve3"
+    },
+    "age=2,berry_type=russet": {
+      "model": "thewesternedge:block/berrybush/russet2"
+    },
+    "age=3,berry_type=russet": {
+      "model": "thewesternedge:block/berrybush/russet3"
+    },
+    "age=2,berry_type=teal": {
+      "model": "thewesternedge:block/berrybush/teal2"
+    },
+    "age=3,berry_type=teal": {
+      "model": "thewesternedge:block/berrybush/teal3"
+    },
+    "age=2,berry_type=vermillion": {
+      "model": "thewesternedge:block/berrybush/vermillion2"
+    },
+    "age=3,berry_type=vermillion": {
+      "model": "thewesternedge:block/berrybush/vermillion3"
+    }
+  }
+}
