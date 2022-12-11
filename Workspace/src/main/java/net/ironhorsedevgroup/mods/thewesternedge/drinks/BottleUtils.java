@@ -5,6 +5,7 @@ import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEAdditives;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEDrinks;
+import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.gui.font.glyphs.BakedGlyph;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.NonNullList;
@@ -13,15 +14,23 @@ import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffectUtil;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
 
 import java.util.List;
 import java.util.Map;
@@ -343,8 +352,66 @@ public class BottleUtils {
         return TWEUtils.toggleBoolTag(itemStack, "Contents");
     }
 
+    public static Integer getBottle(ItemStack itemStack) {
+        return TWEUtils.getIntTag(itemStack, "CustomModelData");
+    }
+
     public static ItemStack setBottle(ItemStack itemStack, Integer integer) {
         TWEUtils.putIntTag(itemStack,"CustomModelData", integer);
         return itemStack;
+    }
+
+    //Drinking Bottles -------------------------------------------------------------------------------------------------
+    public static ItemStack useBottleItem(ItemStack itemStack, Level level, LivingEntity entity) {
+        Player player = entity instanceof Player ? (Player)entity : null;
+        Integer bottle = BottleUtils.getBottle(itemStack);
+        if (player instanceof ServerPlayer) {
+            CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)player, itemStack);
+        }
+
+        if (!level.isClientSide) {
+            List<MobEffectInstance> effects;
+            if (itemStack.getItem() == Items.POTION) {
+                effects = PotionUtils.getMobEffects(itemStack);
+            } else {
+                effects = getPotionEffects(itemStack);
+            }
+            for(MobEffectInstance mobeffectinstance : effects) {
+                if (mobeffectinstance.getEffect().isInstantenous()) {
+                    mobeffectinstance.getEffect().applyInstantenousEffect(player, player, entity, mobeffectinstance.getAmplifier(), 1.0D);
+                } else {
+                    entity.addEffect(new MobEffectInstance(mobeffectinstance));
+                }
+            }
+        }
+
+        if (player != null) {
+            player.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
+            if (!player.getAbilities().instabuild) {
+                itemStack.shrink(1);
+            }
+        }
+
+        if (player == null || !player.getAbilities().instabuild) {
+            if (itemStack.isEmpty()) {
+                return BottleUtils.setBottle(new ItemStack(Items.GLASS_BOTTLE), bottle);
+            }
+
+            if (player != null) {
+                player.getInventory().add(BottleUtils.setBottle(new ItemStack(Items.GLASS_BOTTLE), bottle));
+            }
+        }
+
+        level.gameEvent(entity, GameEvent.DRINKING_FINISH, entity.eyeBlockPosition());
+        return itemStack;
+    }
+
+    public static Integer getUseDuration(ItemStack itemStack) {
+        Double amount = BottleUtils.getAmount(itemStack);
+        if (amount >= 1.0) {
+            return 32;
+        } else {
+            return (int)(32 * amount);
+        }
     }
 }
