@@ -1,10 +1,10 @@
-package net.ironhorsedevgroup.mods.thewesternedge.item;
+package net.ironhorsedevgroup.mods.thewesternedge.drinks;
 
 import net.minecraft.client.color.item.ItemColor;
 import net.minecraft.world.item.ItemStack;
 import software.bernie.geckolib3.core.util.Color;
 
-public class DrinkColor implements ItemColor {
+public class BottleColor implements ItemColor {
     @Override
     public int getColor(ItemStack itemStack, int tintIndex) {
         {

@@ -23,6 +23,7 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -195,12 +196,34 @@ public class TWEUtils {
         return false;
     }
 
-    public static double getDoubleTag(ItemStack itemstack, String name) {
+    public static Integer getIntTag(ItemStack itemStack, String name) {
         try {
-            return itemstack.getTag().getDouble(name);
+            return (int)itemStack.getTag().getDouble(name);
         } catch (Exception e) {
             return 0;
         }
+    }
+
+    public static ItemStack putIntTag(ItemStack itemStack, String name, Integer value) {
+        putDoubleTag(itemStack, name, value.doubleValue());
+        return itemStack;
+    }
+
+    public static Double getDoubleTag(ItemStack itemstack, String name) {
+        try {
+            return itemstack.getTag().getDouble(name);
+        } catch (Exception e) {
+            return 0.0;
+        }
+    }
+
+    public static ItemStack putDoubleTag(ItemStack itemStack, String name, Double value) {
+        if (value != 0) {
+            itemStack.getOrCreateTag().putDouble(name, value);
+        } else {
+            removeTag(itemStack, name);
+        }
+        return itemStack;
     }
 
     public static String getStringTag(ItemStack itemstack, String name) {
@@ -211,6 +234,21 @@ public class TWEUtils {
         }
     }
 
+    public static ItemStack putStringTag(ItemStack itemStack, String name, String text) {
+        if (text != "") {
+            itemStack.getOrCreateTag().putString(name, text);
+        } else {
+            removeTag(itemStack, name);
+        }
+        return itemStack;
+    }
+
+    public static ItemStack appendStringTag(ItemStack itemStack, String name, String text) {
+        String existingText = getStringTag(itemStack, name);
+        putStringTag(itemStack, name, existingText + text);
+        return itemStack;
+    }
+
     public static Boolean getBoolTag(ItemStack itemStack, String name) {
         try {
             return itemStack.getTag().getBoolean(name);
@@ -219,13 +257,26 @@ public class TWEUtils {
         }
     }
 
-    public static ItemStack toggleBoolTag(ItemStack itemStack, String name) {
-        try {
-            Boolean bool = itemStack.getTag().getBoolean(name);
-            itemStack.getOrCreateTag().putBoolean(name, !bool);
-            return itemStack;
-        } catch (Exception e) {
-            return itemStack;
+    public static ItemStack putBoolTag(ItemStack itemStack, String name, Boolean value) {
+        if (value) {
+            itemStack.getOrCreateTag().putBoolean(name, true);
+        } else {
+            removeTag(itemStack, name);
         }
+        return itemStack;
+    }
+
+    public static ItemStack toggleBoolTag(ItemStack itemStack, String name) {
+        if (getBoolTag(itemStack, name)) {
+            itemStack.removeTagKey(name);
+        } else {
+            itemStack.getOrCreateTag().putBoolean(name, true);
+        }
+        return itemStack;
+    }
+
+    public static ItemStack removeTag(ItemStack itemStack, String name) {
+        itemStack.removeTagKey(name);
+        return itemStack;
     }
 }

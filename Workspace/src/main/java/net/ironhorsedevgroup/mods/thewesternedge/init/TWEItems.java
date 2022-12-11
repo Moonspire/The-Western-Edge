@@ -33,7 +33,7 @@ public class TWEItems {
 	public static final RegistryObject<Item> VERMILLION_BERRIES = berries("vermillion_berries");
 
 	//Drinks
-	public static final RegistryObject<Item> DRINK = REGISTRY.register("drink", () -> new DrinkItem((new Item.Properties()).stacksTo(1).tab(TWETabs.TAB_TWE_ALCOHOLS)));
+	public static final RegistryObject<Item> DRINK = REGISTRY.register("drink", () -> new DrinkBottleItem((new Item.Properties()).stacksTo(1).tab(TWETabs.TAB_TWE_ALCOHOLS)));
 
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
