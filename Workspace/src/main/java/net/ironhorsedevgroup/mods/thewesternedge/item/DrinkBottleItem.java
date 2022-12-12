@@ -45,7 +45,7 @@ public class DrinkBottleItem extends Item {
 
     @Override
     public String getDescriptionId(ItemStack itemStack) {
-        String name = TWEUtils.getStringTag(itemStack, "DrinkName");
+        String name = BottleUtils.getName(itemStack);
         if (name == "") {
             return super.getDescriptionId(itemStack);
         }
