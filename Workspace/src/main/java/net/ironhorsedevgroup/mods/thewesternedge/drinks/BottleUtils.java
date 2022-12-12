@@ -126,11 +126,11 @@ public class BottleUtils {
     }
 
     public static ItemStack addDrink(ItemStack itemStack, TWEDrinks drink) {
-        return addDrink(itemStack, drink, 1.0, 1.0);
+        return addDrink(itemStack, drink, 1.0, drink.getDefaultStrength());
     }
 
     public static ItemStack addDrink(ItemStack itemStack, TWEDrinks drink, Double amount) {
-        return addDrink(itemStack, drink, amount, 1.0);
+        return addDrink(itemStack, drink, amount, drink.getDefaultStrength());
     }
 
     public static ItemStack addDrink(ItemStack itemStack, TWEDrinks drink, Double amount, Double strength) {
@@ -438,10 +438,6 @@ public class BottleUtils {
         return itemStack;
     }
 
-    public static ItemStack toggleContentsView(ItemStack itemStack) {
-        return TWEUtils.toggleBoolTag(itemStack, "Contents");
-    }
-
     public static Integer getBottle(ItemStack itemStack) {
         return TWEUtils.getIntTag(itemStack, "CustomModelData");
     }
@@ -451,10 +447,20 @@ public class BottleUtils {
         return itemStack;
     }
 
+    public static ItemStack createEmptyCopy(ItemStack itemStack) {
+        return copyBottleProperties(itemStack, new ItemStack(Items.GLASS_BOTTLE));
+    }
+
+    public static ItemStack copyBottleProperties(ItemStack oldBottle, ItemStack newBottle) {
+        setBottle(newBottle, getBottle(oldBottle));
+        setName(newBottle, getName(oldBottle));
+        setContentsView(newBottle, getContentsView(oldBottle));
+        return newBottle;
+    }
+
     //Drinking Bottles -------------------------------------------------------------------------------------------------
     public static ItemStack useBottleItem(ItemStack itemStack, Level level, LivingEntity entity) {
         Player player = entity instanceof Player ? (Player)entity : null;
-        Integer bottle = BottleUtils.getBottle(itemStack);
         Double servings = getAmount(itemStack);
         if (player instanceof ServerPlayer) {
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)player, itemStack);
@@ -487,11 +493,11 @@ public class BottleUtils {
 
         if ((player == null || !player.getAbilities().instabuild) && servings <= 1) {
             if (itemStack.isEmpty()) {
-                return BottleUtils.setBottle(new ItemStack(Items.GLASS_BOTTLE), bottle);
+                return createEmptyCopy(itemStack);
             }
 
             if (player != null) {
-                player.getInventory().add(BottleUtils.setBottle(new ItemStack(Items.GLASS_BOTTLE), bottle));
+                player.getInventory().add(createEmptyCopy(itemStack));
             }
         }
 

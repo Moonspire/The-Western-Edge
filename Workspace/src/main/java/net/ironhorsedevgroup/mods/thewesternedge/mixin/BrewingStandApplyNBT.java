@@ -14,11 +14,9 @@ import net.minecraft.world.item.ItemStack;
 public class BrewingStandApplyNBT {
 	@Inject(at = @At("RETURN"), method = "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;", cancellable = true)
 	private static void mix(ItemStack ingredient, ItemStack potion, CallbackInfoReturnable<ItemStack> callback) {
-		Integer bottle = BottleUtils.getBottle(potion);
-		Double servings = BottleUtils.getAmount(potion);
-    	if (bottle != 0) {
+    	if (BottleUtils.getBottle(potion) != 0) {
     		ItemStack retPot = callback.getReturnValue();
-    		BottleUtils.setBottle(retPot, bottle);
+    		BottleUtils.copyBottleProperties(potion, retPot);
 			TWEUtils.putDoubleTag(retPot, "Servings", BottleUtils.getBottleSize(retPot));
 	    	callback.setReturnValue(retPot);
 	    } else {

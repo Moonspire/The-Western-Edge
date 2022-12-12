@@ -71,10 +71,9 @@ public class DrinkBottleItem extends Item {
             for(TWEDrinks drink : TWEDrinks.values()) {
                 if (drink != TWEDrinks.EMPTY) {
                     ItemStack newStack = new ItemStack(this);
-                    BottleUtils.addDrink(newStack, drink);
-                    BottleUtils.addPotion(newStack, Potions.REGENERATION);
-                    BottleUtils.setBottle(newStack, 9);
-                    BottleUtils.setContentsView(newStack, true);
+                    BottleUtils.setBottle(newStack, drink.getDefaultBottle());
+                    BottleUtils.addDrink(newStack, drink, BottleUtils.getBottleSize(newStack));
+                    BottleUtils.setName(newStack, BottleUtils.getDrinkName(drink));
                     itemStack.add(newStack);
                 }
             }
