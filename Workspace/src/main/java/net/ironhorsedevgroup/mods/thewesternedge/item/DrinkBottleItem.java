@@ -1,23 +1,16 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
-import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.drinks.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEDrinks;
-import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.stats.Stats;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.gameevent.GameEvent;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -30,7 +23,7 @@ public class DrinkBottleItem extends Item {
 
     @Override
     public ItemStack getDefaultInstance() {
-        return BottleUtils.addDrink(super.getDefaultInstance(), TWEDrinks.BLACKWATER);
+        return BottleUtils.addDrink(super.getDefaultInstance(), TWEDrinks.BLACKWATER, 1.0, 0.0);
     }
 
     @Override
@@ -79,7 +72,7 @@ public class DrinkBottleItem extends Item {
                 if (drink != TWEDrinks.EMPTY) {
                     ItemStack newStack = new ItemStack(this);
                     BottleUtils.addDrink(newStack, drink);
-                    BottleUtils.addPotion(newStack, Potions.STRONG_REGENERATION);
+                    BottleUtils.addPotion(newStack, Potions.REGENERATION);
                     BottleUtils.setBottle(newStack, 9);
                     BottleUtils.setContentsView(newStack, true);
                     itemStack.add(newStack);

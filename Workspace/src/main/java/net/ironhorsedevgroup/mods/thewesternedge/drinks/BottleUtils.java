@@ -1,12 +1,10 @@
 package net.ironhorsedevgroup.mods.thewesternedge.drinks;
 
-import com.mojang.datafixers.util.Pair;
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEAdditives;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEDrinks;
 import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.client.gui.font.glyphs.BakedGlyph;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Registry;
@@ -18,13 +16,8 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.stats.Stats;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
-import net.minecraft.world.effect.MobEffectUtil;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
-import net.minecraft.world.entity.ai.attributes.Attribute;
-import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
@@ -33,6 +26,7 @@ import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.gameevent.GameEvent;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -349,6 +343,10 @@ public class BottleUtils {
         return TWEUtils.getDoubleTag(itemStack, "additive." + additive.getSerializedName());
     }
 
+    public static Double getPotionAmountPerServing(ItemStack itemStack, Potion potion) {
+        return getPotionAmount(itemStack, potion) / getAmount(itemStack);
+    }
+
     // Get Ingredient Properties ---------------------------------------------------------------------------------------
 
     public static String getDrinkName(TWEDrinks drink) {
@@ -380,7 +378,7 @@ public class BottleUtils {
         return itemStack;
     }
 
-    public static List<MobEffectInstance> getPotionEffects(ItemStack itemStack) {
+    public static NonNullList<MobEffectInstance> getPotionEffects(ItemStack itemStack) {
         return getPotionEffects(itemStack, false);
     }
 
@@ -463,18 +461,17 @@ public class BottleUtils {
         }
 
         if (!level.isClientSide) {
-            List<MobEffectInstance> effects;
             if (itemStack.getItem() == Items.POTION) {
-                effects = PotionUtils.getMobEffects(itemStack);
-            } else {
-                effects = getPotionEffects(itemStack);
-            }
-            for(MobEffectInstance mobeffectinstance : effects) {
-                if (mobeffectinstance.getEffect().isInstantenous()) {
-                    mobeffectinstance.getEffect().applyInstantenousEffect(player, player, entity, mobeffectinstance.getAmplifier(), 1.0D);
-                } else {
-                    entity.addEffect(new MobEffectInstance(mobeffectinstance));
+                List<MobEffectInstance> effects = PotionUtils.getMobEffects(itemStack);
+                for(MobEffectInstance mobeffectinstance : effects) {
+                    if (mobeffectinstance.getEffect().isInstantenous()) {
+                        mobeffectinstance.getEffect().applyInstantenousEffect(player, player, entity, mobeffectinstance.getAmplifier(), 1.0);
+                    } else {
+                        entity.addEffect(new MobEffectInstance(mobeffectinstance));
+                    }
                 }
+            } else {
+                applyBottleEffects(itemStack, entity);
             }
         }
         if (player != null) {
@@ -509,5 +506,30 @@ public class BottleUtils {
         } else {
             return (int)(32 * amount);
         }
+    }
+
+    public static ItemStack applyBottleEffects(ItemStack itemStack, LivingEntity entity) {
+        Player player = entity instanceof Player ? (Player)entity : null;
+        List<Potion> potions = getPotions(itemStack);
+        HashMap<MobEffectInstance, Double> effects = new HashMap<>();
+        for (Potion potion : potions) {
+            List<MobEffectInstance> potionEffects = potion.getEffects();
+            for (MobEffectInstance effect : potionEffects) {
+                if (!effects.containsKey(effect)) {
+                    effects.put(effect, getPotionAmountPerServing(itemStack, potion));
+                } else {
+                    effects.put(effect, effects.get(effect) + getPotionAmountPerServing(itemStack, potion));
+                }
+            }
+        }
+        for (Map.Entry<MobEffectInstance, Double> entry : effects.entrySet()) {
+            MobEffectInstance context = entry.getKey();
+            if (entry.getKey().getEffect().isInstantenous()) {
+                context.getEffect().applyInstantenousEffect(player, player, entity, context.getAmplifier(), entry.getValue());
+            } else {
+                entity.addEffect(new MobEffectInstance(context.getEffect(), (int)(entry.getValue() * context.getDuration()), context.getAmplifier()));
+            }
+        }
+        return itemStack;
     }
 }
