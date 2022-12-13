@@ -1,7 +1,7 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
-import net.ironhorsedevgroup.mods.thewesternedge.drinks.BottleUtils;
-import net.ironhorsedevgroup.mods.thewesternedge.init.TWEDrinks;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleDrinks;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -16,13 +16,13 @@ import java.util.List;
 
 public class DrinkBottleItem extends Item {
     private static final int DRINK_DURATION = 32;
-    public DrinkBottleItem(Item.Properties p_42979_) {
-        super(p_42979_);
+    public DrinkBottleItem(Item.Properties properties) {
+        super(properties);
     }
 
     @Override
     public ItemStack getDefaultInstance() {
-        return BottleUtils.addDrink(super.getDefaultInstance(), TWEDrinks.BLACKWATER, 1.0, 0.0);
+        return BottleUtils.addDrink(super.getDefaultInstance(), BottleDrinks.BLACKWATER, 1.0, 0.0);
     }
 
     @Override
@@ -63,8 +63,8 @@ public class DrinkBottleItem extends Item {
     @Override
     public void fillItemCategory(CreativeModeTab tab, NonNullList<ItemStack> itemStack) {
         if (this.allowdedIn(tab)) {
-            for(TWEDrinks drink : TWEDrinks.values()) {
-                if (drink != TWEDrinks.EMPTY) {
+            for(BottleDrinks drink : BottleDrinks.values()) {
+                if (drink != BottleDrinks.EMPTY) {
                     ItemStack newStack = new ItemStack(this);
                     BottleUtils.setBottle(newStack, drink.getDefaultBottle());
                     BottleUtils.addDrink(newStack, drink, BottleUtils.getBottleSize(newStack));
@@ -72,7 +72,6 @@ public class DrinkBottleItem extends Item {
                     itemStack.add(newStack);
                 }
             }
-
         }
 
     }

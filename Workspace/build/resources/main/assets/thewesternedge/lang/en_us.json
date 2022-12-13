@@ -1,27 +1,43 @@
 {
+  "itemGroup.tabtwe_markings": "TWE Markings",
+  "itemGroup.tabtwe_survival": "TWE Survival",
+  "itemGroup.tabtwe_drinks": "TWE Drinks",
+
+  "item.minecraft.glass_bottle": "Potion Bottle",
   "item.thewesternedge.drink": "Drink",
+  "item.thewesternedge.berries": "Berries",
   "item.thewesternedge.paint_brush": "Paint Brush",
-  "block.thewesternedge.well_shaft": "Well Shaft",
   "item.minecraft.lingering_potion.effect.mead": "Lingering Mead",
-  "itemGroup.tabtwe_alcohols": "TWE Alcohols",
-  "block.thewesternedge.wall_marking": "Wall Marking",
   "item.thewesternedge.pemmican": "Pemmican",
+  "item.thewesternedge.broken_bottle": "Broken Bottle",
+  "item.thewesternedge.gauze_strip": "Gauze Strip",
+
+  "block.thewesternedge.gauze_rolls": "Gauze Rolls",
+  "block.thewesternedge.well_shaft": "Well Shaft",
+  "block.thewesternedge.well_topper": "Well Topper",
+  "block.thewesternedge.brewers_barrel": "Brewers Barrel",
   "block.thewesternedge.rain_barrel": "Rain Barrel",
   "block.thewesternedge.well_shaft_ladder": "Well Shaft Ladder",
-  "itemGroup.tabtwe_markings": "TWE Markings",
-  "item.thewesternedge.broken_bottle": "Broken Bottle",
+  "block.thewesternedge.wall_marking": "Wall Marking",
+
   "effect.thewesternedge.bandages_effect": "Bandaged",
-  "itemGroup.tabtwe_survival": "TWE Survival",
-  "block.thewesternedge.brewers_barrel": "Brewers Barrel",
-  "block.thewesternedge.well_topper": "Well Topper",
-  "item.thewesternedge.gauze_strip": "Gauze Strip",
-  "block.thewesternedge.gauze_rolls": "Gauze Rolls",
+
   "drink.thewesternedge.wine": "Sweet Berry Wine",
   "drink.thewesternedge.blackwater": "Blackwater Concoction",
   "drink.thewesternedge.mead": "Honey Mead",
   "drink.thewesternedge.beer": "Beer",
-  "bottle.thewesternedge.door": "Door Glass Bottle",
-  "bottle.thewesternedge.chonk": "Chonk Glass Bottle",
-  "bottle.thewesternedge.tall": "Tall Glass Bottle",
-  "bottle.thewesternedge.blackwater": "Blackwater Bottle"
+
+  "bottle.thewesternedge.door": "Door Bottle",
+  "bottle.thewesternedge.chonk": "Chonk Bottle",
+  "bottle.thewesternedge.tall": "Tall Bottle",
+  "bottle.thewesternedge.blackwater": "Blackwater Bottle",
+  "bottle.thewesternedge.waterskin": "Leather Waterskin",
+
+  "berries.thewesternedge.amber": "Amber Berries",
+  "berries.thewesternedge.indigo": "Indigo Berries",
+  "berries.thewesternedge.jade": "Jade Berries",
+  "berries.thewesternedge.mauve": "Mauve Berries",
+  "berries.thewesternedge.russet": "Russet Berries",
+  "berries.thewesternedge.teal": "Teal Berries",
+  "berries.thewesternedge.vermillion": "Vermilion Berries"
 }

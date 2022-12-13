@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
-import net.ironhorsedevgroup.mods.thewesternedge.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -25,7 +25,7 @@ import net.minecraft.world.InteractionHand;
 public class ItemMixins {
 	@Inject(at = @At("HEAD"), method = "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z", cancellable = true)
 	public void hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity, CallbackInfoReturnable<Boolean> callback) {
-    	if (itemstack.getItem() == Items.POTION) {
+    	if (itemstack.getItem() == Items.POTION && BottleUtils.isBreakable(itemstack)) {
     		Potion potion = PotionUtils.getPotion(itemstack);
 	   		List<MobEffectInstance> list = PotionUtils.getMobEffects(itemstack);
      		boolean flag = potion == Potions.WATER && list.isEmpty();
@@ -35,9 +35,7 @@ public class ItemMixins {
      		
      		int i = potion.hasInstantEffects() ? 2007 : 2002;
      		entity.level.levelEvent(i, entity.blockPosition(), PotionUtils.getColor(itemstack));
-     		ItemStack _setstack = new ItemStack(TWEItems.BROKEN_BOTTLE.get());
-			_setstack.setCount(1);
-			_setstack.getOrCreateTag().putDouble("CustomModelData", itemstack.getOrCreateTag().getDouble("CustomModelData"));
+     		ItemStack _setstack = BottleUtils.createBrokenCopy(itemstack);
 			sourceentity.setItemInHand(InteractionHand.MAIN_HAND, _setstack);
 			if (sourceentity instanceof Player _player)
 				_player.getInventory().setChanged();

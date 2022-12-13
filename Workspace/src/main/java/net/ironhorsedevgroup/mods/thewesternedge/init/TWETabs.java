@@ -1,5 +1,7 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
 import net.minecraft.core.NonNullList;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
@@ -9,7 +11,7 @@ import net.minecraft.world.item.CreativeModeTab;
 
 public class TWETabs {
 	public static CreativeModeTab TAB_TWE_SURVIVAL;
-	public static CreativeModeTab TAB_TWE_ALCOHOLS;
+	public static CreativeModeTab TAB_TWE_DRINKS;
 	public static CreativeModeTab TAB_TWE_MARKINGS;
 
 	public static void load() {
@@ -24,10 +26,10 @@ public class TWETabs {
 				return false;
 			}
 		};
-		TAB_TWE_ALCOHOLS = new CreativeModeTab("tabtwe_alcohols") {
+		TAB_TWE_DRINKS = new CreativeModeTab("tabtwe_drinks") {
 			@Override
 			public ItemStack makeIcon() {
-				return new ItemStack(TWEBlocks.BREWERS_BARREL.get());
+				return BottleUtils.createBottle(BottleVariants.LABELED_BLACKWATER_BOTTLE);
 			}
 
 			@OnlyIn(Dist.CLIENT)
@@ -38,7 +40,7 @@ public class TWETabs {
 		TAB_TWE_MARKINGS = new CreativeModeTab("tabtwe_markings") {
 			@Override
 			public ItemStack makeIcon() {
-				return new ItemStack(TWEItems.BROKEN_BOTTLE.get());
+				return new ItemStack(TWEItems.PAINT_BRUSH.get());
 			}
 
 			@OnlyIn(Dist.CLIENT)

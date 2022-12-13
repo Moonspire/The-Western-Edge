@@ -1,31 +1,35 @@
 {
   "mappings": {
-    "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionApplyEffectModification": {
-      "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;"
+    "net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemMixins": {
+      "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/Item;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;",
+      "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z": "Lnet/minecraft/world/item/Item;m_7579_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z"
     },
-    "net/ironhorsedevgroup/mods/thewesternedge/mixin/BrewingStandApplyNBT": {
+    "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins": {
+      "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;",
+      "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/PotionItem;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;"
+    },
+    "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins": {
       "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/alchemy/PotionBrewing;m_43529_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"
     },
-    "net/ironhorsedevgroup/mods/thewesternedge/mixin/CreateFilledResultReplacement": {
+    "net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemUtilsMixins": {
       "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/ItemUtils;m_41817_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;"
-    },
-    "net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemAddPotionHitEffect": {
-      "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z": "Lnet/minecraft/world/item/Item;m_7579_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z"
     }
   },
   "data": {
     "searge": {
-      "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionApplyEffectModification": {
-        "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;"
+      "net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemMixins": {
+        "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/Item;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;",
+        "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z": "Lnet/minecraft/world/item/Item;m_7579_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z"
       },
-      "net/ironhorsedevgroup/mods/thewesternedge/mixin/BrewingStandApplyNBT": {
+      "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins": {
+        "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;",
+        "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/PotionItem;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;"
+      },
+      "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins": {
         "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/alchemy/PotionBrewing;m_43529_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"
       },
-      "net/ironhorsedevgroup/mods/thewesternedge/mixin/CreateFilledResultReplacement": {
+      "net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemUtilsMixins": {
         "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/ItemUtils;m_41817_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;"
-      },
-      "net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemAddPotionHitEffect": {
-        "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z": "Lnet/minecraft/world/item/Item;m_7579_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z"
       }
     }
   }

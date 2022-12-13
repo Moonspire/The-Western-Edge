@@ -1,8 +1,13 @@
 package net.ironhorsedevgroup.mods.thewesternedge.block.berries;
 
+import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEBlockStateProperties;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
+import net.ironhorsedevgroup.mods.thewesternedge.item.BerriesItem;
+import net.minecraft.Util;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Registry;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
@@ -48,26 +53,18 @@ public class BerryBushBlock extends SweetBerryBushBlock {
 
     @Override
     public ItemStack getCloneItemStack(BlockGetter blockGetter, BlockPos blockPos, BlockState blockState) {
-        return new ItemStack(getBerryItem(blockState));
+        return getBerryItem(blockState);
     }
 
-    public Item getBerryItem(BlockState blockState) {
-        Item item = TWEItems.AMBER_BERRIES.get();
+    public ItemStack getBerryItem(BlockState blockState) {
+        return getBerryItem(blockState, 1);
+    }
+
+    public ItemStack getBerryItem(BlockState blockState, Integer amount) {
+        ItemStack itemStack = new ItemStack(TWEItems.BERRIES.get(), amount);
         BerryType berry = blockState.getValue(BERRY_TYPE);
-        if (berry == BerryType.INDIGO) {
-            item = TWEItems.INDIGO_BERRIES.get();
-        } else if (berry == BerryType.JADE) {
-            item = TWEItems.JADE_BERRIES.get();
-        } else if (berry == BerryType.MAUVE) {
-            item = TWEItems.MAUVE_BERRIES.get();
-        } else if (berry == BerryType.RUSSET) {
-            item = TWEItems.RUSSET_BERRIES.get();
-        } else if (berry == BerryType.TEAL) {
-            item = TWEItems.TEAL_BERRIES.get();
-        } else if (berry == BerryType.VERMILLION) {
-            item = TWEItems.VERMILLION_BERRIES.get();
-        }
-        return item;
+        BerriesItem.setBerryType(itemStack, berry);
+        return itemStack;
     }
 
     @Override
@@ -78,7 +75,7 @@ public class BerryBushBlock extends SweetBerryBushBlock {
             return InteractionResult.PASS;
         } else if (i > 1) {
             int j = 1 + level.random.nextInt(2);
-            popResource(level, blockPos, new ItemStack(getBerryItem(blockState), j + (flag ? 1 : 0)));
+            popResource(level, blockPos, getBerryItem(blockState, j + (flag ? 1 : 0)));
             level.playSound((Player)null, blockPos, SoundEvents.SWEET_BERRY_BUSH_PICK_BERRIES, SoundSource.BLOCKS, 1.0F, 0.8F + level.random.nextFloat() * 0.4F);
             level.setBlock(blockPos, blockState.setValue(AGE, Integer.valueOf(1)), 2);
             return InteractionResult.sidedSuccess(level.isClientSide);
@@ -91,22 +88,7 @@ public class BerryBushBlock extends SweetBerryBushBlock {
     public BlockState getStateForPlacement(BlockPlaceContext context){
         ItemStack stack = context.getItemInHand();
         if (stack != null) {
-            Item item = stack.getItem();
-            if (item == TWEItems.AMBER_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.AMBER).setValue(AGE, 0);
-            } else if (item == TWEItems.INDIGO_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.INDIGO).setValue(AGE, 0);
-            } else if (item == TWEItems.JADE_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.JADE).setValue(AGE, 0);
-            } else if (item == TWEItems.MAUVE_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.MAUVE).setValue(AGE, 0);
-            } else if (item == TWEItems.RUSSET_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.RUSSET).setValue(AGE, 0);
-            } else if (item == TWEItems.TEAL_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.TEAL).setValue(AGE, 0);
-            } else if (item == TWEItems.VERMILLION_BERRIES.get()) {
-                return this.defaultBlockState().setValue(BERRY_TYPE, BerryType.VERMILLION).setValue(AGE, 0);
-            }
+            return this.defaultBlockState().setValue(BERRY_TYPE, BerriesItem.getBerryType(stack)).setValue(AGE, 0);
         }
         return this.defaultBlockState();
     }

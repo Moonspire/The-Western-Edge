@@ -1,0 +1,14 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "thewesternedge:items/berries/amber_berries"
+  },
+  "overrides": [
+    { "predicate": { "custom_model_data": 1}, "model": "thewesternedge:item/berries/indigo" },
+    { "predicate": { "custom_model_data": 2}, "model": "thewesternedge:item/berries/jade" },
+    { "predicate": { "custom_model_data": 3}, "model": "thewesternedge:item/berries/mauve" },
+    { "predicate": { "custom_model_data": 4}, "model": "thewesternedge:item/berries/russet" },
+    { "predicate": { "custom_model_data": 5}, "model": "thewesternedge:item/berries/teal" },
+    { "predicate": { "custom_model_data": 6}, "model": "thewesternedge:item/berries/vermillion" }
+  ]
+}

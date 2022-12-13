@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
-import net.ironhorsedevgroup.mods.thewesternedge.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;

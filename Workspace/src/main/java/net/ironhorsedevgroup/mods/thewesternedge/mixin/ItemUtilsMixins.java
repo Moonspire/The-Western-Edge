@@ -1,7 +1,8 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
-import net.ironhorsedevgroup.mods.thewesternedge.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
@@ -16,7 +17,7 @@ import net.minecraft.world.entity.player.Player;
 public class ItemUtilsMixins {
 	@Inject(at = @At("HEAD"), method = "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;", cancellable = true)
 	private static void createFilledResult(ItemStack originStack, Player player, ItemStack newItem, boolean boolFlag, CallbackInfoReturnable<ItemStack> callback) {
-		if (BottleUtils.getBottle(originStack) != 0) {
+		if (BottleUtils.getBottle(originStack) != BottleVariants.POTION_BOTTLE) {
 			BottleUtils.copyBottleProperties(originStack, newItem);
 			TWEUtils.putDoubleTag(newItem, "Servings", BottleUtils.getBottleSize(newItem));
       		boolean flag = player.getAbilities().instabuild;
