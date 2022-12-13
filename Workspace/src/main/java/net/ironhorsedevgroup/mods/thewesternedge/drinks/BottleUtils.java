@@ -31,36 +31,66 @@ import java.util.List;
 import java.util.Map;
 
 public class BottleUtils {
-    private static List<Map<String, Double>> bottleProperties = List.of(
+    private static List<Map<String, Object>> bottleProperties = List.of(
             // Bottle 0 - Default
-            Map.of("Servings", 1.0),
+            Map.of(
+                    "Servings", 1.0,
+                    "Name", "default"
+            ),
 
             // Bottle 1 - Default Labeled
-            Map.of("Servings", 1.0),
+            Map.of(
+                    "Servings", 1.0,
+                    "Name", "default"
+            ),
 
             // Bottle 2 - Door
-            Map.of("Servings", 3.0),
+            Map.of(
+                    "Servings", 3.0,
+                    "Name", "door"
+            ),
 
             // Bottle 3 - Door Labeled
-            Map.of("Servings", 3.0),
+            Map.of(
+                    "Servings", 3.0,
+                    "Name", "door"
+            ),
 
             // Bottle 4 - Chonk
-            Map.of("Servings", 5.0),
+            Map.of(
+                    "Servings", 5.0,
+                    "Name", "chonk"
+            ),
 
             // Bottle 5 - Chonk Labeled
-            Map.of("Servings", 5.0),
+            Map.of(
+                    "Servings", 5.0,
+                    "Name", "chonk"
+            ),
 
             // Bottle 6 - Blackwater
-            Map.of("Servings", 4.0),
+            Map.of(
+                    "Servings", 4.0,
+                    "Name", "blackwater"
+            ),
 
             // Bottle 7 - Blackwater Labeled
-            Map.of("Servings", 4.0),
+            Map.of(
+                    "Servings", 4.0,
+                    "Name", "blackwater"
+            ),
 
             // Bottle 8 - Tall
-            Map.of("Servings", 2.0),
+            Map.of(
+                    "Servings", 2.0,
+                    "Name", "tall"
+            ),
 
             // Bottle 9 - Tall Labeled
-            Map.of("Servings", 2.0)
+            Map.of(
+                    "Servings", 2.0,
+                    "Name", "tall"
+            )
     );
     
     // Modifying Ingredients -------------------------------------------------------------------------------------------
@@ -289,7 +319,7 @@ public class BottleUtils {
 
     // How Many Servings Exist -----------------------------------------------------------------------------------------
     public static Double getBottleSize(ItemStack itemStack) {
-        return bottleProperties.get(getBottle(itemStack)).get("Servings");
+        return (double)bottleProperties.get(getBottle(itemStack)).get("Servings");
     }
 
     public static Double getAmount(ItemStack itemStack) {
@@ -359,7 +389,16 @@ public class BottleUtils {
 
     // Bottle Properties -----------------------------------------------------------------------------------------------
     public static String getName(ItemStack itemStack) {
-        return TWEUtils.getStringTag(itemStack, "BottleName");
+        String name = TWEUtils.getStringTag(itemStack, "BottleName");
+        if (name == "") {
+            Integer bottle = getBottle(itemStack);
+            if (bottle > 1 && itemStack.getItem() == Items.GLASS_BOTTLE) {
+                return I18n.get("bottle." + TheWesternEdgeMod.MODID + "." + bottleProperties.get(bottle).get("Name"));
+            } else {
+                return itemStack.getItem().getDescriptionId();
+            }
+        }
+        return name;
     }
 
     public static ItemStack setName(ItemStack itemStack, String name) {

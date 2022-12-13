@@ -9,7 +9,6 @@ import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
-import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.Level;
 
 import javax.annotation.Nullable;
@@ -38,11 +37,7 @@ public class DrinkBottleItem extends Item {
 
     @Override
     public String getDescriptionId(ItemStack itemStack) {
-        String name = BottleUtils.getName(itemStack);
-        if (name == "") {
-            return super.getDescriptionId(itemStack);
-        }
-        return name;
+        return BottleUtils.getName(itemStack);
     }
 
     @Override

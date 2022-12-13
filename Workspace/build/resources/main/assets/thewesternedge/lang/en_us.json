@@ -19,5 +19,9 @@
   "drink.thewesternedge.wine": "Sweet Berry Wine",
   "drink.thewesternedge.blackwater": "Blackwater Concoction",
   "drink.thewesternedge.mead": "Honey Mead",
-  "drink.thewesternedge.beer": "Beer"
+  "drink.thewesternedge.beer": "Beer",
+  "bottle.thewesternedge.door": "Door Glass Bottle",
+  "bottle.thewesternedge.chonk": "Chonk Glass Bottle",
+  "bottle.thewesternedge.tall": "Tall Glass Bottle",
+  "bottle.thewesternedge.blackwater": "Blackwater Bottle"
 }

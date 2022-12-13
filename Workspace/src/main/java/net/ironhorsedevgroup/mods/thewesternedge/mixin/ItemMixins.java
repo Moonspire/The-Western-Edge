@@ -1,5 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
+import net.ironhorsedevgroup.mods.thewesternedge.drinks.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,7 +22,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.InteractionHand;
 
 @Mixin(Item.class)
-public class ItemAddPotionHitEffect {
+public class ItemMixins {
 	@Inject(at = @At("HEAD"), method = "hurtEnemy(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/LivingEntity;Lnet/minecraft/world/entity/LivingEntity;)Z", cancellable = true)
 	public void hurtEnemy(ItemStack itemstack, LivingEntity entity, LivingEntity sourceentity, CallbackInfoReturnable<Boolean> callback) {
     	if (itemstack.getItem() == Items.POTION) {
@@ -42,6 +43,13 @@ public class ItemAddPotionHitEffect {
 				_player.getInventory().setChanged();
      		callback.setReturnValue(true);
     	}
+	}
+
+	@Inject(at = @At("HEAD"), method = "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;", cancellable = true)
+	public void getDescriptionId(ItemStack itemStack, CallbackInfoReturnable<String> callback) {
+		if (itemStack.getItem() == Items.GLASS_BOTTLE) {
+			callback.setReturnValue(BottleUtils.getName(itemStack));
+		}
 	}
 
 	public void makeAreaOfEffectCloud(ItemStack itemstack, Potion potion, float rad, float useRad, int waitTime, LivingEntity srcEntity, LivingEntity entity) {

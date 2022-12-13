@@ -4,10 +4,10 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "mixins.thewesternedge.refmap.json",
   "mixins": [
-    "BrewingStandApplyNBT",
-    "CreateFilledResultReplacement",
-    "ItemAddPotionHitEffect",
-    "PotionApplyEffectModification",
+    "PotionBrewingMixins",
+    "ItemUtilsMixins",
+    "ItemMixins",
+    "PotionItemMixins",
     "PotionUtilsMixins"
   ],
   "client": [

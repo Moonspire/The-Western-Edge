@@ -13,7 +13,7 @@ import net.minecraft.world.entity.player.Player;
 
 
 @Mixin(ItemUtils.class)
-public class CreateFilledResultReplacement {
+public class ItemUtilsMixins {
 	@Inject(at = @At("HEAD"), method = "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;", cancellable = true)
 	private static void createFilledResult(ItemStack originStack, Player player, ItemStack newItem, boolean boolFlag, CallbackInfoReturnable<ItemStack> callback) {
 		if (BottleUtils.getBottle(originStack) != 0) {

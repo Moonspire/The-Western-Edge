@@ -11,7 +11,7 @@ import net.minecraft.world.item.alchemy.PotionBrewing;
 import net.minecraft.world.item.ItemStack;
 
 @Mixin(PotionBrewing.class)
-public class BrewingStandApplyNBT {
+public class PotionBrewingMixins {
 	@Inject(at = @At("RETURN"), method = "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;", cancellable = true)
 	private static void mix(ItemStack ingredient, ItemStack potion, CallbackInfoReturnable<ItemStack> callback) {
     	if (BottleUtils.getBottle(potion) != 0) {
