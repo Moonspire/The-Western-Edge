@@ -329,17 +329,22 @@ public class BottleUtils {
 
     // Bottle Properties -----------------------------------------------------------------------------------------------
     public static String getName(ItemStack itemStack) {
-        String name = TWEUtils.getStringTag(itemStack, "BottleName");
+        String name = getCustomName(itemStack);
         if (name == "") {
-            BottleVariants bottle = getBottle(itemStack);
-            String bottleName = bottle.getSerializedName();
-            if (bottleName != "default" && itemStack.getItem() == Items.GLASS_BOTTLE) {
-                return I18n.get("bottle." + TheWesternEdgeMod.MODID + "." + bottleName);
-            } else {
-                return itemStack.getItem().getDescriptionId();
+            if (itemStack.getItem() == Items.GLASS_BOTTLE) {
+                BottleVariants bottle = getBottle(itemStack);
+                String bottleName = bottle.getSerializedName();
+                if (bottleName != "default" && itemStack.getItem() == Items.GLASS_BOTTLE) {
+                    return I18n.get("bottle." + TheWesternEdgeMod.MODID + "." + bottleName);
+                }
             }
+            return itemStack.getItem().getDescriptionId();
         }
         return name;
+    }
+
+    public static String getCustomName(ItemStack itemStack) {
+        return TWEUtils.getStringTag(itemStack, "BottleName");
     }
 
     public static ItemStack setName(ItemStack itemStack, String name) {
@@ -457,7 +462,7 @@ public class BottleUtils {
 
     public static ItemStack copyBottleProperties(ItemStack oldBottle, ItemStack newBottle) {
         setBottle(newBottle, getBottle(oldBottle));
-        setName(newBottle, getName(oldBottle));
+        setName(newBottle, getCustomName(oldBottle));
         setContentsView(newBottle, getContentsView(oldBottle));
         return newBottle;
     }

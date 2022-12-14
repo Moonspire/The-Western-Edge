@@ -1,5 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
+import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleDrinks;
 import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
 import net.minecraft.core.NonNullList;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.CreativeModeTab;
 public class TWETabs {
 	public static CreativeModeTab TAB_TWE_SURVIVAL;
 	public static CreativeModeTab TAB_TWE_DRINKS;
+	public static CreativeModeTab TAB_TWE_BOTTLES;
 	public static CreativeModeTab TAB_TWE_MARKINGS;
 
 	public static void load() {
@@ -29,12 +31,23 @@ public class TWETabs {
 		TAB_TWE_DRINKS = new CreativeModeTab("tabtwe_drinks") {
 			@Override
 			public ItemStack makeIcon() {
-				return BottleUtils.createBottle(BottleVariants.LABELED_BLACKWATER_BOTTLE);
+				return BottleUtils.addDrink(BottleUtils.createBottle(BottleVariants.LABELED_DOOR_BOTTLE), BottleDrinks.MEAD);
 			}
 
 			@OnlyIn(Dist.CLIENT)
 			public boolean hasSearchBar() {
 				return false;
+			}
+		};
+		TAB_TWE_BOTTLES = new CreativeModeTab("tabtwe_bottles") {
+			@Override
+			public ItemStack makeIcon() {
+				return BottleUtils.createBottle(BottleVariants.WATERSKIN);
+			}
+
+			@OnlyIn(Dist.CLIENT)
+			public boolean hasSearchBar() {
+				return true;
 			}
 		};
 		TAB_TWE_MARKINGS = new CreativeModeTab("tabtwe_markings") {

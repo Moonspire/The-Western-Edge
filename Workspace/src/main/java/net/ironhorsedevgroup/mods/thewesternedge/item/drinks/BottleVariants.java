@@ -1,6 +1,7 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item.drinks;
 
 import net.minecraft.util.StringRepresentable;
+import net.minecraftforge.items.IItemHandler;
 
 public enum BottleVariants implements StringRepresentable {
     POTION_BOTTLE("","default", 1.0, true, false),

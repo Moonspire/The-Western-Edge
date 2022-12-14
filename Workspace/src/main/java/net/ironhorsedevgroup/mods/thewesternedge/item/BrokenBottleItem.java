@@ -16,7 +16,7 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class BrokenBottleItem extends SwordItem {
 	public BrokenBottleItem() {
-		super(Tiers.WOOD, 2, -3.0F, new Item.Properties().tab(TWETabs.TAB_TWE_DRINKS).durability(3).rarity(Rarity.COMMON));
+		super(Tiers.WOOD, 2, -3.0F, new Item.Properties().tab(TWETabs.TAB_TWE_BOTTLES).durability(3).rarity(Rarity.COMMON));
 	}
 	@Override
 	public boolean canAttackBlock(BlockState block, Level level, BlockPos pos, Player player) {
