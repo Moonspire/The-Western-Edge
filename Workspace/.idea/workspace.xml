@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added Waterskins and Enumized Bottles in the BottleVariants.java file.">
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Fixed a bug in all bottle related item name code">
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" afterDir="false" />
@@ -14,19 +14,13 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleVariants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleVariants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemUtilsMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemUtilsMixins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionUtilsMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionUtilsMixins.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/lang/en_us.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -67,16 +61,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/models/item/bottles",
-    "settings.editor.selected.configurable": "preferences.keymap"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/models/item/bottles&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
@@ -156,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1670961086858</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Fixed a bug in all bottle related item name code">
+      <created>1670981484871</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1670981484871</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -178,6 +179,7 @@
     <MESSAGE value="Worked on drink names a bit, Next step is mixing in to glass bottle and potion names to make them also apply label names." />
     <MESSAGE value="Glass Bottles &amp; Potions now have custom name capability and Glass Bottles now display the specific name of their variant." />
     <MESSAGE value="Added Waterskins and Enumized Bottles in the BottleVariants.java file." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Waterskins and Enumized Bottles in the BottleVariants.java file." />
+    <MESSAGE value="Fixed a bug in all bottle related item name code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed a bug in all bottle related item name code" />
   </component>
 </project>

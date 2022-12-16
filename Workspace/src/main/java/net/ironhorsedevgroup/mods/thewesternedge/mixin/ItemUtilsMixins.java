@@ -1,8 +1,13 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
+import net.minecraft.client.resources.language.I18n;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionUtils;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
@@ -17,9 +22,9 @@ import net.minecraft.world.entity.player.Player;
 public class ItemUtilsMixins {
 	@Inject(at = @At("HEAD"), method = "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;", cancellable = true)
 	private static void createFilledResult(ItemStack originStack, Player player, ItemStack newItem, boolean boolFlag, CallbackInfoReturnable<ItemStack> callback) {
-		if (BottleUtils.getBottle(originStack) != BottleVariants.POTION_BOTTLE) {
-			BottleUtils.copyBottleProperties(originStack, newItem);
-			TWEUtils.putDoubleTag(newItem, "Servings", BottleUtils.getBottleSize(newItem));
+		if (newItem.getItem() == Items.POTION && BottleUtils.getBottle(originStack) != BottleVariants.POTION_BOTTLE) {
+			newItem = BottleUtils.addPotion(originStack, PotionUtils.getPotion(newItem));
+			player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(newItem)), (true));
       		boolean flag = player.getAbilities().instabuild;
       		if (boolFlag && flag) {
          		if (!player.getInventory().contains(newItem)) {

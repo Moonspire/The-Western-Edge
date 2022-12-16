@@ -40,9 +40,9 @@ public class BottleUtils {
         if (itemStack.getItem() == Items.POTION) {
             return TWEUtils.putDoubleTag(itemStack, "Servings", newServings);
         } else {
-            List<BottleDrinks> drinks = getDrinks(itemStack);
-            List<BottleAdditives> additives = getAdditives(itemStack);
-            List<Potion> potions = getPotions(itemStack);
+            NonNullList<BottleDrinks> drinks = getDrinks(itemStack);
+            NonNullList<BottleAdditives> additives = getAdditives(itemStack);
+            NonNullList<Potion> potions = getPotions(itemStack);
             ItemStack retStack = new ItemStack(itemStack.getItem());
             for (BottleDrinks drink : drinks) {
                 Double drinkStrength = getStrength(itemStack);
@@ -57,6 +57,7 @@ public class BottleUtils {
             }
             for (Potion potion : potions) {
                 Double potionAmount = getPotionAmount(itemStack, potion);
+                System.out.println(potion.getRegistryName() + " " + potionAmount);
                 Double newAmount = potionAmount / (servings / newServings);
                 addPotion(retStack, potion, newAmount);
             }
@@ -105,7 +106,12 @@ public class BottleUtils {
 
     public static ItemStack addDrink(ItemStack itemStack, BottleDrinks drink, Double amount, Double strength) {
         if (drink != BottleDrinks.EMPTY) {
-            Double existingAmount = getDrinkAmount(itemStack, drink);
+            Double bottleSize = getBottleSize(itemStack);
+            Double existingAmount = getAmount(itemStack);
+            if (amount + existingAmount > bottleSize) {
+                amount = bottleSize - existingAmount;
+            }
+            existingAmount = getDrinkAmount(itemStack, drink);
             TWEUtils.putDoubleTag(itemStack, "drink." + drink.getSerializedName(), amount + existingAmount);
             addStrength(itemStack, amount, strength);
         }
@@ -173,7 +179,26 @@ public class BottleUtils {
 
     public static ItemStack addPotion(ItemStack itemStack, Potion potion, Double amount) {
         if (potion != Potions.EMPTY) {
-            TWEUtils.putDoubleTag(itemStack,"potion." + potion.getRegistryName(), amount);
+            Double bottleSize = getBottleSize(itemStack);
+            Double existingAmount = getAmount(itemStack);
+            if (amount + existingAmount > bottleSize) {
+                amount = bottleSize - existingAmount;
+            }
+            Double existingSpecificAmount = getPotionAmount(itemStack, potion);
+            if (itemStack.getItem() == Items.POTION) {
+                Potion existingPotion = PotionUtils.getPotion(itemStack);
+                if (existingPotion == potion) {
+                    TWEUtils.putDoubleTag(itemStack, "Servings", amount + existingSpecificAmount);
+                } else {
+                    itemStack = addPotion(copyBottleProperties(itemStack, new ItemStack(TWEItems.DRINK.get())), existingPotion, existingAmount);
+                    addPotion(itemStack, potion, amount);
+                }
+            } else if (itemStack.getItem() == Items.GLASS_BOTTLE){
+                itemStack = PotionUtils.setPotion(copyBottleProperties(itemStack, new ItemStack(Items.POTION)), potion);
+                TWEUtils.putDoubleTag(itemStack, "Servings", amount);
+            } else {
+                TWEUtils.putDoubleTag(itemStack,"potion." + potion.getRegistryName(), amount);
+            }
         }
         return itemStack;
     }
@@ -263,18 +288,9 @@ public class BottleUtils {
     }
 
     public static Double getAmount(ItemStack itemStack) {
-        if (itemStack.getItem() == Items.POTION) {
-            Double servings = TWEUtils.getDoubleTag(itemStack, "Servings");
-            if (servings == 0.0) {
-                return 1.0;
-            } else {
-                return servings;
-            }
-        } else {
-            return getDrinkAmount(itemStack, List.of(BottleDrinks.values()))
-                    + getPotionAmount(itemStack, Registry.POTION.stream().toList())
-                    + getAdditiveAmount(itemStack, List.of(BottleAdditives.values()));
-        }
+        return getDrinkAmount(itemStack, List.of(BottleDrinks.values()))
+                + getPotionAmount(itemStack, Registry.POTION.stream().toList())
+                + getAdditiveAmount(itemStack, List.of(BottleAdditives.values()));
     }
 
     public static Double getDrinkAmount(ItemStack itemStack, List<BottleDrinks> drinks) {
@@ -302,15 +318,38 @@ public class BottleUtils {
     }
 
     public static Double getDrinkAmount(ItemStack itemStack, BottleDrinks drink) {
-        return TWEUtils.getDoubleTag(itemStack, "drink." + drink.getSerializedName());
+        if (itemStack.getItem() != Items.GLASS_BOTTLE && itemStack.getItem() != Items.POTION) {
+            return TWEUtils.getDoubleTag(itemStack, "drink." + drink.getSerializedName());
+        } else {
+            return 0.0;
+        }
     }
     
     public static Double getPotionAmount(ItemStack itemStack, Potion potion) {
-        return TWEUtils.getDoubleTag(itemStack, "potion." + potion.getRegistryName());
+        if (itemStack.getItem() == Items.POTION) {
+            if (PotionUtils.getPotion(itemStack) == potion) {
+                Double servings = TWEUtils.getDoubleTag(itemStack, "Servings");
+                if (servings == 0.0) {
+                    return 1.0;
+                } else {
+                    return servings;
+                }
+            } else {
+                return 0.0;
+            }
+        } else if (itemStack.getItem() == Items.GLASS_BOTTLE) {
+            return 0.0;
+        } else {
+            return TWEUtils.getDoubleTag(itemStack, "potion." + potion.getRegistryName());
+        }
     }
 
     public static Double getAdditiveAmount(ItemStack itemStack, BottleAdditives additive) {
-        return TWEUtils.getDoubleTag(itemStack, "additive." + additive.getSerializedName());
+        if (itemStack.getItem() != Items.GLASS_BOTTLE && itemStack.getItem() != Items.POTION) {
+            return TWEUtils.getDoubleTag(itemStack, "additive." + additive.getSerializedName());
+        } else {
+            return 0.0;
+        }
     }
 
     public static Double getPotionAmountPerServing(ItemStack itemStack, Potion potion) {
@@ -405,12 +444,7 @@ public class BottleUtils {
             MutableComponent mutablecomponent = new TextComponent(additive.getSerializedName());
             components.add(mutablecomponent);
         }
-        Integer amount = getAmount(itemStack).intValue();
-        String text = amount.toString() + " Serving";
-        if (amount != 1) {
-            text = text + "s";
-        }
-        MutableComponent mutableComponent = new TextComponent(text);
+        MutableComponent mutableComponent = new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + getAmount(itemStack));
         components.add(mutableComponent);
     }
 
@@ -473,6 +507,10 @@ public class BottleUtils {
         Double servings = getAmount(itemStack);
         if (player instanceof ServerPlayer) {
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)player, itemStack);
+        }
+
+        if (servings > 1.0) {
+            player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + (servings - 1)), (true));
         }
 
         if (!level.isClientSide) {

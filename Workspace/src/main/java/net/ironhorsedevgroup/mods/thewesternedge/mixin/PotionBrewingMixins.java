@@ -18,7 +18,7 @@ public class PotionBrewingMixins {
     	if (BottleUtils.getBottle(potion) != BottleVariants.POTION_BOTTLE) {
     		ItemStack retPot = callback.getReturnValue();
     		BottleUtils.copyBottleProperties(potion, retPot);
-			TWEUtils.putDoubleTag(retPot, "Servings", BottleUtils.getBottleSize(retPot));
+			TWEUtils.putDoubleTag(retPot, "Servings", BottleUtils.getAmount(potion));
 	    	callback.setReturnValue(retPot);
 	    } else {
 	    	callback.setReturnValue(callback.getReturnValue());
