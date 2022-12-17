@@ -6,7 +6,8 @@
     },
     "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins": {
       "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;",
-      "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/PotionItem;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;"
+      "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/PotionItem;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;",
+      "use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;": "Lnet/minecraft/world/item/PotionItem;m_7203_(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;"
     },
     "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins": {
       "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/alchemy/PotionBrewing;m_43529_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"
@@ -23,7 +24,8 @@
       },
       "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins": {
         "finishUsingItem(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/PotionItem;m_5922_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/LivingEntity;)Lnet/minecraft/world/item/ItemStack;",
-        "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/PotionItem;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;"
+        "getDescriptionId(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;": "Lnet/minecraft/world/item/PotionItem;m_5671_(Lnet/minecraft/world/item/ItemStack;)Ljava/lang/String;",
+        "use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;": "Lnet/minecraft/world/item/PotionItem;m_7203_(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;"
       },
       "net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins": {
         "mix(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;": "Lnet/minecraft/world/item/alchemy/PotionBrewing;m_43529_(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/item/ItemStack;)Lnet/minecraft/world/item/ItemStack;"

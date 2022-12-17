@@ -1,15 +1,28 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
+import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleDrinks;
+import net.minecraft.client.resources.language.I18n;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.TextComponent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 
 import javax.annotation.Nullable;
 import java.util.List;
@@ -31,6 +44,25 @@ public class DrinkBottleItem extends Item {
     }
 
     @Override
+    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+        HitResult hitresult = TWEUtils.getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
+        if (hitresult.getType() == HitResult.Type.BLOCK) {
+            BlockPos blockpos = ((BlockHitResult)hitresult).getBlockPos();
+            if (level.mayInteract(player, blockpos) && level.getFluidState(blockpos).is(FluidTags.WATER)) {
+                if (BottleUtils.getAmount(itemStack) < BottleUtils.getBottleSize(itemStack)) {
+                    level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                    level.gameEvent(player, GameEvent.FLUID_PICKUP, blockpos);
+                    itemStack = BottleUtils.addPotion(itemStack, Potions.WATER);
+                    player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
+                    return InteractionResultHolder.pass(itemStack);
+                }
+            }
+        }
+        return ItemUtils.startUsingInstantly(level, player, hand);
+    }
+
+    @Override
     public int getUseDuration(ItemStack itemStack) {
         return BottleUtils.getUseDuration(itemStack);
     }
@@ -43,11 +75,6 @@ public class DrinkBottleItem extends Item {
     @Override
     public UseAnim getUseAnimation(ItemStack itemStack) {
         return UseAnim.DRINK;
-    }
-
-    @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        return ItemUtils.startUsingInstantly(level, player, hand);
     }
 
     @Override
