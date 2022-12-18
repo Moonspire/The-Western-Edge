@@ -12,7 +12,7 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraftforge.common.BiomeDictionary;
 
-public class AbstractWellBlock extends AbstractWaterCollector {
+public abstract class AbstractWellBlock extends AbstractWaterCollector {
     public AbstractWellBlock(BlockBehaviour.Properties blockproperties) {
         super(blockproperties);
     }

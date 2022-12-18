@@ -5,6 +5,7 @@ import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.resources.language.I18n;
+import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.Component;
@@ -12,7 +13,12 @@ import net.minecraft.network.chat.MutableComponent;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.FluidTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -22,8 +28,14 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
+import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LayeredCauldronBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
 
 import java.util.Arrays;
 import java.util.HashMap;
@@ -37,6 +49,9 @@ public class BottleUtils {
     public static ItemStack drainAmount(ItemStack itemStack, Double amount) {
         Double servings = getAmount(itemStack);
         Double newServings = servings - amount;
+        if (newServings <= 0.0) {
+            return createEmptyCopy(itemStack);
+        }
         if (itemStack.getItem() == Items.POTION) {
             return TWEUtils.putDoubleTag(itemStack, "Servings", newServings);
         } else {
@@ -511,10 +526,6 @@ public class BottleUtils {
             CriteriaTriggers.CONSUME_ITEM.trigger((ServerPlayer)player, itemStack);
         }
 
-        if (servings > 1.0) {
-            player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + (servings - 1)), (true));
-        }
-
         if (!level.isClientSide) {
             if (itemStack.getItem() == Items.POTION) {
                 List<MobEffectInstance> effects = PotionUtils.getMobEffects(itemStack);
@@ -529,29 +540,40 @@ public class BottleUtils {
                 applyBottleEffects(itemStack, entity);
             }
         }
+
         if (player != null) {
             player.awardStat(Stats.ITEM_USED.get(itemStack.getItem()));
             if (!player.getAbilities().instabuild) {
-                if (servings <= 1) {
-                    itemStack.shrink(1);
-                } else {
-                    itemStack = drainAmount(itemStack, 1.0);
-                }
-            }
-        }
-
-        if ((player == null || !player.getAbilities().instabuild) && servings <= 1) {
-            if (itemStack.isEmpty()) {
-                return createEmptyCopy(itemStack);
-            }
-
-            if (player != null) {
-                player.getInventory().add(createEmptyCopy(itemStack));
+                itemStack = drainAmount(itemStack, 1.0);
+                player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
+                return itemStack;
             }
         }
 
         level.gameEvent(entity, GameEvent.DRINKING_FINISH, entity.eyeBlockPosition());
         return itemStack;
+    }
+
+    public static ItemStack use(Level level, Player player, InteractionHand hand) {
+        ItemStack itemStack = player.getItemInHand(hand);
+        HitResult hitresult = TWEUtils.getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
+        if (hitresult.getType() == HitResult.Type.BLOCK) {
+            BlockPos blockpos = ((BlockHitResult)hitresult).getBlockPos();
+            BlockState blockState = level.getBlockState(blockpos);
+            if ((level.mayInteract(player, blockpos) && blockState.is(Blocks.WATER_CAULDRON) && player.isCrouching()) || (level.mayInteract(player, blockpos) && level.getFluidState(blockpos).is(FluidTags.WATER))) {
+                if (BottleUtils.getAmount(itemStack) < BottleUtils.getBottleSize(itemStack)) {
+                    if (blockState.is(Blocks.WATER_CAULDRON)) {
+                        LayeredCauldronBlock.lowerFillLevel(blockState, level, blockpos);
+                    }
+                    level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
+                    level.gameEvent(player, GameEvent.FLUID_PICKUP, blockpos);
+                    itemStack = BottleUtils.addPotion(itemStack, Potions.WATER);
+                    player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
+                    return itemStack;
+                }
+            }
+        }
+        return null;
     }
 
     public static Integer getUseDuration(ItemStack itemStack) {

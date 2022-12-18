@@ -14,7 +14,7 @@ import net.minecraft.world.item.ItemUtils;
 import net.minecraft.world.item.UseAnim;
 import net.minecraft.world.level.Level;
 
-public class AbstractBandageItem extends Item implements ItemRightClickTrigger {
+public abstract class AbstractBandageItem extends Item implements ItemRightClickTrigger {
     public AbstractBandageItem(Item.Properties properties) {
         super(properties);
     }

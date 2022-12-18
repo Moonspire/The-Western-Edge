@@ -20,6 +20,7 @@ import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.gameevent.GameEvent;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.HitResult;
@@ -45,19 +46,9 @@ public class DrinkBottleItem extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand hand) {
-        ItemStack itemStack = player.getItemInHand(hand);
-        HitResult hitresult = TWEUtils.getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
-        if (hitresult.getType() == HitResult.Type.BLOCK) {
-            BlockPos blockpos = ((BlockHitResult)hitresult).getBlockPos();
-            if (level.mayInteract(player, blockpos) && level.getFluidState(blockpos).is(FluidTags.WATER)) {
-                if (BottleUtils.getAmount(itemStack) < BottleUtils.getBottleSize(itemStack)) {
-                    level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
-                    level.gameEvent(player, GameEvent.FLUID_PICKUP, blockpos);
-                    itemStack = BottleUtils.addPotion(itemStack, Potions.WATER);
-                    player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
-                    return InteractionResultHolder.pass(itemStack);
-                }
-            }
+        ItemStack itemStack = BottleUtils.use(level, player, hand);
+        if (itemStack != null) {
+            return InteractionResultHolder.pass(itemStack);
         }
         return ItemUtils.startUsingInstantly(level, player, hand);
     }

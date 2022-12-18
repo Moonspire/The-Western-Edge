@@ -11,7 +11,7 @@ import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.BlockHitResult;
 
-public class AbstractWaterCollector extends Block {
+public abstract class AbstractWaterCollector extends Block {
     public AbstractWaterCollector(BlockBehaviour.Properties blockproperties) {
         super(blockproperties);
     }

@@ -8,6 +8,7 @@ import net.minecraft.client.resources.language.I18n;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.item.alchemy.Potions;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;
@@ -22,10 +23,9 @@ import net.minecraft.world.entity.player.Player;
 public class ItemUtilsMixins {
 	@Inject(at = @At("HEAD"), method = "createFilledResult(Lnet/minecraft/world/item/ItemStack;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/item/ItemStack;Z)Lnet/minecraft/world/item/ItemStack;", cancellable = true)
 	private static void createFilledResult(ItemStack originStack, Player player, ItemStack newItem, boolean boolFlag, CallbackInfoReturnable<ItemStack> callback) {
-		if (newItem.getItem() == Items.POTION && BottleUtils.getBottle(originStack) != BottleVariants.POTION_BOTTLE) {
+		if (newItem.getItem() == Items.POTION  && BottleUtils.getBottle(originStack) != BottleVariants.POTION_BOTTLE) {
 			newItem = BottleUtils.addPotion(originStack, PotionUtils.getPotion(newItem));
-			player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(newItem)), (true));
-      		boolean flag = player.getAbilities().instabuild;
+			boolean flag = player.getAbilities().instabuild;
       		if (boolFlag && flag) {
          		if (!player.getInventory().contains(newItem)) {
             		player.getInventory().add(newItem);
@@ -33,7 +33,8 @@ public class ItemUtilsMixins {
 
         		callback.setReturnValue(originStack);
       		} else {
-        		if (!flag) {
+				player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(newItem)), (true));
+				if (!flag) {
             		originStack.shrink(1);
          		}
 
@@ -47,6 +48,15 @@ public class ItemUtilsMixins {
             		callback.setReturnValue(originStack);
          		}
       		}
-   		}
+   		} else if (newItem.getItem() == Items.GLASS_BOTTLE  && BottleUtils.getBottle(originStack) != BottleVariants.POTION_BOTTLE && PotionUtils.getPotion(originStack) == Potions.WATER) {
+			if (!player.getAbilities().instabuild) {
+				newItem = BottleUtils.drainAmount(originStack, 1.0);
+				player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(newItem)), (true));
+				callback.setReturnValue(newItem);
+			} else if (!player.getInventory().contains(newItem)) {
+				newItem = BottleUtils.createEmptyCopy(originStack);
+				player.getInventory().add(newItem);
+			}
+		}
 	}
 }

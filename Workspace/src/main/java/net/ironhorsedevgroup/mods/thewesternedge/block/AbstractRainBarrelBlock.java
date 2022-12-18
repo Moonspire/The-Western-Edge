@@ -6,7 +6,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.common.BiomeDictionary;
 
-public class AbstractRainBarrelBlock extends AbstractWaterCollector{
+public abstract class AbstractRainBarrelBlock extends AbstractWaterCollector{
     public AbstractRainBarrelBlock(BlockBehaviour.Properties blockproperties) {
         super(blockproperties);
     }

@@ -4,7 +4,7 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SimpleWaterloggedBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
-public class AbstractWellShaftBlock extends Block implements SimpleWaterloggedBlock {
+public abstract class AbstractWellShaftBlock extends Block implements SimpleWaterloggedBlock {
     public AbstractWellShaftBlock(BlockBehaviour.Properties blockproperties) {
         super(blockproperties);
     }

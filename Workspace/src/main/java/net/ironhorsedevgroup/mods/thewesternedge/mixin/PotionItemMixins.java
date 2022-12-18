@@ -33,19 +33,9 @@ public class PotionItemMixins {
 
 	@Inject(at = @At("HEAD"), method = "use(Lnet/minecraft/world/level/Level;Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;)Lnet/minecraft/world/InteractionResultHolder;", cancellable = true)
 	public void use(Level level, Player player, InteractionHand hand, CallbackInfoReturnable<InteractionResultHolder<ItemStack>> callback) {
-		ItemStack itemStack = player.getItemInHand(hand);
-		HitResult hitresult = TWEUtils.getPlayerPOVHitResult(level, player, ClipContext.Fluid.SOURCE_ONLY);
-		if (hitresult.getType() == HitResult.Type.BLOCK) {
-			BlockPos blockpos = ((BlockHitResult)hitresult).getBlockPos();
-			if (level.mayInteract(player, blockpos) && level.getFluidState(blockpos).is(FluidTags.WATER)) {
-				if (BottleUtils.getAmount(itemStack) < BottleUtils.getBottleSize(itemStack)) {
-					level.playSound(player, player.getX(), player.getY(), player.getZ(), SoundEvents.BOTTLE_FILL, SoundSource.NEUTRAL, 1.0F, 1.0F);
-					level.gameEvent(player, GameEvent.FLUID_PICKUP, blockpos);
-					itemStack = BottleUtils.addPotion(itemStack, Potions.WATER);
-					player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
-					callback.setReturnValue(InteractionResultHolder.pass(itemStack));
-				}
-			}
+		ItemStack itemStack = BottleUtils.use(level, player, hand);
+		if (itemStack != null) {
+			callback.setReturnValue(InteractionResultHolder.pass(itemStack));
 		}
 	}
 
