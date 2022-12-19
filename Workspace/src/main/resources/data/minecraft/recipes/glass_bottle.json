@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " B",
+    "##"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:leather"
+    },
+    "B": {
+      "tag": "minecraft:wooden_buttons"
+    }
+  },
+  "result": {
+    "item": "minecraft:glass_bottle",
+    "nbt": {
+      "CustomModelData": 10
+    }
+  }
+}

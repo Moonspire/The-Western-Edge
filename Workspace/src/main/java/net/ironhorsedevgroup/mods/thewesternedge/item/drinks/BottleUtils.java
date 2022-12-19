@@ -43,7 +43,6 @@ import java.util.List;
 import java.util.Map;
 
 public class BottleUtils {
-    private static List<BottleVariants> bottleProperties = Arrays.stream(BottleVariants.values()).toList();
     
     // Modifying Ingredients -------------------------------------------------------------------------------------------
     public static ItemStack drainAmount(ItemStack itemStack, Double amount) {
@@ -475,16 +474,23 @@ public class BottleUtils {
     }
 
     public static BottleVariants getBottle(ItemStack itemStack) {
-        return bottleProperties.get(TWEUtils.getIntTag(itemStack, "CustomModelData"));
+        Integer id = TWEUtils.getIntTag(itemStack, "CustomModelData");
+        for (BottleVariants bottle : BottleVariants.values()) {
+            if (bottle.getID() == id) {
+                return bottle;
+            }
+        }
+        TWEUtils.putIntTag(itemStack,"CustomModelData", 0);
+        return BottleVariants.POTION_BOTTLE;
     }
 
     public static ItemStack setBottle(ItemStack itemStack, BottleVariants bottle) {
-        TWEUtils.putIntTag(itemStack,"CustomModelData", bottleProperties.indexOf(bottle));
+        TWEUtils.putIntTag(itemStack,"CustomModelData", bottle.getID());
         return itemStack;
     }
 
-    public static Integer getAllBottles() {
-        return bottleProperties.size();
+    public static List<BottleVariants> getAllBottles() {
+        return Arrays.stream(BottleVariants.values()).toList();
     }
 
     public static ItemStack createEmptyCopy(ItemStack itemStack) {

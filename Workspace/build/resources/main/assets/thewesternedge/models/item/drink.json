@@ -12,8 +12,8 @@
   		{ "predicate": { "custom_model_data": 5}, "model": "thewesternedge:item/bottles/chonk_bottle_full_label" },
   		{ "predicate": { "custom_model_data": 6}, "model": "thewesternedge:item/bottles/blackwater_bottle_full" },
   		{ "predicate": { "custom_model_data": 7}, "model": "thewesternedge:item/bottles/blackwater_bottle_full_label" },
-  		{ "predicate": { "custom_model_data": 8}, "model": "thewesternedge:item/bottles/tall_bottle/tall_bottle_full" },
-  		{ "predicate": { "custom_model_data": 9}, "model": "thewesternedge:item/bottles/tall_bottle/tall_bottle_full_label" },
+  		{ "predicate": { "custom_model_data": 8}, "model": "thewesternedge:item/bottles/tall_bottle_full" },
+  		{ "predicate": { "custom_model_data": 9}, "model": "thewesternedge:item/bottles/tall_bottle_full_label" },
 		{ "predicate": { "custom_model_data": 10}, "model": "thewesternedge:item/bottles/waterskin/waterskin" }
   	]
 }
