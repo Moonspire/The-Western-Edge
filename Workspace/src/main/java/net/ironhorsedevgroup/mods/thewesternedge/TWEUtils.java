@@ -1,6 +1,8 @@
 package net.ironhorsedevgroup.mods.thewesternedge;
 
+import mcp.mobius.waila.utils.Color;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceKey;
@@ -215,6 +217,10 @@ public class TWEUtils {
         return level.clip(new ClipContext(vec3, vec31, ClipContext.Block.OUTLINE, context, player));
     }
 
+    public static Integer getIntFromRGB(int red, int green, int blue) {
+        return Color.fromRGB((byte)red, (byte)green, (byte)blue).toInt();
+    }
+
     public static Integer getIntTag(ItemStack itemStack, String name) {
         try {
             return (int)itemStack.getTag().getDouble(name);
@@ -224,7 +230,11 @@ public class TWEUtils {
     }
 
     public static ItemStack putIntTag(ItemStack itemStack, String name, Integer value) {
-        putDoubleTag(itemStack, name, value.doubleValue());
+        if (value != 0) {
+            itemStack.getOrCreateTag().putDouble(name, value);
+        } else {
+            removeTag(itemStack, name);
+        }
         return itemStack;
     }
 

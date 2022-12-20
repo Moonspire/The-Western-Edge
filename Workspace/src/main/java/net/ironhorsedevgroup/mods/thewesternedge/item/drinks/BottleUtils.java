@@ -1,5 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item.drinks;
 
+import mcp.mobius.waila.utils.Color;
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
@@ -18,7 +19,6 @@ import net.minecraft.sounds.SoundSource;
 import net.minecraft.stats.Stats;
 import net.minecraft.tags.FluidTags;
 import net.minecraft.world.InteractionHand;
-import net.minecraft.world.InteractionResultHolder;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
@@ -122,9 +122,10 @@ public class BottleUtils {
             if (amount + existingAmount > bottleSize) {
                 amount = bottleSize - existingAmount;
             }
+            addColor(itemStack, amount, drink);
+            addStrength(itemStack, amount, strength);
             Double drinkAmount = getDrinkAmount(itemStack, drink);
             TWEUtils.putDoubleTag(itemStack, "drink." + drink.getSerializedName(), amount + drinkAmount);
-            addStrength(itemStack, amount, strength);
         }
         return itemStack;
     }
@@ -404,6 +405,32 @@ public class BottleUtils {
 
     public static ItemStack setName(ItemStack itemStack, String name) {
         return TWEUtils.putStringTag(itemStack, "BottleName", name);
+    }
+
+    public static Integer getColor(ItemStack itemStack, Integer tintIndex) {
+        if (tintIndex == 0) {
+            return getColor(itemStack);
+        } else {
+            return TWEUtils.getIntFromRGB(255, 255, 255);
+        }
+    }
+
+    public static Integer getColor(ItemStack itemStack) {
+        Integer color = TWEUtils.getIntTag(itemStack, "DrinkColor");
+        return color;
+    }
+
+    public static ItemStack addColor(ItemStack itemStack, Double amount, BottleDrinks drink) {
+        Integer color = drink.getColor();
+        Integer existingColor = getColor(itemStack);
+        if (existingColor == 0 || existingColor == PotionUtils.getColor(Potions.WATER)) {
+            TWEUtils.putIntTag(itemStack, "DrinkColor", color);
+        } else if (drink.getColorInfluence()) {
+            Double existingAmount = getAmount(itemStack);
+            Integer newColor = (int)(((existingColor * existingAmount) + (color * amount)) / (existingAmount + amount)); // This will not work, must average Red, Green, and Blue channels then merge to int.
+            TWEUtils.putIntTag(itemStack, "DrinkColor", newColor);
+        }
+        return itemStack;
     }
 
     public static Double getStrength(ItemStack itemStack) {
