@@ -13,6 +13,9 @@ public enum BottleVariants implements StringRepresentable {
     LABELED_BLACKWATER_BOTTLE("blackwater", 4.0, true, true, 7),
     TALL_BOTTLE("tall", 2.0, true, false, 8),
     LABELED_TALL_BOTTLE("tall", 2.0, true, true, 9),
+    SODA_BOTTLE("soda", 1.5, true, false, 11),
+    LABELED_SODA_BOTTLE("soda", 1.5, true, true, 12),
+    //GLASS_CUP("glass_cup", 1.0, true, false, 13),
     WATERSKIN("waterskin", 3.0, false, true, 10);
     private final String name;
     private final Double servings;

@@ -2,7 +2,7 @@ package net.ironhorsedevgroup.mods.thewesternedge;
 
 import mcp.mobius.waila.utils.Color;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.NonNullList;
+import net.minecraft.core.Position;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.resources.ResourceKey;
@@ -10,11 +10,13 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.Mth;
 import net.minecraft.world.InteractionHand;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.item.alchemy.Potions;
 import net.minecraft.world.level.ClipContext;
+import net.minecraft.world.level.Explosion;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.LevelAccessor;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -29,13 +31,24 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 import java.util.concurrent.atomic.AtomicReference;
 
 public class TWEUtils {
+
+    public static Integer secondsToTicks(Double seconds) {
+        return (int)(seconds * 20);
+    }
+
+    public static void explode(Level level, Double force, Position position, Entity entity) {
+        explode(level, force, position, entity, Explosion.BlockInteraction.BREAK);
+    }
+
+    public static void explode(Level level, Double force, Position position, Entity entity, Explosion.BlockInteraction interaction) {
+        level.explode(entity, position.x(), position.y(), position.z(), force.floatValue(), interaction);
+    }
 
     public static int getFluidTankCapacity(LevelAccessor level, BlockPos pos, int tank) {
         AtomicInteger _retval = new AtomicInteger(0);
@@ -229,6 +242,14 @@ public class TWEUtils {
         }
     }
 
+    public static Integer getIntTag(Entity entity, String name) {
+        try {
+            return (int)entity.getPersistentData().getDouble(name);
+        } catch (Exception e) {
+            return 0;
+        }
+    }
+
     public static ItemStack putIntTag(ItemStack itemStack, String name, Integer value) {
         if (value != 0) {
             itemStack.getOrCreateTag().putDouble(name, value);
@@ -236,6 +257,15 @@ public class TWEUtils {
             removeTag(itemStack, name);
         }
         return itemStack;
+    }
+
+    public static Entity putIntTag(Entity entity, String name, Integer value) {
+        if (value != 0) {
+            entity.getPersistentData().putDouble(name, value);
+        } else {
+            removeTag(entity, name);
+        }
+        return entity;
     }
 
     public static Double getDoubleTag(ItemStack itemstack, String name) {
@@ -307,5 +337,10 @@ public class TWEUtils {
     public static ItemStack removeTag(ItemStack itemStack, String name) {
         itemStack.removeTagKey(name);
         return itemStack;
+    }
+
+    public static Entity removeTag(Entity entity, String name) {
+        entity.removeTag(name);
+        return entity;
     }
 }

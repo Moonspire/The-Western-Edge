@@ -4,8 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Replaced glass bottle recipe with waterskin recipe, also finished enumizing bottles in BottleVariants">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ColorHandlers.java" afterDir="false" />
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added colors finally!">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/entity/projectiles/DynamiteProjectile.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEEntities.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/DynamiteItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/soda_bottle.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/soda_bottle_broken.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/soda_bottle_full.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/soda_bottle_full_label.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/soda_bottle_label.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/bottles/sodabottle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/bottles/sodabottlebroken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/bottles/sodabottlefluid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/bottles/sodabottlelabel.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/dynamite/dynamite.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/dynamite/dynamite_lit1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/dynamite/dynamite_lit2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/dynamite/dynamite_lit3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/dynamite/dynamite_lit4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/blackwater.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Resources/bottles.xcf" beforeDir="false" afterPath="$PROJECT_DIR$/../Resources/bottles.xcf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
@@ -17,13 +36,29 @@
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/events/ClientInitEvents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/events/CommonInitEvents.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/minecraft/models/item/glass_bottle.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/minecraft/models/item/glass_bottle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/minecraft/models/item/potion.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/minecraft/models/item/potion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/models/item/broken_bottle.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/models/item/broken_bottle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/models/item/drink.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/models/item/drink.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ClientInitEvents.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleAdditives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleAdditives.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ColorHandlers.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ClientEvents.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/CommonInitEvents.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleDrinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleDrinks.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleVariants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleVariants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/minecraft/models/item/glass_bottle.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/models/item/glass_bottle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/minecraft/models/item/potion.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/minecraft/models/item/potion.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/broken_bottle.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/broken_bottle.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/drink.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/drink.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,20 +98,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/models/item/bottles&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "last_opened_file_path": "/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/models/item",
+    "settings.editor.selected.configurable": "preferences.keymap"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item" />
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/block/berrybush" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/blockstates" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge_wallmarks/models/block" />
@@ -187,7 +222,14 @@
       <option name="project" value="LOCAL" />
       <updated>1671432257654</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Added colors finally!">
+      <created>1671514967217</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1671514967217</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -214,6 +256,7 @@
     <MESSAGE value="Fixed servings on Drinks" />
     <MESSAGE value="Shift Right Clicking a filled bottle with some empty space in it on a cauldron now drains 1 serving from the cauldron into the bottle" />
     <MESSAGE value="Replaced glass bottle recipe with waterskin recipe, also finished enumizing bottles in BottleVariants" />
-    <option name="LAST_COMMIT_MESSAGE" value="Replaced glass bottle recipe with waterskin recipe, also finished enumizing bottles in BottleVariants" />
+    <MESSAGE value="Added colors finally!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added colors finally!" />
   </component>
 </project>

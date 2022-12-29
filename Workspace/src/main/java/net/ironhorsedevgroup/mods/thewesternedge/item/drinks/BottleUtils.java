@@ -1,6 +1,5 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item.drinks;
 
-import mcp.mobius.waila.utils.Color;
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;

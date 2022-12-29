@@ -21,6 +21,7 @@ public class TWEItems {
 	public static final RegistryObject<Item> PEMMICAN = REGISTRY.register("pemmican", () -> new PemmicanItem());
 	public static final RegistryObject<Item> BREWERS_BARREL = block(TWEBlocks.BREWERS_BARREL, TWETabs.TAB_TWE_SURVIVAL);
 	public static final RegistryObject<Item> PAINT_BRUSH = REGISTRY.register("paint_brush", () -> new PaintBrushItem());
+	public static final RegistryObject<Item> DYNAMITE = REGISTRY.register("dynamite", () -> new DynamiteItem());
 
 	//Berries
 	public static final RegistryObject<Item> BERRIES = berries("berries");

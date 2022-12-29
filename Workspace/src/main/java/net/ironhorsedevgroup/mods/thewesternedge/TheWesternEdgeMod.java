@@ -1,6 +1,6 @@
 package net.ironhorsedevgroup.mods.thewesternedge;
 
-import net.ironhorsedevgroup.mods.thewesternedge.events.ColorHandlers;
+import net.ironhorsedevgroup.mods.thewesternedge.events.ClientEvents;
 import net.ironhorsedevgroup.mods.thewesternedge.events.GeneratedItemHooks;
 import net.ironhorsedevgroup.mods.thewesternedge.init.*;
 import net.minecraftforge.common.MinecraftForge;
@@ -42,6 +42,8 @@ public class TheWesternEdgeMod {
 
 		TWEItems.REGISTRY.register(bus);
 
+		TWEEntities.REGISTRY.register(bus);
+
 		TWEBlockEntities.REGISTRY.register(bus);
 
 		TWEMobEffects.REGISTRY.register(bus);
@@ -49,7 +51,9 @@ public class TheWesternEdgeMod {
 		TWEFeatures.REGISTRY.register(bus);
 
 		forgeEventBus.addListener(EventPriority.NORMAL, GeneratedItemHooks::OnEntityInteract);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(ColorHandlers::registerItemColors);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::registerItemColors);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::layerRegister);
+		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::rendererRegister);
 	}
 
 	public static <T> void addNetworkMessage(Class<T> messageType, BiConsumer<T, FriendlyByteBuf> encoder, Function<FriendlyByteBuf, T> decoder,

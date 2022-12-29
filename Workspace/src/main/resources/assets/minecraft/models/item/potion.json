@@ -14,6 +14,8 @@
   		{ "predicate": { "custom_model_data": 7}, "model": "thewesternedge:item/bottles/blackwater_bottle_full_label" },
   		{ "predicate": { "custom_model_data": 8}, "model": "thewesternedge:item/bottles/tall_bottle_full" },
   		{ "predicate": { "custom_model_data": 9}, "model": "thewesternedge:item/bottles/tall_bottle_full_label" },
-		{ "predicate": { "custom_model_data": 10}, "model": "thewesternedge:item/bottles/waterskin" }
-  	]
+		{ "predicate": { "custom_model_data": 10}, "model": "thewesternedge:item/bottles/waterskin" },
+		{ "predicate": { "custom_model_data": 11}, "model": "thewesternedge:item/bottles/soda_bottle_full" },
+		{ "predicate": { "custom_model_data": 12}, "model": "thewesternedge:item/bottles/soda_bottle_full_label" }
+	]
 }

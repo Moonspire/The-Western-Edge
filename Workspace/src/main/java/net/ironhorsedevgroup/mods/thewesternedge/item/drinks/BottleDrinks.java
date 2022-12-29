@@ -1,17 +1,16 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item.drinks;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
-import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.util.StringRepresentable;
-import net.minecraftforge.client.event.RenderTooltipEvent;
-import org.jline.utils.Colors;
 
 public enum BottleDrinks implements StringRepresentable {
     EMPTY("empty", 0.0, BottleVariants.POTION_BOTTLE, TWEUtils.getIntFromRGB(255, 255, 255), false),
-    BLACKWATER("blackwater", 0.0, BottleVariants.BLACKWATER_BOTTLE, TWEUtils.getIntFromRGB(50, 50, 50), true),
-    MEAD("mead", 1.0, BottleVariants.DOOR_BOTTLE, TWEUtils.getIntFromRGB(255, 179, 15), true),
-    BEER("beer", 0.6, BottleVariants.TALL_BOTTLE, TWEUtils.getIntFromRGB(255, 230, 120), true),
-    WINE("wine", 0.4, BottleVariants.TALL_BOTTLE, TWEUtils.getIntFromRGB(148, 0, 76), true);
+    ROOTBEER("rootbeer", 0.0, BottleVariants.LABELED_SODA_BOTTLE, TWEUtils.getIntFromRGB(135, 67, 19), true),
+    LEMONADE("lemonade", 0.1, BottleVariants.LABELED_CHONK_BOTTLE, TWEUtils.getIntFromRGB(253, 255, 115), true),
+    BLACKWATER("blackwater", 0.0, BottleVariants.LABELED_BLACKWATER_BOTTLE, TWEUtils.getIntFromRGB(50, 50, 50), true),
+    MEAD("mead", 1.0, BottleVariants.LABELED_DOOR_BOTTLE, TWEUtils.getIntFromRGB(255, 179, 15), true),
+    BEER("beer", 0.6, BottleVariants.LABELED_SODA_BOTTLE, TWEUtils.getIntFromRGB(255, 230, 120), true),
+    WINE("wine", 0.4, BottleVariants.LABELED_TALL_BOTTLE, TWEUtils.getIntFromRGB(148, 0, 76), true);
 
     private final String name;
     private final Double strength;
