@@ -10,3 +10,4 @@ I've got some mixins in here to allow CustomModelData NBT tags to transfer acros
 - Pemmican, a food with low hunger restoration but high saturation
 - More berry bushes (not finished yet)
 - Removes MC enchant shien as I found it annoying (Plan to make configurable later)
+- Colored beverages with a wide range of effects (Thanks to RayRayRay of Create Industrial Chemistry for showing me how to recolor item layers)
