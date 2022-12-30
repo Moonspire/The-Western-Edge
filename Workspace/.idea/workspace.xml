@@ -4,29 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added Dynamite, will have animated texture when lit soon">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite/dynamite_lit1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite/dynamite_lit2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite/dynamite_lit3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite/dynamite_lit4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added sound and animations to dynamite">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/tnt.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes/dynamite_from_tnt_recipe.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes/dynamite_recipe.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/entity/projectiles/DynamiteProjectile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/entity/projectiles/DynamiteProjectile.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ClientEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ClientEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEEntities.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/DynamiteItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/DynamiteItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,17 +59,17 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/models/item/dynamite",
+    "last_opened_file_path": "/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/data/thewesternedge/recipes",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/block/berrybush" />
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/blockstates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
@@ -204,7 +191,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672305118595</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Added sound and animations to dynamite">
+      <created>1672383235572</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1672383235572</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -233,6 +227,7 @@
     <MESSAGE value="Replaced glass bottle recipe with waterskin recipe, also finished enumizing bottles in BottleVariants" />
     <MESSAGE value="Added colors finally!" />
     <MESSAGE value="Added Dynamite, will have animated texture when lit soon" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Dynamite, will have animated texture when lit soon" />
+    <MESSAGE value="Added sound and animations to dynamite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added sound and animations to dynamite" />
   </component>
 </project>

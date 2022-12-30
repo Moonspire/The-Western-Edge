@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "DDD",
+    "DDD",
+    "DDD"
+  ],
+  "key": {
+    "D": [
+      {
+        "item": "thewesternedge:dynamite"
+      }
+    ]
+  },
+  "result": {
+    "item": "minecraft:tnt"
+  }
+}
