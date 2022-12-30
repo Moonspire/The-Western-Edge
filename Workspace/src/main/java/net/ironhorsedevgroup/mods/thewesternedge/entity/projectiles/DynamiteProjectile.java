@@ -6,11 +6,14 @@ import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleOptions;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.monster.Blaze;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.entity.projectile.ThrowableItemProjectile;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -22,6 +25,7 @@ public class DynamiteProjectile extends ThrowableItemProjectile {
     private int fuse;
     public DynamiteProjectile(EntityType<? extends ThrowableItemProjectile> entity, Level level) {
         super(entity, level);
+
     }
 
     public DynamiteProjectile(Level p_37399_, LivingEntity p_37400_) {
@@ -75,11 +79,21 @@ public class DynamiteProjectile extends ThrowableItemProjectile {
 
     @Override
     public void tick() {
+        int fuse = this.fuse;
+        if (fuse % 10 == 0 && fuse > 10) {
+            this.getLevel().playSound((Player)null, this.blockPosition(), SoundEvents.FIRE_EXTINGUISH, SoundSource.NEUTRAL, 0.2F, 0.7F);
+        }
         if (!this.onGround) {
             super.tick();
         }
         if (!level.isClientSide){
-            int fuse = this.fuse;
+            if (fuse == TWEUtils.secondsToTicks(10.0)) {
+                this.setItem(TWEUtils.putIntTag(this.getItem(), "CustomModelData", 2));
+            } else if (fuse == TWEUtils.secondsToTicks(5.5)) {
+                this.setItem(TWEUtils.putIntTag(this.getItem(), "CustomModelData", 3));
+            } else if(fuse == TWEUtils.secondsToTicks(1.0)) {
+                this.setItem(TWEUtils.putIntTag(this.getItem(), "CustomModelData", 4));
+            }
             if (fuse > 0) {
                 this.fuse = fuse - 1;
             } else {

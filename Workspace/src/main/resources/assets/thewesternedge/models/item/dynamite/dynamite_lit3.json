@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "thewesternedge:items/dynamite/dynamite_lit3"
+  }
+}

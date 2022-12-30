@@ -11,7 +11,7 @@ import net.minecraftforge.registries.RegistryObject;
 public class TWEEntities {
     public static final DeferredRegister<EntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.ENTITIES, TheWesternEdgeMod.MODID);
     public static final RegistryObject<EntityType<DynamiteProjectile>> DYNAMITE = REGISTRY.register("dynamite", () ->
-            registerEntity(EntityType.Builder.<DynamiteProjectile>of(DynamiteProjectile::new, MobCategory.MISC).sized(0.25F, 0.25F), "dynamite"));
+            registerEntity(EntityType.Builder.<DynamiteProjectile>of(DynamiteProjectile::new, MobCategory.MISC).sized(0.5F, 0.5F), "dynamite"));
 
     private static final EntityType registerEntity(EntityType.Builder builder, String entityName) {
         return (EntityType) builder.build(entityName);

@@ -52,7 +52,6 @@ public class TheWesternEdgeMod {
 
 		forgeEventBus.addListener(EventPriority.NORMAL, GeneratedItemHooks::OnEntityInteract);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::registerItemColors);
-		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::layerRegister);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::rendererRegister);
 	}
 

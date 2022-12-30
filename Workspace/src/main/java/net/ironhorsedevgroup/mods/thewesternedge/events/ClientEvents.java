@@ -26,13 +26,8 @@ public class ClientEvents {
     }
 
     @SubscribeEvent
-    public static void layerRegister(EntityRenderersEvent.RegisterLayerDefinitions event) {
-
-    }
-
-    @SubscribeEvent
     public static void rendererRegister(EntityRenderersEvent.RegisterRenderers event) {
-        event.registerEntityRenderer(TWEEntities.DYNAMITE.get(), ThrownItemRenderer::new);
+        event.registerEntityRenderer(TWEEntities.DYNAMITE.get(), (renderContext) -> new ThrownItemRenderer<>(renderContext, 1.5F, true));
     }
 
 }
