@@ -15,6 +15,7 @@ public class TWETabs {
 	public static CreativeModeTab TAB_TWE_DRINKS;
 	public static CreativeModeTab TAB_TWE_BOTTLES;
 	public static CreativeModeTab TAB_TWE_MARKINGS;
+	public static CreativeModeTab TAB_TWE_GAMES;
 
 	public static void load() {
 		TAB_TWE_SURVIVAL = new CreativeModeTab("tabtwe_survival") {
@@ -54,6 +55,17 @@ public class TWETabs {
 			@Override
 			public ItemStack makeIcon() {
 				return new ItemStack(TWEItems.PAINT_BRUSH.get());
+			}
+
+			@OnlyIn(Dist.CLIENT)
+			public boolean hasSearchBar() {
+				return false;
+			}
+		};
+		TAB_TWE_GAMES = new CreativeModeTab("tabtwe_games") {
+			@Override
+			public ItemStack makeIcon() {
+				return new ItemStack(TWEItems.CARD.get());
 			}
 
 			@OnlyIn(Dist.CLIENT)

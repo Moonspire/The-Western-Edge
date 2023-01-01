@@ -4,16 +4,101 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added sound and animations to dynamite">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/minecraft/recipes/tnt.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes/dynamite_from_tnt_recipe.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes/dynamite_recipe.json" afterDir="false" />
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added recipes for Dynamite">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/CardItem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/custom/card.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/card.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_dragon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_guardian.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_squid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/axe_wither.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_dragon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_guardian.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_squid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/bow_wither.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_dragon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_guardian.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_squid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/crossbow_wither.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_10.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_2.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_3.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_4.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_5.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_6.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_7.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_8.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_9.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_dragon.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_guardian.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_squid.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards/sword_wither.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card_back.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card_border.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/dragon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/guardian.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_10.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_6.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_7.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_8.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_9.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/squid.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_axe.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_bow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_crossbow.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_sword.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/tutorial.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/wither.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,24 +144,24 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/data/thewesternedge/recipes",
+    "last_opened_file_path": "/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/models/item/cards",
     "settings.editor.selected.configurable": "preferences.keymap"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards" />
       <recent name="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/block/berrybush" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/custom" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/tall_bottle" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles/waterskin" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/berries" />
-      <recent name="$PROJECT_DIR$/src/main/resources/data/thewesternedge/drinks/beverages" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="net.ironhorsedevgroup.mods.thewesternedge.init" />
@@ -198,7 +283,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672383235572</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Added recipes for Dynamite">
+      <created>1672429024446</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1672429024446</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -228,6 +320,7 @@
     <MESSAGE value="Added colors finally!" />
     <MESSAGE value="Added Dynamite, will have animated texture when lit soon" />
     <MESSAGE value="Added sound and animations to dynamite" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added sound and animations to dynamite" />
+    <MESSAGE value="Added recipes for Dynamite" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added recipes for Dynamite" />
   </component>
 </project>

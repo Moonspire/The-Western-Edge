@@ -32,6 +32,9 @@ public class TWEItems {
 	// Drinks Tab
 	public static final RegistryObject<Item> DRINK = REGISTRY.register("drink", () -> new DrinkBottleItem((new Item.Properties()).stacksTo(1).tab(TWETabs.TAB_TWE_DRINKS)));
 
+	// Games Tab
+	public static final RegistryObject<Item> CARD = REGISTRY.register("card", () -> new CardItem((new Item.Properties()).stacksTo(1).tab(TWETabs.TAB_TWE_GAMES)));
+
 	private static RegistryObject<Item> block(RegistryObject<Block> block, CreativeModeTab tab) {
 		return REGISTRY.register(block.getId().getPath(), () -> new BlockItem(block.get(), new Item.Properties().tab(tab)));
 	}

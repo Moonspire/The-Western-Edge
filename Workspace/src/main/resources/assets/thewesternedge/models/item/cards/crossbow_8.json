@@ -1,0 +1,11 @@
+{
+  "parent": "thewesternedge:custom/card",
+  "textures": {
+    "0": "thewesternedge:items/cards/card",
+    "1": "thewesternedge:items/cards/card_back",
+    "2": "thewesternedge:items/cards/card_border",
+    "3": "thewesternedge:items/cards/number_8",
+    "4": "thewesternedge:items/cards/suit_crossbow",
+    "particle": "thewesternedge:items/cards/card"
+  }
+}
