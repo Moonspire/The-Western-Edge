@@ -1,9 +1,9 @@
 
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWETabs;
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleVariants;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.damagesource.DamageSource;

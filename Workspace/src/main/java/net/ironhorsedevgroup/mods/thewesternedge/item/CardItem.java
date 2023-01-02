@@ -1,11 +1,14 @@
 package net.ironhorsedevgroup.mods.thewesternedge.item;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.item.cards.CardUtils;
+import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.NonNullList;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 public class CardItem extends Item {
     public CardItem(Item.Properties properties) {
@@ -21,5 +24,10 @@ public class CardItem extends Item {
                 itemStack.add(newStack);
             }
         }
+    }
+
+    @Override
+    public String getDescriptionId(ItemStack itemStack) {
+        return CardUtils.getCard(itemStack).getName();
     }
 }

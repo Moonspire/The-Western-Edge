@@ -1,8 +1,8 @@
 package net.ironhorsedevgroup.mods.thewesternedge.mixin;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleVariants;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.At;

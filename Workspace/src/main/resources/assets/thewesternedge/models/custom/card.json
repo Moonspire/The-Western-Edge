@@ -1,5 +1,6 @@
 {
-	"credit": "Made with Blockbench",
+	"credit": "Made by Aunuli in Blockbench",
+    "gui_light": "front",
 	"textures": {
 		"0": "thewesternedge:items/cards/card",
 		"1": "thewesternedge:items/cards/card_back",
@@ -37,21 +38,21 @@
 			"from": [0, 0, 7.4],
 			"to": [16, 16, 8.4],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#2"}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#2", "tintindex": 0}
 			}
 		},
 		{
 			"from": [7.75, 10, 7.4],
 			"to": [11.75, 13.75, 8.4],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#4"}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#4", "tintindex": 2}
 			}
 		},
 		{
 			"from": [0, 0, 7.4],
 			"to": [16, 16, 8.4],
 			"faces": {
-				"north": {"uv": [0, 0, 16, 16], "texture": "#3"}
+				"north": {"uv": [0, 0, 16, 16], "texture": "#3", "tintindex": 1}
 			}
 		}
 	],

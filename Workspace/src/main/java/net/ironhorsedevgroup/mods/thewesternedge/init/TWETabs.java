@@ -1,9 +1,8 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleDrinks;
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleUtils;
-import net.ironhorsedevgroup.mods.thewesternedge.item.drinks.BottleVariants;
-import net.minecraft.core.NonNullList;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleDrinks;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleUtils;
+import net.ironhorsedevgroup.mods.thewesternedge.item.bottles.BottleVariants;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 

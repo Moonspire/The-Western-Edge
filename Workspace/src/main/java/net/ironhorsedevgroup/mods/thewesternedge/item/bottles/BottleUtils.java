@@ -1,4 +1,4 @@
-package net.ironhorsedevgroup.mods.thewesternedge.item.drinks;
+package net.ironhorsedevgroup.mods.thewesternedge.item.bottles;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
