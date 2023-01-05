@@ -25,12 +25,14 @@ import net.minecraft.world.level.material.Fluids;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
 import net.minecraftforge.common.BiomeDictionary;
+import net.minecraftforge.common.ForgeConfigSpec;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
+import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -232,6 +234,11 @@ public class TWEUtils {
 
     public static Integer getIntFromRGB(int red, int green, int blue) {
         return Color.fromRGB((byte)red, (byte)green, (byte)blue).toInt();
+    }
+
+    public static Integer getIntFromRGB(ForgeConfigSpec.ConfigValue<List<? extends Integer>> color) {
+        List<? extends Integer> colorList = color.get();
+        return getIntFromRGB(colorList.get(0).intValue(), colorList.get(1).intValue(), colorList.get(2).intValue());
     }
 
     public static Integer getIntTag(ItemStack itemStack, String name) {

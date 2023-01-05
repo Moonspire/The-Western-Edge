@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added full set of 52 playing cards">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEColorHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/cards/CardUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/cards/Cards.java" afterDir="false" />
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Color coded playing cards by Suit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/executionHistory/executionHistory.bin" afterDir="false" />
@@ -18,49 +16,12 @@
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/thewesternedge/lang/en_us.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ClientEvents.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/ClientEvents.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWETabs.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/BrokenBottleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/CardItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/CardItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/DrinkBottleItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/DrinkBottleItem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleAdditives.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleAdditives.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleColor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleColor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleDrinks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleDrinks.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/drinks/BottleVariants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleVariants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemMixins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemUtilsMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/ItemUtilsMixins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionBrewingMixins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionItemMixins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionUtilsMixins.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/mixin/PotionUtilsMixins.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/custom/card.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/custom/card.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card_back.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card_back.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card_border.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/card_border.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/dragon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/dragon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/guardian.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/guardian.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_10.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_9.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/number_9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/squid.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/squid.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_axe.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_axe.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_bow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_bow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_crossbow.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_crossbow.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_sword.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/suit_sword.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/wither.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/items/cards/wither.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TheWesternEdgeMod.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEColorHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/cards/CardUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/cards/CardUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/cards/Cards.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/cards/Cards.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -259,7 +220,14 @@
       <option name="project" value="LOCAL" />
       <updated>1672577599917</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="Color coded playing cards by Suit">
+      <created>1672637630963</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1672637630963</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,6 +259,7 @@
     <MESSAGE value="Added sound and animations to dynamite" />
     <MESSAGE value="Added recipes for Dynamite" />
     <MESSAGE value="Added full set of 52 playing cards" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added full set of 52 playing cards" />
+    <MESSAGE value="Color coded playing cards by Suit" />
+    <option name="LAST_COMMIT_MESSAGE" value="Color coded playing cards by Suit" />
   </component>
 </project>

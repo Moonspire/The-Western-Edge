@@ -5,6 +5,8 @@ import net.ironhorsedevgroup.mods.thewesternedge.events.GeneratedItemHooks;
 import net.ironhorsedevgroup.mods.thewesternedge.init.*;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.EventPriority;
+import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.config.ModConfig;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
@@ -51,6 +53,9 @@ public class TheWesternEdgeMod {
 		TWEFeatures.REGISTRY.register(bus);
 
 		forgeEventBus.addListener(EventPriority.NORMAL, GeneratedItemHooks::OnEntityInteract);
+		
+		ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, TWEConfig.GENERAL_SPEC, "tweconfig.toml");
+
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::registerItemColors);
 		FMLJavaModLoadingContext.get().getModEventBus().addListener(ClientEvents::rendererRegister);
 	}
