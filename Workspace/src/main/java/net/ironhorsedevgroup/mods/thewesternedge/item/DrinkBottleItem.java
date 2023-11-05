@@ -22,7 +22,7 @@ public class DrinkBottleItem extends Item {
 
     @Override
     public ItemStack getDefaultInstance() {
-        return BottleUtils.addDrink(super.getDefaultInstance(), BottleDrinks.BLACKWATER, 1.0, 0.0);
+        return BottleUtils.addDrink(super.getDefaultInstance(), BottleDrinks.BLACKWATER, 1.0, 0.0, true);
     }
 
     @Override

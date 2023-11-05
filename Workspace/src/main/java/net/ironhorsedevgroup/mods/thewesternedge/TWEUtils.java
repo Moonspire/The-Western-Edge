@@ -2,6 +2,7 @@ package net.ironhorsedevgroup.mods.thewesternedge;
 
 import mcp.mobius.waila.utils.Color;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 import net.minecraft.core.Position;
 import net.minecraft.core.Registry;
 import net.minecraft.network.chat.TextComponent;
@@ -32,6 +33,7 @@ import net.minecraftforge.fluids.capability.IFluidHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
+import java.nio.ByteBuffer;
 import java.util.List;
 import java.util.Objects;
 import java.util.concurrent.atomic.AtomicBoolean;
@@ -241,6 +243,15 @@ public class TWEUtils {
         return getIntFromRGB(colorList.get(0).intValue(), colorList.get(1).intValue(), colorList.get(2).intValue());
     }
 
+    public static NonNullList<Integer> getRGBFromInt(Integer color) {
+        byte[] bytes = ByteBuffer.allocate(4).putInt(color).array();
+        NonNullList<Integer> retRGB = NonNullList.create();
+        retRGB.add(Byte.toUnsignedInt(bytes[1]));
+        retRGB.add(Byte.toUnsignedInt(bytes[2]));
+        retRGB.add(Byte.toUnsignedInt(bytes[3]));
+        return(retRGB);
+    }
+
     public static Integer getIntTag(ItemStack itemStack, String name) {
         try {
             return (int)itemStack.getTag().getDouble(name);
@@ -349,5 +360,11 @@ public class TWEUtils {
     public static Entity removeTag(Entity entity, String name) {
         entity.removeTag(name);
         return entity;
+    }
+
+    // from https://stackoverflow.com/questions/22186778/using-math-round-to-round-to-one-decimal-place
+    public static double round (double value, int precision) {
+        int scale = (int) Math.pow(10, precision);
+        return (double) Math.round(value * scale) / scale;
     }
 }

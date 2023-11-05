@@ -22,6 +22,7 @@ import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.Potion;
@@ -61,7 +62,7 @@ public class BottleUtils {
                 Double drinkStrength = getStrength(itemStack);
                 Double drinkAmount = getDrinkAmount(itemStack, drink);
                 Double newAmount = drinkAmount / (servings / newServings);
-                addDrink(retStack, drink, newAmount, drinkStrength);
+                addDrink(retStack, drink, newAmount, drinkStrength, false);
             }
             for (BottleAdditives additive : additives) {
                 Double additiveAmount = getAdditiveAmount(itemStack, additive);
@@ -71,8 +72,9 @@ public class BottleUtils {
             for (Potion potion : potions) {
                 Double potionAmount = getPotionAmount(itemStack, potion);
                 Double newAmount = potionAmount / (servings / newServings);
-                addPotion(retStack, potion, newAmount);
+                addPotion(retStack, potion, newAmount, false);
             }
+            makeColor(itemStack);
             return retStack;
         }
     }
@@ -115,16 +117,22 @@ public class BottleUtils {
     }
 
     public static ItemStack addDrink(ItemStack itemStack, BottleDrinks drink, Double amount, Double strength) {
+        return addDrink(itemStack, drink, amount, strength, true);
+    }
+
+    public static ItemStack addDrink(ItemStack itemStack, BottleDrinks drink, Double amount, Double strength, Boolean recolor) {
         if (drink != BottleDrinks.EMPTY) {
             Double bottleSize = getBottleSize(itemStack);
             Double existingAmount = getAmount(itemStack);
             if (amount + existingAmount > bottleSize) {
                 amount = bottleSize - existingAmount;
             }
-            addColor(itemStack, amount, drink);
             addStrength(itemStack, amount, strength);
             Double drinkAmount = getDrinkAmount(itemStack, drink);
             TWEUtils.putDoubleTag(itemStack, "drink." + drink.getSerializedName(), amount + drinkAmount);
+            if (recolor) {
+                makeColor(itemStack);
+            }
         }
         return itemStack;
     }
@@ -189,6 +197,10 @@ public class BottleUtils {
     }
 
     public static ItemStack addPotion(ItemStack itemStack, Potion potion, Double amount) {
+        return addPotion(itemStack, potion, amount, true);
+    }
+
+    public static ItemStack addPotion(ItemStack itemStack, Potion potion, Double amount, Boolean recolor) {
         if (potion != Potions.EMPTY) {
             Double bottleSize = getBottleSize(itemStack);
             System.out.println("Bottle Size: " + bottleSize);
@@ -214,6 +226,9 @@ public class BottleUtils {
                 TWEUtils.putDoubleTag(itemStack, "Servings", amount);
             } else {
                 TWEUtils.putDoubleTag(itemStack,"potion." + potion.getRegistryName(), amount + potionAmount);
+            }
+            if (recolor) {
+                makeColor(itemStack);
             }
         }
         return itemStack;
@@ -304,9 +319,10 @@ public class BottleUtils {
     }
 
     public static Double getAmount(ItemStack itemStack) {
-        return getDrinkAmount(itemStack, List.of(BottleDrinks.values()))
+        Double total = getDrinkAmount(itemStack, List.of(BottleDrinks.values()))
                 + getPotionAmount(itemStack, Registry.POTION.stream().toList())
                 + getAdditiveAmount(itemStack, List.of(BottleAdditives.values()));
+        return TWEUtils.round(total, 1);
     }
 
     public static Double getDrinkAmount(ItemStack itemStack, List<BottleDrinks> drinks) {
@@ -416,19 +432,64 @@ public class BottleUtils {
 
     public static Integer getColor(ItemStack itemStack) {
         Integer color = TWEUtils.getIntTag(itemStack, "DrinkColor");
+        if (color == 0) {
+            TWEUtils.putIntTag(itemStack, "DrinkColor", PotionUtils.getColor(Potions.WATER));
+            color = PotionUtils.getColor(Potions.WATER);
+        }
         return color;
     }
 
-    public static ItemStack addColor(ItemStack itemStack, Double amount, BottleDrinks drink) {
-        Integer color = drink.getColor();
-        Integer existingColor = getColor(itemStack);
-        if (existingColor == 0 || existingColor == PotionUtils.getColor(Potions.WATER)) {
-            TWEUtils.putIntTag(itemStack, "DrinkColor", color);
-        } else if (drink.getColorInfluence()) {
-            Double existingAmount = getAmount(itemStack);
-            Integer newColor = (int)(((existingColor * existingAmount) + (color * amount)) / (existingAmount + amount)); // This will not work, must average Red, Green, and Blue channels then merge to int.
-            TWEUtils.putIntTag(itemStack, "DrinkColor", newColor);
+    public static Integer makeColor(ItemStack itemStack, Boolean flag) {
+        NonNullList<Integer> colorPercent = NonNullList.create();
+        NonNullList<Integer> colors = NonNullList.create();
+        NonNullList<Potion> potions = getPotions(itemStack);
+        for(Potion potion : potions) {
+            Integer colorStrength = 5;
+            List<MobEffectInstance> effects = potion.getEffects();
+            for (MobEffectInstance effect : effects) {
+                colorStrength = colorStrength + 50 + (50 * effect.getAmplifier());
+            }
+            if (colorStrength > 255) {
+                colorStrength = 255;
+            }
+            colorPercent.add((int)(colorStrength * getPotionAmount(itemStack, potion)));
+            colors.add(PotionUtils.getColor(potion));
         }
+        NonNullList<BottleDrinks> drinks = getDrinks(itemStack);
+        for(BottleDrinks drink : drinks){
+            Integer color = (int)(drink.getColorInfluence() * getDrinkAmount(itemStack, drink));
+            if (color > 0) {
+                colorPercent.add(color);
+                colors.add(drink.getColor());
+            }
+        }
+        Integer finalColor = PotionUtils.getColor(Potions.WATER);
+        if (!colors.isEmpty()) {
+            Double averageR = 0.0;
+            Double averageG = 0.0;
+            Double averageB = 0.0;
+            Integer totalAmount = 0;
+            for (int i = 0; i < colors.size(); i++) {
+                Integer currentAmount = colorPercent.get(i);
+                NonNullList<Integer> currentColor = (TWEUtils.getRGBFromInt(colors.get(i)));
+                Double currentR = currentColor.get(0) / 255.0;
+                Double currentG = currentColor.get(1) / 255.0;
+                Double currentB = currentColor.get(2) / 255.0;
+                averageR = averageR + (currentR * currentAmount);
+                averageG = averageG + (currentG * currentAmount);
+                averageB = averageB + (currentB * currentAmount);
+                totalAmount = totalAmount + currentAmount;
+            }
+            averageR = (averageR * 255) / totalAmount;
+            averageG = (averageG * 255) / totalAmount;
+            averageB = (averageB * 255) / totalAmount;
+            finalColor = TWEUtils.getIntFromRGB(averageR.intValue(), averageG.intValue(), averageB.intValue());
+        }
+        return finalColor;
+    }
+
+    public static ItemStack makeColor(ItemStack itemStack) {
+        TWEUtils.putIntTag(itemStack, "DrinkColor", makeColor(itemStack, true));
         return itemStack;
     }
 
@@ -578,12 +639,12 @@ public class BottleUtils {
             if (!player.getAbilities().instabuild) {
                 itemStack = drainAmount(itemStack, 1.0);
                 player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
-                return itemStack;
+                return makeColor(itemStack);
             }
         }
 
         level.gameEvent(entity, GameEvent.DRINKING_FINISH, entity.eyeBlockPosition());
-        return itemStack;
+        return makeColor(itemStack);
     }
 
     public static ItemStack use(Level level, Player player, InteractionHand hand) {
