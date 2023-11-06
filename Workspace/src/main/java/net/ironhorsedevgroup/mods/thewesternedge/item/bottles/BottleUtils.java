@@ -2,6 +2,7 @@ package net.ironhorsedevgroup.mods.thewesternedge.item.bottles;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TWEUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.entity.player.PlayerUtils;
 import net.ironhorsedevgroup.mods.thewesternedge.init.TWEItems;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.minecraft.client.resources.language.I18n;
@@ -74,8 +75,7 @@ public class BottleUtils {
                 Double newAmount = potionAmount / (servings / newServings);
                 addPotion(retStack, potion, newAmount, false);
             }
-            makeColor(itemStack);
-            return retStack;
+            return makeColor(retStack);
         }
     }
 
@@ -639,12 +639,12 @@ public class BottleUtils {
             if (!player.getAbilities().instabuild) {
                 itemStack = drainAmount(itemStack, 1.0);
                 player.displayClientMessage(new TextComponent(I18n.get("misc." + TheWesternEdgeMod.MODID + ".serving_name") + ": " + BottleUtils.getAmount(itemStack)), (true));
-                return makeColor(itemStack);
+                return itemStack;
             }
         }
 
         level.gameEvent(entity, GameEvent.DRINKING_FINISH, entity.eyeBlockPosition());
-        return makeColor(itemStack);
+        return itemStack;
     }
 
     public static ItemStack use(Level level, Player player, InteractionHand hand) {
@@ -700,6 +700,7 @@ public class BottleUtils {
                 entity.addEffect(new MobEffectInstance(context.getEffect(), (int)(entry.getValue() * context.getDuration()), context.getAmplifier()));
             }
         }
+        PlayerUtils.changeAlcoholIngested(entity, getStrength(itemStack));
         return itemStack;
     }
 }

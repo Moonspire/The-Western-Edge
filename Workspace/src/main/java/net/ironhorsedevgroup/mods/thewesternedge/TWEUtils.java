@@ -294,6 +294,14 @@ public class TWEUtils {
         }
     }
 
+    public static Double getDoubleTag(Entity entity, String name) {
+        try {
+            return entity.getPersistentData().getDouble(name);
+        } catch (Exception e) {
+            return 0.0;
+        }
+    }
+
     public static ItemStack putDoubleTag(ItemStack itemStack, String name, Double value) {
         if (value != 0) {
             itemStack.getOrCreateTag().putDouble(name, value);
@@ -301,6 +309,15 @@ public class TWEUtils {
             removeTag(itemStack, name);
         }
         return itemStack;
+    }
+
+    public static Entity putDoubleTag(Entity entity, String name, Double value) {
+        if (value != 0.0) {
+            entity.getPersistentData().putDouble(name, value);
+        } else {
+            removeTag(entity, name);
+        }
+        return entity;
     }
 
     public static String getStringTag(ItemStack itemstack, String name) {
