@@ -4,8 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Added math to calculate the color for mixed drinks">
-      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/entity/player/PlayerUtils.java" afterDir="false" />
+    <list default="true" id="e947e194-5723-4081-baac-61aa5dc62e05" name="Changes" comment="Laid the basic framework for how players are effected by alcoholic beverages">
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/block/GlassblowersKilm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/block/entity/GlassblowersKilmEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWERecipes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/crafting/BottleTagRecipe.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/block/glassblowers_kilm.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/glassblowers_kilm.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/blocks/glassblowers_bottom.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/blocks/glassblowers_front.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/blocks/glassblowers_front_lit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/blocks/glassblowers_side.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/blocks/glassblowers_top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/textures/blocks/glassblowers_top_lit.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/data/forge/tags/items/bottle_items.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.3/checksums/sha1-checksums.bin" afterDir="false" />
@@ -21,6 +33,11 @@
       <change beforePath="$PROJECT_DIR$/build/_applyBinpatches_2/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/_applyBinpatches_2/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/_atJar_4/log.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/_atJar_4/log.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/events/GeneratedItemHooks.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/events/GeneratedItemHooks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlockEntities.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlockEntities.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlocks$ClientSideHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlocks$ClientSideHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlocks.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlocks.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/net/ironhorsedevgroup/mods/thewesternedge/procedures/AlcoholSystemProcedure.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classpath/runClient_minecraftClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/classpath/runClient_minecraftClasspath.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classpath/runServer_minecraftClasspath.txt" beforeDir="false" afterPath="$PROJECT_DIR$/build/classpath/runServer_minecraftClasspath.txt" afterDir="false" />
@@ -28,8 +45,10 @@
       <change beforePath="$PROJECT_DIR$/build/reobfJar/output.jar" beforeDir="false" afterPath="$PROJECT_DIR$/build/reobfJar/output.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/TWEUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/item/bottles/BottleUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/procedures/AlcoholSystemProcedure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/AlcoholTicks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/GeneratedItemHooks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/events/GeneratedItemHooks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlockEntities.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlockEntities.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlocks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEBlocks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/net/ironhorsedevgroup/mods/thewesternedge/init/TWEItems.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +115,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/media/aunuli/Tery/Minecraft/Mods/The-Western-Edge/Workspace/src/main/resources/assets/thewesternedge/blockstates&quot;,
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
@@ -105,11 +124,11 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards" />
-      <recent name="$PROJECT_DIR$/src/main/resources/data/thewesternedge/recipes" />
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/dynamite" />
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/blockstates" />
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item" />
-      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/bottles" />
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/block" />
+      <recent name="$PROJECT_DIR$/src/main/resources/data/forge/tags/items" />
+      <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/item/cards" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/assets/thewesternedge/models/custom" />
@@ -363,7 +382,14 @@
       <option name="project" value="LOCAL" />
       <updated>1699163781455</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="Laid the basic framework for how players are effected by alcoholic beverages">
+      <created>1699248651315</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1699248651315</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -397,6 +423,7 @@
     <MESSAGE value="Added full set of 52 playing cards" />
     <MESSAGE value="Color coded playing cards by Suit" />
     <MESSAGE value="Added math to calculate the color for mixed drinks" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added math to calculate the color for mixed drinks" />
+    <MESSAGE value="Laid the basic framework for how players are effected by alcoholic beverages" />
+    <option name="LAST_COMMIT_MESSAGE" value="Laid the basic framework for how players are effected by alcoholic beverages" />
   </component>
 </project>

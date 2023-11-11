@@ -1,0 +1,25 @@
+{
+  "variants": {
+    "facing=north": {
+      "model": "thewesternedge:block/glassblowers_kilm"
+    },
+    "facing=east": {
+      "model": "thewesternedge:block/glassblowers_kilm",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "thewesternedge:block/glassblowers_kilm",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "thewesternedge:block/glassblowers_kilm",
+      "y": 270
+    },
+    "facing=up": {
+      "model": "thewesternedge:block/glassblowers_kilm"
+    },
+    "facing=down": {
+      "model": "thewesternedge:block/glassblowers_kilm"
+    }
+  }
+}

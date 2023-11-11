@@ -2,6 +2,7 @@ package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import com.tterrag.registrate.util.entry.RegistryEntry;
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.block.*;
 import net.ironhorsedevgroup.mods.thewesternedge.block.berries.BerryBushBlock;
 import net.ironhorsedevgroup.mods.thewesternedge.block.wallmarkings.WallMarkingBlock;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
@@ -19,13 +20,6 @@ import net.minecraftforge.api.distmarker.Dist;
 
 import net.minecraft.world.level.block.Block;
 
-import net.ironhorsedevgroup.mods.thewesternedge.block.WellTopperBlock;
-import net.ironhorsedevgroup.mods.thewesternedge.block.WellShaftLadderBlock;
-import net.ironhorsedevgroup.mods.thewesternedge.block.WellShaftBlock;
-import net.ironhorsedevgroup.mods.thewesternedge.block.RainBarrelBlock;
-import net.ironhorsedevgroup.mods.thewesternedge.block.GauzeRollsBlock;
-import net.ironhorsedevgroup.mods.thewesternedge.block.BrewersBarrelBlock;
-
 public class TWEBlocks {
 	//static {
 	//	TheWesternEdgeMod.REGISTRATE.creativeModeTab(() -> TWETabs.TAB_TWE_SURVIVAL);
@@ -37,6 +31,7 @@ public class TWEBlocks {
 	public static final RegistryObject<Block> WELL_TOPPER = REGISTRY.register("well_topper", () -> new WellTopperBlock());
 	public static final RegistryObject<Block> GAUZE_ROLLS = REGISTRY.register("gauze_rolls", () -> new GauzeRollsBlock());
 	public static final RegistryObject<Block> BREWERS_BARREL = REGISTRY.register("brewers_barrel", () -> new BrewersBarrelBlock());
+	public static final RegistryObject<Block> GLASSBLOWERS_KILM = REGISTRY.register("glassblowers_kilm", () -> new GlassblowersKilm());
 
 	// Foliage
 	public static final RegistryObject<Block> BERRY_BUSH = REGISTRY.register("berry_bush", () -> new BerryBushBlock(BlockBehaviour.Properties.of(Material.PLANT).randomTicks().noCollission().sound(SoundType.SWEET_BERRY_BUSH)));

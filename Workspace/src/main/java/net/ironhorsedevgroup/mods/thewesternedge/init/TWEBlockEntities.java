@@ -1,17 +1,13 @@
 package net.ironhorsedevgroup.mods.thewesternedge.init;
 
 import net.ironhorsedevgroup.mods.thewesternedge.TheWesternEdgeMod;
+import net.ironhorsedevgroup.mods.thewesternedge.block.entity.*;
 import net.minecraftforge.registries.RegistryObject;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.DeferredRegister;
 
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.Block;
-
-import net.ironhorsedevgroup.mods.thewesternedge.block.entity.WellTopperBlockEntity;
-import net.ironhorsedevgroup.mods.thewesternedge.block.entity.RainBarrelBlockEntity;
-import net.ironhorsedevgroup.mods.thewesternedge.block.entity.GauzeRollsBlockEntity;
-import net.ironhorsedevgroup.mods.thewesternedge.block.entity.BrewersBarrelBlockEntity;
 
 public class TWEBlockEntities {
 	public static final DeferredRegister<BlockEntityType<?>> REGISTRY = DeferredRegister.create(ForgeRegistries.BLOCK_ENTITIES,
@@ -24,6 +20,8 @@ public class TWEBlockEntities {
 			GauzeRollsBlockEntity::new);
 	public static final RegistryObject<BlockEntityType<?>> BREWERS_BARREL = register("brewers_barrel", TWEBlocks.BREWERS_BARREL,
 			BrewersBarrelBlockEntity::new);
+	public static final RegistryObject<BlockEntityType<?>> GLASSBLOWERS_KILM = register("glassblowers_kilm", TWEBlocks.GLASSBLOWERS_KILM,
+			GlassblowersKilmEntity::new);
 
 	private static RegistryObject<BlockEntityType<?>> register(String registryname, RegistryObject<Block> block,
 			BlockEntityType.BlockEntitySupplier<?> supplier) {
